@@ -95,3 +95,4 @@ E:\VB\CIS\CIS\bin\Debug\es\DevExpress.Office.v21.2.Core.resources.dll
 E:\VB\CIS\CIS\bin\Debug\ja\DevExpress.Office.v21.2.Core.resources.dll
 E:\VB\CIS\CIS\bin\Debug\ru\DevExpress.Office.v21.2.Core.resources.dll
 E:\VB\CIS\CIS\obj\Debug\CIS.MasterPasien.resources
+E:\VB\CIS\CIS\obj\Debug\CIS.MasterUser.resources

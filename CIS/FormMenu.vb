@@ -32,4 +32,12 @@ Partial Public Class FormMenu
     Private Sub FormMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ribbonControl1.Minimized = True
     End Sub
+
+    Private Sub btnUser_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnUser.ItemClick
+        MasterUser.TopLevel = False
+        PanelControl1.Controls.Add(MasterUser)
+        ' FormUsers.Dock = DockStyle.Fill
+        MasterUser.Show()
+        MasterUser.BringToFront()
+    End Sub
 End Class

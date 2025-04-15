@@ -41,6 +41,7 @@ Partial Class MasterUser
         Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
         Me.btnFoto = New DevExpress.XtraEditors.ButtonEdit()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.lblid = New DevExpress.XtraEditors.LabelControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -68,6 +69,7 @@ Partial Class MasterUser
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.lblid)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnFoto)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.PictureEdit1)
@@ -139,7 +141,7 @@ Partial Class MasterUser
         Me.cmbStatus.Location = New System.Drawing.Point(114, 162)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbStatus.Properties.Items.AddRange(New Object() {"0", "1"})
+        Me.cmbStatus.Properties.Items.AddRange(New Object() {"True", "False"})
         Me.cmbStatus.Size = New System.Drawing.Size(51, 24)
         Me.cmbStatus.TabIndex = 5
         '
@@ -261,6 +263,14 @@ Partial Class MasterUser
         Me.LabelControl6.TabIndex = 32
         Me.LabelControl6.Text = "Foto"
         '
+        'lblid
+        '
+        Me.lblid.Location = New System.Drawing.Point(350, 15)
+        Me.lblid.Name = "lblid"
+        Me.lblid.Size = New System.Drawing.Size(0, 17)
+        Me.lblid.TabIndex = 33
+        Me.lblid.Visible = False
+        '
         'MasterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -312,4 +322,5 @@ Partial Class MasterUser
     Friend WithEvents PictureEdit1 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents btnFoto As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblid As DevExpress.XtraEditors.LabelControl
 End Class
