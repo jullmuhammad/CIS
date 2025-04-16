@@ -21,6 +21,9 @@ Partial Class MasterPasien
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterPasien))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtIDPasien = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
         Me.cmbPekerjaan = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
@@ -46,15 +49,13 @@ Partial Class MasterPasien
         Me.lblid = New DevExpress.XtraEditors.LabelControl()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.txtIDPasien = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.txtIDPasien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbPekerjaan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbGoldarah.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +69,6 @@ Partial Class MasterPasien
         CType(Me.txtNIK.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIDPasien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -115,6 +115,32 @@ Partial Class MasterPasien
         Me.SplitContainerControl1.Size = New System.Drawing.Size(897, 523)
         Me.SplitContainerControl1.SplitterPosition = 244
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'btnClear
+        '
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnClear.Location = New System.Drawing.Point(261, 12)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(87, 24)
+        Me.btnClear.TabIndex = 24
+        Me.btnClear.Text = "Bersihkan"
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(12, 15)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(92, 17)
+        Me.LabelControl10.TabIndex = 23
+        Me.LabelControl10.Text = "ID Pasien (Auto)"
+        '
+        'txtIDPasien
+        '
+        Me.txtIDPasien.Location = New System.Drawing.Point(110, 12)
+        Me.txtIDPasien.Name = "txtIDPasien"
+        Me.txtIDPasien.Properties.ReadOnly = True
+        Me.txtIDPasien.Size = New System.Drawing.Size(145, 24)
+        Me.txtIDPasien.TabIndex = 1
         '
         'LabelControl9
         '
@@ -327,32 +353,6 @@ Partial Class MasterPasien
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'txtIDPasien
-        '
-        Me.txtIDPasien.Location = New System.Drawing.Point(110, 12)
-        Me.txtIDPasien.Name = "txtIDPasien"
-        Me.txtIDPasien.Properties.ReadOnly = True
-        Me.txtIDPasien.Size = New System.Drawing.Size(145, 24)
-        Me.txtIDPasien.TabIndex = 22
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Location = New System.Drawing.Point(12, 15)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(92, 17)
-        Me.LabelControl10.TabIndex = 23
-        Me.LabelControl10.Text = "ID Pasien (Auto)"
-        '
-        'btnClear
-        '
-        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClear.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClear.Location = New System.Drawing.Point(261, 12)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(87, 24)
-        Me.btnClear.TabIndex = 24
-        Me.btnClear.Text = "Bersihkan"
-        '
         'MasterPasien
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -369,6 +369,7 @@ Partial Class MasterPasien
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.txtIDPasien.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbPekerjaan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbGoldarah.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -382,7 +383,6 @@ Partial Class MasterPasien
         CType(Me.txtNIK.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIDPasien.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

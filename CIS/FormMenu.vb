@@ -40,4 +40,12 @@ Partial Public Class FormMenu
         MasterUser.Show()
         MasterUser.BringToFront()
     End Sub
+
+    Private Sub btnRawatJalan_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnRawatJalan.ItemClick
+        Pendaftaran_Rawat_Jalan.TopLevel = False
+        PanelControl1.Controls.Add(Pendaftaran_Rawat_Jalan)
+        ' FormUsers.Dock = DockStyle.Fill
+        Pendaftaran_Rawat_Jalan.Show()
+        Pendaftaran_Rawat_Jalan.BringToFront()
+    End Sub
 End Class
