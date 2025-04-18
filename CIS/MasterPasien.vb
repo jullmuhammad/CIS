@@ -229,4 +229,5 @@ Public Class MasterPasien
 
         End Try
     End Sub
+
 End Class
