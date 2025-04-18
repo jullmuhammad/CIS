@@ -48,4 +48,8 @@ Partial Public Class FormMenu
         Pendaftaran_Rawat_Jalan.Show()
         Pendaftaran_Rawat_Jalan.BringToFront()
     End Sub
+
+    Private Sub btnExit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExit.ItemClick
+        Close()
+    End Sub
 End Class
