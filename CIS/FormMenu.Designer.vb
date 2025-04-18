@@ -35,8 +35,6 @@
         Me.btnBarang = New DevExpress.XtraBars.BarButtonItem()
         Me.btnUser = New DevExpress.XtraBars.BarButtonItem()
         Me.btnRawatJalan = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnRawatInap = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnIGD = New DevExpress.XtraBars.BarButtonItem()
         Me.btnRekamMedis = New DevExpress.XtraBars.BarButtonItem()
         Me.btnTindakanRM = New DevExpress.XtraBars.BarButtonItem()
         Me.btnObatRM = New DevExpress.XtraBars.BarButtonItem()
@@ -74,7 +72,7 @@
         '
         Me.ribbonControl1.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(35, 39, 35, 39)
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.ribbonControl1.SearchEditItem, Me.btnLogout, Me.btnExit, Me.btnChangePwd, Me.btnPasien, Me.btnKamar, Me.btnDokter, Me.btnBarang, Me.btnUser, Me.btnRawatJalan, Me.btnRawatInap, Me.btnIGD, Me.btnRekamMedis, Me.btnTindakanRM, Me.btnObatRM, Me.btnBarangMasuk, Me.btnBarangKeluar, Me.txtUsername, Me.BarStaticItem1, Me.txtRole, Me.txtUserID, Me.btnKasir, Me.btnPelayananPoli})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.ribbonControl1.SearchEditItem, Me.btnLogout, Me.btnExit, Me.btnChangePwd, Me.btnPasien, Me.btnKamar, Me.btnDokter, Me.btnBarang, Me.btnUser, Me.btnRawatJalan, Me.btnRekamMedis, Me.btnTindakanRM, Me.btnObatRM, Me.btnBarangMasuk, Me.btnBarangKeluar, Me.txtUsername, Me.BarStaticItem1, Me.txtRole, Me.txtUserID, Me.btnKasir, Me.btnPelayananPoli})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.ribbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ribbonControl1.MaxItemId = 23
@@ -147,24 +145,10 @@
         '
         'btnRawatJalan
         '
-        Me.btnRawatJalan.Caption = "Rawat Jalan"
+        Me.btnRawatJalan.Caption = "Rawat Jalan/Inap/IGD"
         Me.btnRawatJalan.Id = 9
         Me.btnRawatJalan.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.doctor_patient
         Me.btnRawatJalan.Name = "btnRawatJalan"
-        '
-        'btnRawatInap
-        '
-        Me.btnRawatInap.Caption = "Rawat Inap"
-        Me.btnRawatInap.Id = 10
-        Me.btnRawatInap.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.medical
-        Me.btnRawatInap.Name = "btnRawatInap"
-        '
-        'btnIGD
-        '
-        Me.btnIGD.Caption = "IGD"
-        Me.btnIGD.Id = 11
-        Me.btnIGD.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.alarm
-        Me.btnIGD.Name = "btnIGD"
         '
         'btnRekamMedis
         '
@@ -298,8 +282,6 @@
         'rpgPendaftaran
         '
         Me.rpgPendaftaran.ItemLinks.Add(Me.btnRawatJalan)
-        Me.rpgPendaftaran.ItemLinks.Add(Me.btnRawatInap)
-        Me.rpgPendaftaran.ItemLinks.Add(Me.btnIGD)
         Me.rpgPendaftaran.Name = "rpgPendaftaran"
         Me.rpgPendaftaran.Text = "Pendaftaran"
         '
@@ -419,8 +401,6 @@
     Friend WithEvents rpTransaksi As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents rpgPendaftaran As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnRawatJalan As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnRawatInap As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnIGD As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpgRekamMedis As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents rpgTransFarmasi As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnRekamMedis As DevExpress.XtraBars.BarButtonItem

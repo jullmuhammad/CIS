@@ -6,9 +6,9 @@ Imports DevExpress.XtraGrid.Views.Grid
 Public Class Pendaftaran_Rawat_Jalan
     Dim SQL As String
     Dim Proses As New ClassKoneksi
-    Dim tblUser, tblPasien, tblPoli, tblCaraBayar, tblRJ, tblDokter As DataTable
+    Dim tblUser, tblPasien, tblPoli, tblCaraBayar, tblRJ, tblDokter, tblKamar As DataTable
     Dim aksi As String
-
+    Dim shostname As String = System.Net.Dns.GetHostName
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Trim(lblid.Text) = "" Then
             aksi = "I"
@@ -29,15 +29,26 @@ Public Class Pendaftaran_Rawat_Jalan
     End Sub
 
     Private Sub Pendaftaran_Rawat_Jalan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtJamDaftar.Text = Date.Now
+        dtTglDaftar.EditValue = Date.Now
+
+        ' Contoh: di Form Load atau setelah inisialisasi
+        dtTglDaftar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglDaftar.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglDaftar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglDaftar.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglDaftar.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        dtTglDaftar.Properties.Mask.UseMaskAsDisplayFormat = True
+
         masterpasien()
         masterpoliklinik()
         masterdokter()
         mastercarabayar()
+        masterkamar()
         data()
     End Sub
 
-    Dim shostname As String = System.Net.Dns.GetHostName
     Sub PROSESPROC()
         If Trim(cmbPasienID.Text) = "" Then MsgBox("Pilih pasien yang akan didaftarkan!") : Exit Sub
 
@@ -56,29 +67,43 @@ Public Class Pendaftaran_Rawat_Jalan
         Commandku.CommandType = CommandType.StoredProcedure
         Commandku.Connection = Database
 
-        Commandku.CommandText = "sp_Pendaftaran_RawatJalan"
+        Commandku.CommandText = "sp_Pendaftaran"
 
         Dim id = Trim(lblid.Text)
         Dim noreg = Trim(txtNodaftar.Text)
+        Dim tgldaftar = dtTglDaftar.DateTime
+        Dim jenislayanan = Trim(cmbJenisLayanan.Text)
         Dim pasienid = Trim(cmbPasienID.Text)
         Dim poliklinik = Trim(cmbPoliklinik.Text)
         Dim dokter = Trim(cmbDokter.Text)
         Dim carabayar = Trim(cmbCaraBayar.Text)
         Dim nojkn = Trim(txtNoJKN.Text)
         Dim keluhan = Trim(mmoKeluhan.Text)
+        Dim diagnosa = Trim(mmoDiagnosa.Text)
+        Dim kamarid = Trim(cmbKamar.Text)
+        Dim caramasuk = Trim(cmbCaramasuk.Text)
+        Dim asalrujukan = Trim(txtAsalRujukan.Text)
         Dim statuskunjungan = Trim(txtStatusKunjungan.Text)
+        Dim tglpulang = DBNull.Value
 
         Dim userid = Trim(FormMenu.txtUserID.Caption)
 
         Commandku.Parameters.AddWithValue("@id", id)
         Commandku.Parameters.AddWithValue("@nopendaftaran", noreg)
+        Commandku.Parameters.AddWithValue("@tgldaftar", tgldaftar)
+        Commandku.Parameters.AddWithValue("@jenislayanan", jenislayanan)
         Commandku.Parameters.AddWithValue("@pasienid", pasienid)
         Commandku.Parameters.AddWithValue("@poliklinikid", poliklinik)
         Commandku.Parameters.AddWithValue("@dokterid", dokter)
         Commandku.Parameters.AddWithValue("@carabayar", carabayar)
         Commandku.Parameters.AddWithValue("@nokartujkn", nojkn)
         Commandku.Parameters.AddWithValue("@keluhan", keluhan)
+        Commandku.Parameters.AddWithValue("@diagnosa", diagnosa)
+        Commandku.Parameters.AddWithValue("@kamarid", kamarid)
+        Commandku.Parameters.AddWithValue("@caramasuk", caramasuk)
+        Commandku.Parameters.AddWithValue("@asalrujukan", asalrujukan)
         Commandku.Parameters.AddWithValue("@statuskunjungan", statuskunjungan)
+        Commandku.Parameters.AddWithValue("@tglpulang", tglpulang)
         Commandku.Parameters.AddWithValue("@userid", userid)
         Commandku.Parameters.AddWithValue("@pc", shostname)
         Commandku.Parameters.AddWithValue("@aksi", aksi)
@@ -126,6 +151,7 @@ Public Class Pendaftaran_Rawat_Jalan
         tblPasien = Proses.ExecuteQuery("SELECT a.[ID]
                                           ,[NoPendaftaran]
                                           ,[TanggalDaftar]
+                                           ,[JenisLayanan]
                                           ,a.[PasienID] 
 										  ,psn.NamaLengkap NamaPasien
                                           ,a.[PoliklinikID] 
@@ -135,17 +161,25 @@ Public Class Pendaftaran_Rawat_Jalan
                                           ,[CaraBayar]
                                           ,[NoKartuJKN]
                                           ,[Keluhan]
+                                          ,[Diagnosa]
+                                          ,a.[KamarID]
+                                          ,kmr.KodeKamar
+                                          ,kmr.NamaKamar
+                                          ,[CaraMasuk]
+                                          ,[AsalRujukan]
                                           ,[StatusKunjungan]
                                           ,a.[CreatedAt]
                                           ,a.[UserCreated]
                                           ,a.[PC]
-                                      FROM [db_klinik].[dbo].[T_Pendaftaran_RawatJalan] a
+                                      FROM [db_klinik].[dbo].[T_Pendaftaran] a
 									  left join [dbo].[M_Pasien] psn
 									  on psn.ID=a.PasienID
 									  left join [dbo].[M_Poliklinik] pol
 									  on pol.PoliklinikID=a.PoliklinikID
 									  left join [dbo].[M_Dokter] dr
 									  on dr.ID=a.DokterID
+                                      left join [dbo].[M_Kamar] kmr
+                                      on kmr.[KamarID]=a.[KamarID]
                                        where StatusKunjungan='Terdaftar'
                                         order by TanggalDaftar desc
                                     ")
@@ -166,6 +200,7 @@ Public Class Pendaftaran_Rawat_Jalan
             Dim created As GridColumn = gridView1.Columns("CreatedAt")
             Dim polid As GridColumn = gridView1.Columns("PoliklinikID")
             Dim dokid As GridColumn = gridView1.Columns("DokterID")
+            Dim kamarid As GridColumn = gridView1.Columns("KamarID")
 
             created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
             created.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
@@ -177,6 +212,7 @@ Public Class Pendaftaran_Rawat_Jalan
             pasien.Visible = False
             polid.Visible = False
             dokid.Visible = False
+            kamarid.Visible = False
 
             noreg.Fixed = FixedStyle.Left
             tgl.Fixed = FixedStyle.Left
@@ -196,6 +232,8 @@ Public Class Pendaftaran_Rawat_Jalan
     Sub clear()
         lblid.Text = String.Empty
         txtNodaftar.Text = String.Empty
+        dtTglDaftar.EditValue = Date.Now
+        cmbJenisLayanan.SelectedIndex = -1
         cmbPasienID.Text = String.Empty
         txtPasien.Text = String.Empty
         cmbPoliklinik.Text = String.Empty
@@ -205,7 +243,13 @@ Public Class Pendaftaran_Rawat_Jalan
         cmbCaraBayar.Text = String.Empty
         txtNoJKN.Text = String.Empty
         mmoKeluhan.Text = String.Empty
+        mmoDiagnosa.Text = String.Empty
+        cmbKamar.EditValue = String.Empty
+        cmbKamar.Text = String.Empty
+        cmbCaramasuk.Text = String.Empty
+        txtAsalRujukan.Text = String.Empty
         txtStatusKunjungan.Text = "Terdaftar"
+
     End Sub
 
     Private Sub cmbPoliklinik_EditValueChanged(sender As Object, e As EventArgs) Handles cmbPoliklinik.EditValueChanged
@@ -266,6 +310,28 @@ Public Class Pendaftaran_Rawat_Jalan
 
     Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
         gridtotext()
+    End Sub
+
+    Private Sub cmbJenisLayanan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbJenisLayanan.SelectedIndexChanged
+        Dim jenlay = Trim(cmbJenisLayanan.Text)
+
+        If jenlay = "Rawat Jalan" Then
+            cmbKamar.Properties.ReadOnly = True
+            cmbCaramasuk.Properties.ReadOnly = True
+            txtAsalRujukan.Properties.ReadOnly = True
+        ElseIf jenlay = "Rawat Inap" Then
+            cmbKamar.Properties.ReadOnly = False
+            cmbCaramasuk.Properties.ReadOnly = True
+            txtAsalRujukan.Properties.ReadOnly = True
+        Else
+            cmbKamar.Properties.ReadOnly = True
+            cmbCaramasuk.Properties.ReadOnly = False
+            txtAsalRujukan.Properties.ReadOnly = False
+        End If
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        clear()
     End Sub
 
     Sub getnamapoliklinik()
@@ -345,7 +411,8 @@ Public Class Pendaftaran_Rawat_Jalan
         Try
             lblid.Text = GridViewData.GetFocusedRowCellValue("ID").ToString
             txtNodaftar.Text = GridViewData.GetFocusedRowCellValue("NoPendaftaran").ToString
-            txtJamDaftar.Text = GridViewData.GetFocusedRowCellValue("TanggalDaftar").ToString
+            cmbJenisLayanan.Text = GridViewData.GetFocusedRowCellValue("JenisLayanan").ToString
+            dtTglDaftar.Text = GridViewData.GetFocusedRowCellValue("TanggalDaftar").ToString
             cmbPasienID.Text = GridViewData.GetFocusedRowCellValue("PasienID").ToString
             txtPasien.Text = GridViewData.GetFocusedRowCellValue("NamaPasien").ToString
             cmbPoliklinik.Text = GridViewData.GetFocusedRowCellValue("PoliklinikID").ToString
@@ -355,10 +422,30 @@ Public Class Pendaftaran_Rawat_Jalan
             cmbCaraBayar.Text = GridViewData.GetFocusedRowCellValue("CaraBayar").ToString
             txtNoJKN.Text = GridViewData.GetFocusedRowCellValue("NoKartuJKN").ToString
             mmoKeluhan.Text = GridViewData.GetFocusedRowCellValue("Keluhan").ToString
+            mmoDiagnosa.Text = GridViewData.GetFocusedRowCellValue("Diagnosa").ToString
+            cmbKamar.Text = GridViewData.GetFocusedRowCellValue("KodeKamar").ToString
+            cmbCaramasuk.Text = GridViewData.GetFocusedRowCellValue("CaraMasuk").ToString
+            txtAsalRujukan.Text = GridViewData.GetFocusedRowCellValue("AsalRujukan").ToString
             txtStatusKunjungan.Text = GridViewData.GetFocusedRowCellValue("StatusKunjungan").ToString
 
         Catch ex As Exception
 
         End Try
+    End Sub
+    Sub masterkamar()
+
+        tblKamar = Proses.ExecuteQuery("SELECT KodeKamar,NamaKamar,Ruang,Kelas  FROM [db_klinik].[dbo].[M_Kamar]")
+
+        cmbKamar.Properties.DataSource = tblKamar
+        cmbKamar.Properties.ValueMember = "KodeKamar"
+        cmbKamar.Properties.DisplayMember = "KodeKamar"
+        cmbKamar.Properties.BestFitMode = BestFitMode.BestFitResizePopup
+
+        cmbKamar.Properties.AutoSearchColumnIndex = 1
+        cmbKamar.Properties.SearchMode = SearchMode.AutoSearch
+        cmbKamar.Properties.HeaderClickMode = HeaderClickMode.AutoSearch
+        cmbKamar.Properties.CaseSensitiveSearch = True
+        cmbKamar.Properties.NullText = ""
+
     End Sub
 End Class
