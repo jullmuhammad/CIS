@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cislogo.ico" />
+    <None Include="Resources\clinic.png" />
     <None Include="Resources\crowd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
