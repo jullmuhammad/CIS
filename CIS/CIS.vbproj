@@ -109,6 +109,12 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Pelayanan_Poliklinik.Designer.vb">
+      <DependentUpon>Pelayanan_Poliklinik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pelayanan_Poliklinik.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pendaftaran_Rawat_Jalan.Designer.vb">
       <DependentUpon>Pendaftaran_Rawat_Jalan.vb</DependentUpon>
     </Compile>
@@ -139,6 +145,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Pelayanan_Poliklinik.resx">
+      <DependentUpon>Pelayanan_Poliklinik.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pendaftaran_Rawat_Jalan.resx">
       <DependentUpon>Pendaftaran_Rawat_Jalan.vb</DependentUpon>
     </EmbeddedResource>
