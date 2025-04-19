@@ -21,6 +21,18 @@ Partial Class Pendaftaran_Rawat_Jalan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pendaftaran_Rawat_Jalan))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.cmbCaraMasuk = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtAsalRujukan = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.cmbKamar = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
+        Me.mmoDiagnosa = New DevExpress.XtraEditors.MemoEdit()
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
+        Me.cmbJenisLayanan = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.dtTglDaftar = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
@@ -48,24 +60,20 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.lblid = New DevExpress.XtraEditors.LabelControl()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.dtTglDaftar = New DevExpress.XtraEditors.DateEdit()
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
-        Me.cmbJenisLayanan = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
-        Me.mmoDiagnosa = New DevExpress.XtraEditors.MemoEdit()
-        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
-        Me.cmbKamar = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtAsalRujukan = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
-        Me.cmbCaraMasuk = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.btnTambahPasien = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.cmbCaraMasuk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAsalRujukan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbKamar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mmoDiagnosa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbJenisLayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglDaftar.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglDaftar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtStatusKunjungan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mmoKeluhan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNoJKN.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,13 +87,6 @@ Partial Class Pendaftaran_Rawat_Jalan
         CType(Me.txtNodaftar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglDaftar.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglDaftar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbJenisLayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mmoDiagnosa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbKamar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtAsalRujukan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbCaraMasuk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -97,6 +98,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnTambahPasien)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.cmbCaraMasuk)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl14)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl13)
@@ -143,6 +145,108 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.SplitContainerControl1.Size = New System.Drawing.Size(903, 448)
         Me.SplitContainerControl1.SplitterPosition = 338
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'cmbCaraMasuk
+        '
+        Me.cmbCaraMasuk.Location = New System.Drawing.Point(415, 276)
+        Me.cmbCaraMasuk.Name = "cmbCaraMasuk"
+        Me.cmbCaraMasuk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbCaraMasuk.Properties.Items.AddRange(New Object() {"Mandiri", "Rujukan", "Ambulans"})
+        Me.cmbCaraMasuk.Properties.ReadOnly = True
+        Me.cmbCaraMasuk.Size = New System.Drawing.Size(218, 24)
+        Me.cmbCaraMasuk.TabIndex = 14
+        '
+        'LabelControl14
+        '
+        Me.LabelControl14.Location = New System.Drawing.Point(330, 309)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(73, 17)
+        Me.LabelControl14.TabIndex = 46
+        Me.LabelControl14.Text = "Asal Rujukan"
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Location = New System.Drawing.Point(330, 279)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(70, 17)
+        Me.LabelControl13.TabIndex = 45
+        Me.LabelControl13.Text = "Cara Masuk"
+        '
+        'txtAsalRujukan
+        '
+        Me.txtAsalRujukan.Location = New System.Drawing.Point(415, 306)
+        Me.txtAsalRujukan.Name = "txtAsalRujukan"
+        Me.txtAsalRujukan.Properties.ReadOnly = True
+        Me.txtAsalRujukan.Size = New System.Drawing.Size(320, 24)
+        Me.txtAsalRujukan.TabIndex = 15
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Location = New System.Drawing.Point(12, 279)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(38, 17)
+        Me.LabelControl8.TabIndex = 42
+        Me.LabelControl8.Text = "Kamar"
+        '
+        'cmbKamar
+        '
+        Me.cmbKamar.Location = New System.Drawing.Point(139, 276)
+        Me.cmbKamar.Name = "cmbKamar"
+        Me.cmbKamar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbKamar.Properties.NullText = ""
+        Me.cmbKamar.Properties.ReadOnly = True
+        Me.cmbKamar.Size = New System.Drawing.Size(185, 24)
+        Me.cmbKamar.TabIndex = 13
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Location = New System.Drawing.Point(12, 206)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(55, 17)
+        Me.LabelControl12.TabIndex = 40
+        Me.LabelControl12.Text = "Diagnosa"
+        '
+        'mmoDiagnosa
+        '
+        Me.mmoDiagnosa.Location = New System.Drawing.Point(139, 204)
+        Me.mmoDiagnosa.Name = "mmoDiagnosa"
+        Me.mmoDiagnosa.Size = New System.Drawing.Size(461, 66)
+        Me.mmoDiagnosa.TabIndex = 12
+        '
+        'LabelControl11
+        '
+        Me.LabelControl11.Location = New System.Drawing.Point(14, 45)
+        Me.LabelControl11.Name = "LabelControl11"
+        Me.LabelControl11.Size = New System.Drawing.Size(79, 17)
+        Me.LabelControl11.TabIndex = 38
+        Me.LabelControl11.Text = "Jenis Layanan"
+        '
+        'cmbJenisLayanan
+        '
+        Me.cmbJenisLayanan.Location = New System.Drawing.Point(139, 42)
+        Me.cmbJenisLayanan.Name = "cmbJenisLayanan"
+        Me.cmbJenisLayanan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbJenisLayanan.Properties.Items.AddRange(New Object() {"Rawat Jalan", "Rawat Inap", "IGD"})
+        Me.cmbJenisLayanan.Size = New System.Drawing.Size(185, 24)
+        Me.cmbJenisLayanan.TabIndex = 2
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Location = New System.Drawing.Point(330, 15)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(87, 17)
+        Me.LabelControl9.TabIndex = 36
+        Me.LabelControl9.Text = "Tanggal Daftar"
+        '
+        'dtTglDaftar
+        '
+        Me.dtTglDaftar.EditValue = Nothing
+        Me.dtTglDaftar.Location = New System.Drawing.Point(423, 12)
+        Me.dtTglDaftar.Name = "dtTglDaftar"
+        Me.dtTglDaftar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglDaftar.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglDaftar.Size = New System.Drawing.Size(210, 24)
+        Me.dtTglDaftar.TabIndex = 1
         '
         'LabelControl7
         '
@@ -372,107 +476,15 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'dtTglDaftar
+        'btnTambahPasien
         '
-        Me.dtTglDaftar.EditValue = Nothing
-        Me.dtTglDaftar.Location = New System.Drawing.Point(423, 12)
-        Me.dtTglDaftar.Name = "dtTglDaftar"
-        Me.dtTglDaftar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglDaftar.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglDaftar.Size = New System.Drawing.Size(210, 24)
-        Me.dtTglDaftar.TabIndex = 1
-        '
-        'LabelControl9
-        '
-        Me.LabelControl9.Location = New System.Drawing.Point(330, 15)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(87, 17)
-        Me.LabelControl9.TabIndex = 36
-        Me.LabelControl9.Text = "Tanggal Daftar"
-        '
-        'cmbJenisLayanan
-        '
-        Me.cmbJenisLayanan.Location = New System.Drawing.Point(139, 42)
-        Me.cmbJenisLayanan.Name = "cmbJenisLayanan"
-        Me.cmbJenisLayanan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbJenisLayanan.Properties.Items.AddRange(New Object() {"Rawat Jalan", "Rawat Inap", "IGD"})
-        Me.cmbJenisLayanan.Size = New System.Drawing.Size(185, 24)
-        Me.cmbJenisLayanan.TabIndex = 2
-        '
-        'LabelControl11
-        '
-        Me.LabelControl11.Location = New System.Drawing.Point(14, 45)
-        Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(79, 17)
-        Me.LabelControl11.TabIndex = 38
-        Me.LabelControl11.Text = "Jenis Layanan"
-        '
-        'mmoDiagnosa
-        '
-        Me.mmoDiagnosa.Location = New System.Drawing.Point(139, 204)
-        Me.mmoDiagnosa.Name = "mmoDiagnosa"
-        Me.mmoDiagnosa.Size = New System.Drawing.Size(461, 66)
-        Me.mmoDiagnosa.TabIndex = 12
-        '
-        'LabelControl12
-        '
-        Me.LabelControl12.Location = New System.Drawing.Point(12, 206)
-        Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(55, 17)
-        Me.LabelControl12.TabIndex = 40
-        Me.LabelControl12.Text = "Diagnosa"
-        '
-        'cmbKamar
-        '
-        Me.cmbKamar.Location = New System.Drawing.Point(139, 276)
-        Me.cmbKamar.Name = "cmbKamar"
-        Me.cmbKamar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbKamar.Properties.NullText = ""
-        Me.cmbKamar.Properties.ReadOnly = True
-        Me.cmbKamar.Size = New System.Drawing.Size(185, 24)
-        Me.cmbKamar.TabIndex = 13
-        '
-        'LabelControl8
-        '
-        Me.LabelControl8.Location = New System.Drawing.Point(12, 279)
-        Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(38, 17)
-        Me.LabelControl8.TabIndex = 42
-        Me.LabelControl8.Text = "Kamar"
-        '
-        'txtAsalRujukan
-        '
-        Me.txtAsalRujukan.Location = New System.Drawing.Point(415, 306)
-        Me.txtAsalRujukan.Name = "txtAsalRujukan"
-        Me.txtAsalRujukan.Properties.ReadOnly = True
-        Me.txtAsalRujukan.Size = New System.Drawing.Size(320, 24)
-        Me.txtAsalRujukan.TabIndex = 15
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Location = New System.Drawing.Point(330, 279)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(70, 17)
-        Me.LabelControl13.TabIndex = 45
-        Me.LabelControl13.Text = "Cara Masuk"
-        '
-        'LabelControl14
-        '
-        Me.LabelControl14.Location = New System.Drawing.Point(330, 309)
-        Me.LabelControl14.Name = "LabelControl14"
-        Me.LabelControl14.Size = New System.Drawing.Size(73, 17)
-        Me.LabelControl14.TabIndex = 46
-        Me.LabelControl14.Text = "Asal Rujukan"
-        '
-        'cmbCaraMasuk
-        '
-        Me.cmbCaraMasuk.Location = New System.Drawing.Point(415, 276)
-        Me.cmbCaraMasuk.Name = "cmbCaraMasuk"
-        Me.cmbCaraMasuk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbCaraMasuk.Properties.Items.AddRange(New Object() {"Mandiri", "Rujukan", "Ambulans"})
-        Me.cmbCaraMasuk.Properties.ReadOnly = True
-        Me.cmbCaraMasuk.Size = New System.Drawing.Size(218, 24)
-        Me.cmbCaraMasuk.TabIndex = 14
+        Me.btnTambahPasien.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTambahPasien.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnTambahPasien.Location = New System.Drawing.Point(765, 12)
+        Me.btnTambahPasien.Name = "btnTambahPasien"
+        Me.btnTambahPasien.Size = New System.Drawing.Size(119, 24)
+        Me.btnTambahPasien.TabIndex = 47
+        Me.btnTambahPasien.Text = "Tambah Pasien"
         '
         'Pendaftaran_Rawat_Jalan
         '
@@ -491,6 +503,13 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.cmbCaraMasuk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAsalRujukan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbKamar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mmoDiagnosa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbJenisLayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglDaftar.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglDaftar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtStatusKunjungan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mmoKeluhan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNoJKN.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -504,13 +523,6 @@ Partial Class Pendaftaran_Rawat_Jalan
         CType(Me.txtNodaftar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglDaftar.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglDaftar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbJenisLayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mmoDiagnosa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbKamar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtAsalRujukan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbCaraMasuk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -555,4 +567,5 @@ Partial Class Pendaftaran_Rawat_Jalan
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmbCaraMasuk As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents btnTambahPasien As DevExpress.XtraEditors.SimpleButton
 End Class
