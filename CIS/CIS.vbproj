@@ -79,6 +79,12 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CariPendaftaran.Designer.vb">
+      <DependentUpon>CariPendaftaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CariPendaftaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ClassKoneksi.vb" />
     <Compile Include="FormMenu.vb">
       <SubType>Form</SubType>
@@ -121,6 +127,9 @@
     <Compile Include="Pendaftaran_Rawat_Jalan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="CariPendaftaran.resx">
+      <DependentUpon>CariPendaftaran.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.vb</DependentUpon>
     </EmbeddedResource>

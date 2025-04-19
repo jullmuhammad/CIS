@@ -52,4 +52,12 @@ Partial Public Class FormMenu
     Private Sub btnExit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExit.ItemClick
         Close()
     End Sub
+
+    Private Sub btnPelayananPoli_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPelayananPoli.ItemClick
+        Pelayanan_Poliklinik.TopLevel = False
+        PanelControl1.Controls.Add(Pelayanan_Poliklinik)
+        ' FormUsers.Dock = DockStyle.Fill
+        Pelayanan_Poliklinik.Show()
+        Pelayanan_Poliklinik.BringToFront()
+    End Sub
 End Class
