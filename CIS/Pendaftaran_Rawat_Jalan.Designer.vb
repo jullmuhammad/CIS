@@ -21,6 +21,7 @@ Partial Class Pendaftaran_Rawat_Jalan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pendaftaran_Rawat_Jalan))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.btnTambahPasien = New DevExpress.XtraEditors.SimpleButton()
         Me.cmbCaraMasuk = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
@@ -60,7 +61,6 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.lblid = New DevExpress.XtraEditors.LabelControl()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnTambahPasien = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -145,6 +145,16 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.SplitContainerControl1.Size = New System.Drawing.Size(903, 448)
         Me.SplitContainerControl1.SplitterPosition = 338
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'btnTambahPasien
+        '
+        Me.btnTambahPasien.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTambahPasien.ImageOptions.Image = CType(resources.GetObject("btnTambahPasien.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnTambahPasien.Location = New System.Drawing.Point(765, 12)
+        Me.btnTambahPasien.Name = "btnTambahPasien"
+        Me.btnTambahPasien.Size = New System.Drawing.Size(119, 24)
+        Me.btnTambahPasien.TabIndex = 47
+        Me.btnTambahPasien.Text = "Tambah Pasien"
         '
         'cmbCaraMasuk
         '
@@ -475,16 +485,6 @@ Partial Class Pendaftaran_Rawat_Jalan
         '
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
-        '
-        'btnTambahPasien
-        '
-        Me.btnTambahPasien.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTambahPasien.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnTambahPasien.Location = New System.Drawing.Point(765, 12)
-        Me.btnTambahPasien.Name = "btnTambahPasien"
-        Me.btnTambahPasien.Size = New System.Drawing.Size(119, 24)
-        Me.btnTambahPasien.TabIndex = 47
-        Me.btnTambahPasien.Text = "Tambah Pasien"
         '
         'Pendaftaran_Rawat_Jalan
         '

@@ -20,8 +20,18 @@ Public Class Pendaftaran_Rawat_Jalan
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        aksi = "D"
-        PROSESPROC()
+        ' Tampilkan pesan konfirmasi
+        Dim result As DialogResult = XtraMessageBox.Show("Apakah Anda yakin ingin menghapus data ini?",
+                                                     "Konfirmasi Hapus",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question)
+
+        ' Cek hasil konfirmasi
+        If result = DialogResult.Yes Then
+            ' Lakukan proses penghapusan data
+            aksi = "D"
+            PROSESPROC()
+        End If
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -41,7 +51,7 @@ Public Class Pendaftaran_Rawat_Jalan
         dtTglDaftar.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
         dtTglDaftar.Properties.Mask.UseMaskAsDisplayFormat = True
 
-        masterpasien()
+        combopasien()
         masterpoliklinik()
         masterdokter()
         mastercarabayar()
@@ -256,7 +266,7 @@ Public Class Pendaftaran_Rawat_Jalan
         getnamapoliklinik()
     End Sub
 
-    Sub masterpasien()
+    Sub combopasien()
 
         tblPasien = Proses.ExecuteQuery("SELECT [ID],[NIK],[NamaLengkap],[TanggalLahir]  FROM [db_klinik].[dbo].[M_Pasien]  where Status='Aktif'")
 
@@ -332,6 +342,11 @@ Public Class Pendaftaran_Rawat_Jalan
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         clear()
+    End Sub
+
+    Private Sub btnTambahPasien_Click(sender As Object, e As EventArgs) Handles btnTambahPasien.Click
+        MasterPasien.Show()
+        MasterPasien.BringToFront()
     End Sub
 
     Sub getnamapoliklinik()

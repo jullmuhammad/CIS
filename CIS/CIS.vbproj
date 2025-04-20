@@ -127,6 +127,12 @@
     <Compile Include="Pendaftaran_Rawat_Jalan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ResepObat.Designer.vb">
+      <DependentUpon>ResepObat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResepObat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="CariPendaftaran.resx">
       <DependentUpon>CariPendaftaran.vb</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pendaftaran_Rawat_Jalan.resx">
       <DependentUpon>Pendaftaran_Rawat_Jalan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResepObat.resx">
+      <DependentUpon>ResepObat.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
