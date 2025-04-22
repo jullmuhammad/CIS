@@ -39,7 +39,35 @@ Public Class Pelayanan_Poliklinik
         CariPendaftaran.BringToFront()
     End Sub
 
+    Private Sub btnObat_Click(sender As Object, e As EventArgs) Handles btnObat.Click
+        If txtIDPelayanan.Text = "" Then MsgBox("Pilih dulu pelayanannya, baru bisa resep obat!") : Exit Sub
+
+        ResepObat.txtIDPelayanan.Text = txtIDPelayanan.Text
+
+        ResepObat.dtTglResep.EditValue = Date.Now
+
+        ' Contoh: di Form Load atau setelah inisialisasi
+        ResepObat.dtTglResep.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        ResepObat.dtTglResep.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        ResepObat.dtTglResep.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        ResepObat.dtTglResep.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        ResepObat.dtTglResep.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        ResepObat.dtTglResep.Properties.Mask.UseMaskAsDisplayFormat = True
+
+        ResepObat.aksi = "I"
+        ResepObat.HeaderProc()
+        ResepObat.ShowDialog()
+        ResepObat.BringToFront()
+    End Sub
+
     Dim shostname As String = System.Net.Dns.GetHostName
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
+    End Sub
+
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
@@ -224,5 +252,24 @@ Public Class Pelayanan_Poliklinik
         mmoSaran.Text = String.Empty
         cmbStatus.Text = String.Empty
 
+    End Sub
+    Sub gridtotext()
+        Try
+            txtIDPelayanan.Text = GridViewData.GetFocusedRowCellValue("IDPelayanan").ToString
+            txtNoPendaftaran.Text = GridViewData.GetFocusedRowCellValue("NoPendaftaran").ToString
+            txtJenisDaftar.Text = GridViewData.GetFocusedRowCellValue("JenisDaftar").ToString
+            dtTglPeriksa.Text = GridViewData.GetFocusedRowCellValue("TanggalPeriksa").ToString
+            txtPoliklinikID.Text = GridViewData.GetFocusedRowCellValue("PoliID").ToString
+            txtDokterID.Text = GridViewData.GetFocusedRowCellValue("DokterID").ToString
+            mmoKeluhan.Text = GridViewData.GetFocusedRowCellValue("Keluhan").ToString
+            mmoPemeriksaanFisik.Text = GridViewData.GetFocusedRowCellValue("PemeriksaanFisik").ToString
+            mmoDiagnosa.Text = GridViewData.GetFocusedRowCellValue("Diagnosa").ToString
+            mmoTindakan.Text = GridViewData.GetFocusedRowCellValue("Tindakan").ToString
+            mmoSaran.Text = GridViewData.GetFocusedRowCellValue("Saran").ToString
+            cmbStatus.Text = GridViewData.GetFocusedRowCellValue("StatusSelesai").ToString
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

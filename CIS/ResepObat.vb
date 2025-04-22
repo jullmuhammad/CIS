@@ -1,18 +1,17 @@
 ﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.Controls
 
 Public Class ResepObat
     Dim SQL As String
     Dim Proses As New ClassKoneksi
     Dim tblUser, tblPasien, tblPoli, tblCaraBayar, tblRJ, tblDokter, tblKamar As DataTable
-
+    Public aksi As String
+    Dim shostname As String = System.Net.Dns.GetHostName
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If Trim(lbliddetail.Text) = "" Then
-            aksi = "I"
-            DetailProc()
-        Else
-            aksi = "U"
-            DetailProc()
-        End If
+
+        aksi = "U"
+            HeaderProc()
+
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
@@ -30,8 +29,27 @@ Public Class ResepObat
         End If
     End Sub
 
-    Dim aksi As String
-    Dim shostname As String = System.Net.Dns.GetHostName
+    Private Sub ResepObat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        comboobat()
+        combosatuan()
+
+        dtTglResep.EditValue = Date.Now
+
+        ' Contoh: di Form Load atau setelah inisialisasi
+        dtTglResep.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglResep.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglResep.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglResep.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglResep.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        dtTglResep.Properties.Mask.UseMaskAsDisplayFormat = True
+    End Sub
+
+    Private Sub cmbKodeObat_EditValueChanged(sender As Object, e As EventArgs) Handles cmbKodeObat.EditValueChanged
+        getnamaobat()
+    End Sub
+
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
@@ -89,11 +107,22 @@ Public Class ResepObat
 
         If Trim(OutSTS.Value.ToString) = "OK" Then
             Cursor.Current = Cursors.Default
-            XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If aksi = "U" Then
+                If Trim(lbliddetail.Text) = "" Then
+                    aksi = "I"
+                    DetailProc()
+                Else
+                    aksi = "U"
+                    DetailProc()
+                End If
+
+            Else
+                XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                txtIDResep.Text = Trim(OutId.Value.ToString)
+            End If
             'Data()
             'clear()
 
-            txtIDResep.Text = Trim(OutId.Value.ToString)
 
         Else
             Cursor.Current = Cursors.Default
@@ -171,6 +200,7 @@ Public Class ResepObat
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'Data()
             'clear()
+            clear()
 
         Else
             Cursor.Current = Cursors.Default
@@ -203,5 +233,47 @@ Public Class ResepObat
         satuan = String.Empty
         aturanpake = String.Empty
         ket = String.Empty
+    End Sub
+    Sub comboobat()
+
+        tblPasien = Proses.ExecuteQuery("SELECT [KodeBarang] KodeObat,[NamaBarang] NamaObat  FROM [db_klinik].[dbo].[M_Barang] where Jenis='Obat' and Stok>0")
+
+        cmbKodeObat.Properties.DataSource = tblPasien
+        cmbKodeObat.Properties.ValueMember = "KodeObat"
+        cmbKodeObat.Properties.DisplayMember = "KodeObat"
+        cmbKodeObat.Properties.BestFitMode = BestFitMode.BestFitResizePopup
+
+        cmbKodeObat.Properties.AutoSearchColumnIndex = 1
+        cmbKodeObat.Properties.SearchMode = SearchMode.AutoSearch
+        cmbKodeObat.Properties.HeaderClickMode = HeaderClickMode.AutoSearch
+        cmbKodeObat.Properties.CaseSensitiveSearch = True
+        cmbKodeObat.Properties.NullText = ""
+
+    End Sub
+    Sub getnamaobat()
+        Dim kodeobat = Trim(cmbKodeObat.Text)
+        Dim tblobat As DataTable = Proses.ExecuteQuery("SELECT [KodeBarang] KodeObat,[NamaBarang] NamaObat  FROM [db_klinik].[dbo].[M_Barang] where KodeBarang='" & kodeobat & "'")
+
+        If tblobat.Rows.Count = 0 Then
+            txtNamaObat.Text = ""
+        Else
+            txtNamaObat.Text = Trim(tblobat.Rows(0).Item("NamaObat").ToString)
+        End If
+    End Sub
+    Sub combosatuan()
+        cmbSatuan.Properties.Items.Clear()
+        Call Proses.OpenConn()
+        Dim str As String
+        str = "SELECT  [KodeSatuan] + ' - ' + [Satuan] Satuan  FROM [db_klinik].[dbo].[M_Satuan]"
+        Proses.Cmd = New OleDb.OleDbCommand(str, Proses.Cn)
+        Proses.Rd = Proses.Cmd.ExecuteReader
+        If Proses.Rd.HasRows Then
+            Do While Proses.Rd.Read
+                cmbSatuan.Properties.Items.Add(Proses.Rd("Satuan").ToString)
+
+            Loop
+        Else
+        End If
+
     End Sub
 End Class

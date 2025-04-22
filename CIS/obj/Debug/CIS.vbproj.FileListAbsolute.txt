@@ -99,3 +99,4 @@ E:\VB\CIS\CIS\obj\Debug\CIS.MasterUser.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.Pendaftaran_Rawat_Jalan.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.CariPendaftaran.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.Pelayanan_Poliklinik.resources
+E:\VB\CIS\CIS\obj\Debug\CIS.ResepObat.resources

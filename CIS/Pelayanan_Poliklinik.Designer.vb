@@ -21,6 +21,7 @@ Partial Class Pelayanan_Poliklinik
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pelayanan_Poliklinik))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.btnObat = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
@@ -40,6 +41,8 @@ Partial Class Pelayanan_Poliklinik
         Me.mmoPemeriksaanFisik = New DevExpress.XtraEditors.MemoEdit()
         Me.dtTglPeriksa = New DevExpress.XtraEditors.DateEdit()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtPasien = New DevExpress.XtraEditors.TextEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
@@ -52,9 +55,6 @@ Partial Class Pelayanan_Poliklinik
         Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.txtPasien = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnObat = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -70,6 +70,7 @@ Partial Class Pelayanan_Poliklinik
         CType(Me.dtTglPeriksa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.txtPasien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mmoKeluhan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDokterID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPoliklinikID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +79,6 @@ Partial Class Pelayanan_Poliklinik
         CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtPasien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -121,6 +121,16 @@ Partial Class Pelayanan_Poliklinik
         Me.SplitContainerControl1.Size = New System.Drawing.Size(962, 439)
         Me.SplitContainerControl1.SplitterPosition = 340
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'btnObat
+        '
+        Me.btnObat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnObat.ImageOptions.Image = CType(resources.GetObject("btnObat.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnObat.Location = New System.Drawing.Point(680, 248)
+        Me.btnObat.Name = "btnObat"
+        Me.btnObat.Size = New System.Drawing.Size(75, 33)
+        Me.btnObat.TabIndex = 33
+        Me.btnObat.Text = "Resep"
         '
         'LabelControl12
         '
@@ -290,6 +300,22 @@ Partial Class Pelayanan_Poliklinik
         Me.PanelControl1.Size = New System.Drawing.Size(451, 198)
         Me.PanelControl1.TabIndex = 5
         '
+        'LabelControl13
+        '
+        Me.LabelControl13.Location = New System.Drawing.Point(10, 38)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(37, 17)
+        Me.LabelControl13.TabIndex = 32
+        Me.LabelControl13.Text = "Pasien"
+        '
+        'txtPasien
+        '
+        Me.txtPasien.Location = New System.Drawing.Point(99, 35)
+        Me.txtPasien.Name = "txtPasien"
+        Me.txtPasien.Properties.ReadOnly = True
+        Me.txtPasien.Size = New System.Drawing.Size(275, 24)
+        Me.txtPasien.TabIndex = 31
+        '
         'LabelControl5
         '
         Me.LabelControl5.Location = New System.Drawing.Point(9, 126)
@@ -385,32 +411,6 @@ Partial Class Pelayanan_Poliklinik
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'txtPasien
-        '
-        Me.txtPasien.Location = New System.Drawing.Point(99, 35)
-        Me.txtPasien.Name = "txtPasien"
-        Me.txtPasien.Properties.ReadOnly = True
-        Me.txtPasien.Size = New System.Drawing.Size(275, 24)
-        Me.txtPasien.TabIndex = 31
-        '
-        'LabelControl13
-        '
-        Me.LabelControl13.Location = New System.Drawing.Point(10, 38)
-        Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(37, 17)
-        Me.LabelControl13.TabIndex = 32
-        Me.LabelControl13.Text = "Pasien"
-        '
-        'btnObat
-        '
-        Me.btnObat.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnObat.ImageOptions.Image = CType(resources.GetObject("SimpleButton2.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnObat.Location = New System.Drawing.Point(680, 248)
-        Me.btnObat.Name = "btnObat"
-        Me.btnObat.Size = New System.Drawing.Size(75, 33)
-        Me.btnObat.TabIndex = 33
-        Me.btnObat.Text = "Resep"
-        '
         'Pelayanan_Poliklinik
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -438,6 +438,7 @@ Partial Class Pelayanan_Poliklinik
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
+        CType(Me.txtPasien.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mmoKeluhan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDokterID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPoliklinikID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -446,7 +447,6 @@ Partial Class Pelayanan_Poliklinik
         CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtPasien.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
