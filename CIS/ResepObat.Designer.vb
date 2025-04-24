@@ -50,6 +50,7 @@ Partial Class ResepObat
         Me.txtIDResep = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnTambahResep = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -82,6 +83,7 @@ Partial Class ResepObat
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnTambahResep)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.lbliddetail)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl10)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl8)
@@ -361,6 +363,16 @@ Partial Class ResepObat
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
+        'btnTambahResep
+        '
+        Me.btnTambahResep.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTambahResep.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnTambahResep.Location = New System.Drawing.Point(596, 3)
+        Me.btnTambahResep.Name = "btnTambahResep"
+        Me.btnTambahResep.Size = New System.Drawing.Size(106, 33)
+        Me.btnTambahResep.TabIndex = 48
+        Me.btnTambahResep.Text = "Buat Resep"
+        '
         'ResepObat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -369,6 +381,7 @@ Partial Class ResepObat
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.medicine
         Me.Name = "ResepObat"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Resep Obat"
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.Panel1.ResumeLayout(False)
@@ -426,4 +439,5 @@ Partial Class ResepObat
     Friend WithEvents GridControlData As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewData As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents lbliddetail As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnTambahResep As DevExpress.XtraEditors.SimpleButton
 End Class

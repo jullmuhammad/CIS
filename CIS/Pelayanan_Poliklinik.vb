@@ -44,20 +44,24 @@ Public Class Pelayanan_Poliklinik
 
         ResepObat.txtIDPelayanan.Text = txtIDPelayanan.Text
 
-        ResepObat.dtTglResep.EditValue = Date.Now
-
-        ' Contoh: di Form Load atau setelah inisialisasi
-        ResepObat.dtTglResep.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        ResepObat.dtTglResep.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
-
-        ResepObat.dtTglResep.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        ResepObat.dtTglResep.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
-
-        ResepObat.dtTglResep.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
-        ResepObat.dtTglResep.Properties.Mask.UseMaskAsDisplayFormat = True
-
-        ResepObat.aksi = "I"
-        ResepObat.HeaderProc()
+        Dim tblCekData As DataTable = Proses.ExecuteQuery("SELECT  [IDResep]
+                                                          ,[IDPelayanan]
+                                                          ,[TanggalResep]
+                                                          ,[UserResep]
+                                                          ,[Status]
+                                                       FROM [db_klinik].[dbo].[T_ResepObat] 
+                                                      where [IDPelayanan]='" & txtIDPelayanan.Text & "'")
+        If tblCekData.Rows.Count = 0 Then
+            ResepObat.txtIDResep.Text = ""
+            ResepObat.dtTglResep.EditValue = Date.Now
+            ResepObat.cmbStatus.Text = ""
+        Else
+            ResepObat.txtIDResep.Text = tblCekData.Rows(0).Item("IDResep").ToString
+            ResepObat.dtTglResep.EditValue = tblCekData.Rows(0).Item("TanggalResep").ToString
+            ResepObat.cmbStatus.Text = tblCekData.Rows(0).Item("Status").ToString
+        End If
+        'ResepObat.aksi = "I"
+        'ResepObat.HeaderProc()
         ResepObat.ShowDialog()
         ResepObat.BringToFront()
     End Sub

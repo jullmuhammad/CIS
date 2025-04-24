@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class ResepObat
     Dim SQL As String
@@ -8,9 +9,13 @@ Public Class ResepObat
     Public aksi As String
     Dim shostname As String = System.Net.Dns.GetHostName
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        aksi = "U"
-            HeaderProc()
+        If Trim(lbliddetail.Text) = "" Then
+            aksi = "I"
+            DetailProc()
+        Else
+            aksi = "U"
+            DetailProc()
+        End If
 
     End Sub
 
@@ -32,7 +37,7 @@ Public Class ResepObat
     Private Sub ResepObat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         comboobat()
         combosatuan()
-
+        data()
         dtTglResep.EditValue = Date.Now
 
         ' Contoh: di Form Load atau setelah inisialisasi
@@ -55,6 +60,7 @@ Public Class ResepObat
     End Sub
     Sub HeaderProc()
         If Trim(Pelayanan_Poliklinik.txtIDPelayanan.Text) = "" Then MsgBox("Pilih pelayanan mana yang akan ditambahkan resep!") : Exit Sub
+        If Trim(txtIDResep.Text) = "" Then MsgBox("Silahkan Buat Resep terlebih dahulu!") : Exit Sub
 
         Cursor.Current = Cursors.WaitCursor
 
@@ -107,19 +113,9 @@ Public Class ResepObat
 
         If Trim(OutSTS.Value.ToString) = "OK" Then
             Cursor.Current = Cursors.Default
-            If aksi = "U" Then
-                If Trim(lbliddetail.Text) = "" Then
-                    aksi = "I"
-                    DetailProc()
-                Else
-                    aksi = "U"
-                    DetailProc()
-                End If
 
-            Else
-                XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 txtIDResep.Text = Trim(OutId.Value.ToString)
-            End If
             'Data()
             'clear()
 
@@ -137,6 +133,18 @@ Public Class ResepObat
 
 
     End Sub
+
+    Private Sub btnTambahResep_Click(sender As Object, e As EventArgs) Handles btnTambahResep.Click
+        If txtIDResep.Text = "" Then
+
+            aksi = "I"
+            HeaderProc()
+        Else
+            aksi = "U"
+            HeaderProc()
+        End If
+    End Sub
+
     Sub DetailProc()
         If Trim(txtIDResep.Text) = "" Then MsgBox("Pilih resep mana yang akan ditambahkan obat!") : Exit Sub
 
@@ -200,6 +208,7 @@ Public Class ResepObat
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'Data()
             'clear()
+            data()
             clear()
 
         Else
@@ -215,24 +224,22 @@ Public Class ResepObat
 
 
     End Sub
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
+    End Sub
+
     Sub clear()
 
-        Dim kdobat = Trim(cmbKodeObat.Text)
-        Dim namaobat = Trim(txtNamaObat.Text)
-        Dim dosis = Trim(txtDosis.Text)
-        Dim jml = Val(txtJumlah.Text)
-        Dim satuan = Trim(cmbSatuan.Text)
-        Dim aturanpake = Trim(txtAturanPakai.Text)
-        Dim ket = Trim(txtKet.Text)
-
         lbliddetail.Text = String.Empty
-        kdobat = String.Empty
-        namaobat = String.Empty
-        dosis = String.Empty
-        jml = 0
-        satuan = String.Empty
-        aturanpake = String.Empty
-        ket = String.Empty
+        cmbKodeObat.Text = String.Empty
+        cmbKodeObat.EditValue = String.Empty
+        txtNamaObat.Text = String.Empty
+        txtDosis.Text = String.Empty
+        txtJumlah.Text = "0"
+        cmbSatuan.SelectedIndex = -1
+        txtAturanPakai.Text = String.Empty
+        txtKet.Text = String.Empty
     End Sub
     Sub comboobat()
 
@@ -275,5 +282,57 @@ Public Class ResepObat
         Else
         End If
 
+    End Sub
+    Sub data()
+        Dim resepid = Trim(txtIDResep.Text)
+        tblPasien = Proses.ExecuteQuery("SELECT [IDDetail]
+                                          ,[IDResep]
+                                          ,[KodeObat]
+                                          ,[NamaObat]
+                                          ,[Dosis]
+                                          ,[Jumlah]
+                                          ,[Satuan]
+                                          ,[AturanPakai]
+                                          ,[Keterangan]
+                                          ,[CreatedAt]
+                                          ,[PC]
+                                      FROM [db_klinik].[dbo].[T_ResepObat_Detail]
+                                      where IDResep='" & resepid & "'")
+
+        If tblPasien.Rows.Count = 0 Then
+            GridControlData.DataSource = Nothing
+        Else
+            GridControlData.DataSource = tblPasien
+
+            Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
+
+            ' Obtain created columns.
+            'Dim id As GridColumn = gridView1.Columns("ID")
+
+            ' Make the grid read-only.
+            gridView1.OptionsBehavior.Editable = False
+            ' Prevent the focused cell from being highlighted.
+            gridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+            ' Draw a dotted focus rectangle around the entire row.
+            gridView1.FocusRectStyle = DrawFocusRectStyle.RowFocus
+
+            gridView1.OptionsView.ColumnAutoWidth = False
+            gridView1.BestFitColumns()
+        End If
+    End Sub
+    Sub gridtotext()
+        Try
+            lbliddetail.Text = GridViewData.GetFocusedRowCellValue("IDDetail").ToString
+            cmbKodeObat.Text = GridViewData.GetFocusedRowCellValue("KodeObat").ToString
+            cmbKodeObat.EditValue = GridViewData.GetFocusedRowCellValue("KodeObat").ToString
+            txtNamaObat.Text = GridViewData.GetFocusedRowCellValue("NamaObat").ToString
+            txtDosis.Text = GridViewData.GetFocusedRowCellValue("Dosis").ToString
+            txtJumlah.Text = GridViewData.GetFocusedRowCellValue("Jumlah").ToString
+            cmbSatuan.Text = GridViewData.GetFocusedRowCellValue("Satuan").ToString
+            txtAturanPakai.Text = GridViewData.GetFocusedRowCellValue("AturanPakai").ToString
+            txtKet.Text = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
