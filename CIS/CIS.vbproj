@@ -104,6 +104,12 @@
     <Compile Include="FormMenu.Designer.vb">
       <DependentUpon>FormMenu.vb</DependentUpon>
     </Compile>
+    <Compile Include="Kasir.Designer.vb">
+      <DependentUpon>Kasir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Kasir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasir.resx">
+      <DependentUpon>Kasir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

@@ -41,6 +41,11 @@ Public Class TindakanPelayanan
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
+    End Sub
+
     Sub TindakanProc()
         If Trim(txtIDPelayanan.Text) = "" Then MsgBox("Pilih Pelayanan mana yang akan ditambahkan tindakan!") : Exit Sub
 
@@ -118,13 +123,16 @@ Public Class TindakanPelayanan
         tblPasien = Proses.ExecuteQuery("SELECT [ID]
                                           ,[IDPelayanan]
                                           ,[IDTindakan]
-                                          ,[Tarif]
+                                          ,b.NamaTindakan
+                                          ,a.[Tarif]
                                           ,[Qty]
                                           ,[Subtotal]
-                                          ,[Keterangan]
-                                          ,[CreatedAt]
-                                          ,[UserCreated]
-                                      FROM [db_klinik].[dbo].[T_Tindakan_Pelayanan]
+                                          ,a.[Keterangan]
+                                          ,a.[CreatedAt]
+                                          ,a.[UserCreated]
+                                      FROM [db_klinik].[dbo].[T_Tindakan_Pelayanan] a
+									  left join [M_Tindakan] b
+									  on b.TindakanID=a.IDTindakan
                                       where IDPelayanan='" & idpelayanan & "'")
 
         If tblPasien.Rows.Count = 0 Then
@@ -194,5 +202,21 @@ Public Class TindakanPelayanan
             txtTarif.Text = tblPoli.Rows(0).Item("Tarif").ToString
             mmoKet.Text = tblPoli.Rows(0).Item("Keterangan").ToString
         End If
+    End Sub
+    Sub gridtotext()
+        Try
+            txtID.Text = GridViewData.GetFocusedRowCellValue("ID").ToString
+            txtIDPelayanan.Text = GridViewData.GetFocusedRowCellValue("IDPelayanan").ToString
+            cmbKodeTindakan.EditValue = GridViewData.GetFocusedRowCellValue("IDTindakan").ToString
+            cmbKodeTindakan.Text = GridViewData.GetFocusedRowCellValue("IDTindakan").ToString
+            txtNamaTindakan.Text = GridViewData.GetFocusedRowCellValue("NamaTindakan").ToString
+            txtTarif.Text = GridViewData.GetFocusedRowCellValue("Tarif").ToString
+            txtJumlah.Text = GridViewData.GetFocusedRowCellValue("Qty").ToString
+            mmoKet.Text = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
+
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

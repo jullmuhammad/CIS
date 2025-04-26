@@ -73,6 +73,8 @@ Public Class Pelayanan_Poliklinik
     End Sub
 
     Private Sub btnTindakan_Click(sender As Object, e As EventArgs) Handles btnTindakan.Click
+        If txtIDPelayanan.Text = "" Then MsgBox("Pilih dulu pelayanannya, baru bisa tindakan!") : Exit Sub
+
         TindakanPelayanan.txtIDPelayanan.Text = txtIDPelayanan.Text
         TindakanPelayanan.ShowDialog()
         TindakanPelayanan.BringToFront()
