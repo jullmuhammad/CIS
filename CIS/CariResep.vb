@@ -23,7 +23,10 @@ Public Class CariResep
     End Sub
 
     Private Sub RadioGroup1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioGroup1.SelectedIndexChanged
-        data()
+        If RadioGroup1.SelectedIndex >= 0 Then
+
+            data()
+        End If
     End Sub
 
     Private Sub CariResep_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -31,6 +34,10 @@ Public Class CariResep
         RadioGroup1.SelectedIndex = 0
     End Sub
     Sub data()
+        If RadioGroup1.SelectedIndex = -1 Then Exit Sub
+
+        GridViewData.Columns.Clear()
+
         Dim radiogrup = RadioGroup1.Properties.Items(RadioGroup1.SelectedIndex).Description
         Dim yyyymm = Trim(DateEdit1.Text)
         If radiogrup = "Belum Proses" Then
@@ -49,7 +56,10 @@ Public Class CariResep
                                           on c.NoPendaftaran=b.NoPendaftaran
                                           left join M_Pasien d
                                           on d.ID=c.PasienID
-                                          where substring(convert(varchar(20),a.CreatedAt,113),4,8)='" & yyyymm & "'")
+                                         left join [dbo].[Farmasi_Barang_Keluar_H] e
+										  on e.KodeResep=a.IDResep
+                                          where substring(convert(varchar(20),a.CreatedAt,113),4,8)='" & yyyymm & "'
+										  and e.KodeResep is null")
         Else
             tblPasien = Proses.ExecuteQuery("SELECT [TransID]
 		                                        ,[NoPendaftaran]
@@ -93,6 +103,13 @@ Public Class CariResep
                 With FarmasiKeluar
                     .txtNoPendaftaran.Text = GridViewData.GetFocusedRowCellValue("NoPendaftaran").ToString
                     .txtIDResep.Text = GridViewData.GetFocusedRowCellValue("IDResep").ToString
+
+                    If .txtIDResep.Text = "" Then
+                        .cmbJenisKeluar.SelectedIndex = -1
+                    Else
+                        .cmbJenisKeluar.SelectedIndex = 0
+                    End If
+                    .dataobat()
                 End With
             Else
                 With FarmasiKeluar
@@ -103,6 +120,13 @@ Public Class CariResep
                     .cmbJenisKeluar.Text = GridViewData.GetFocusedRowCellValue("JenisKeluar").ToString
                     .txtTujuanKeluar.Text = GridViewData.GetFocusedRowCellValue("TujuanKeluar").ToString
                     .txtKeterangan.Text = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
+
+                    'If .txtIDResep.Text = "" Then
+                    '    .cmbJenisKeluar.SelectedIndex = -1
+                    'Else
+                    '    .cmbJenisKeluar.SelectedIndex = 0
+                    'End If
+                    .dataobat()
                 End With
             End If
             Me.Close()

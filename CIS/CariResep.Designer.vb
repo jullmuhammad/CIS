@@ -21,9 +21,9 @@ Partial Class CariResep
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CariResep))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.RadioGroup1 = New DevExpress.XtraEditors.RadioGroup()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.RadioGroup1 = New DevExpress.XtraEditors.RadioGroup()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -32,9 +32,9 @@ Partial Class CariResep
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,6 +60,17 @@ Partial Class CariResep
         Me.SplitContainerControl1.Size = New System.Drawing.Size(754, 388)
         Me.SplitContainerControl1.SplitterPosition = 47
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'RadioGroup1
+        '
+        Me.RadioGroup1.Location = New System.Drawing.Point(206, 10)
+        Me.RadioGroup1.Name = "RadioGroup1"
+        Me.RadioGroup1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioGroup1.Properties.Appearance.Options.UseFont = True
+        Me.RadioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.RadioGroup1.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Belum Proses", True, Nothing, "rbPlan"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Sudah Proses", True, Nothing, "rbApp")})
+        Me.RadioGroup1.Size = New System.Drawing.Size(235, 27)
+        Me.RadioGroup1.TabIndex = 7
         '
         'DateEdit1
         '
@@ -91,17 +102,6 @@ Partial Class CariResep
         Me.LabelControl1.TabIndex = 5
         Me.LabelControl1.Text = "Bulan"
         '
-        'RadioGroup1
-        '
-        Me.RadioGroup1.Location = New System.Drawing.Point(206, 10)
-        Me.RadioGroup1.Name = "RadioGroup1"
-        Me.RadioGroup1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioGroup1.Properties.Appearance.Options.UseFont = True
-        Me.RadioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.RadioGroup1.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Belum Proses", True, Nothing, "rbPlan"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Sudah Proses", True, Nothing, "rbApp")})
-        Me.RadioGroup1.Size = New System.Drawing.Size(235, 27)
-        Me.RadioGroup1.TabIndex = 7
-        '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
@@ -125,6 +125,7 @@ Partial Class CariResep
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = CType(resources.GetObject("CariResep.IconOptions.Image"), System.Drawing.Image)
         Me.Name = "CariResep"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cari Resep"
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.Panel1.ResumeLayout(False)
@@ -133,9 +134,9 @@ Partial Class CariResep
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -21,6 +21,7 @@ Partial Class Pelayanan_Poliklinik
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pelayanan_Poliklinik))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.btnTindakan = New DevExpress.XtraEditors.SimpleButton()
         Me.btnObat = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl()
@@ -30,7 +31,7 @@ Partial Class Pelayanan_Poliklinik
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnCari = New DevExpress.XtraEditors.SimpleButton()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
         Me.cmbStatus = New DevExpress.XtraEditors.ComboBoxEdit()
@@ -90,6 +91,7 @@ Partial Class Pelayanan_Poliklinik
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnTindakan)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnObat)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl12)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl11)
@@ -99,7 +101,7 @@ Partial Class Pelayanan_Poliklinik
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl10)
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton1)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnCari)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnExit)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnHapus)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.cmbStatus)
@@ -122,11 +124,21 @@ Partial Class Pelayanan_Poliklinik
         Me.SplitContainerControl1.SplitterPosition = 340
         Me.SplitContainerControl1.TabIndex = 0
         '
+        'btnTindakan
+        '
+        Me.btnTindakan.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTindakan.ImageOptions.Image = Global.CIS.My.Resources.Resources.stethoscope
+        Me.btnTindakan.Location = New System.Drawing.Point(656, 280)
+        Me.btnTindakan.Name = "btnTindakan"
+        Me.btnTindakan.Size = New System.Drawing.Size(96, 33)
+        Me.btnTindakan.TabIndex = 34
+        Me.btnTindakan.Text = "Tindakan"
+        '
         'btnObat
         '
         Me.btnObat.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnObat.ImageOptions.Image = CType(resources.GetObject("btnObat.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnObat.Location = New System.Drawing.Point(680, 248)
+        Me.btnObat.Location = New System.Drawing.Point(656, 232)
         Me.btnObat.Name = "btnObat"
         Me.btnObat.Size = New System.Drawing.Size(75, 33)
         Me.btnObat.TabIndex = 33
@@ -134,7 +146,7 @@ Partial Class Pelayanan_Poliklinik
         '
         'LabelControl12
         '
-        Me.LabelControl12.Location = New System.Drawing.Point(12, 248)
+        Me.LabelControl12.Location = New System.Drawing.Point(12, 190)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(33, 17)
         Me.LabelControl12.TabIndex = 32
@@ -142,11 +154,12 @@ Partial Class Pelayanan_Poliklinik
         '
         'LabelControl11
         '
-        Me.LabelControl11.Location = New System.Drawing.Point(12, 191)
+        Me.LabelControl11.Location = New System.Drawing.Point(12, 305)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(52, 17)
         Me.LabelControl11.TabIndex = 31
         Me.LabelControl11.Text = "Tindakan"
+        Me.LabelControl11.Visible = False
         '
         'LabelControl9
         '
@@ -174,7 +187,7 @@ Partial Class Pelayanan_Poliklinik
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(534, 216)
+        Me.LabelControl6.Location = New System.Drawing.Point(12, 248)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(79, 17)
         Me.LabelControl6.TabIndex = 27
@@ -196,21 +209,21 @@ Partial Class Pelayanan_Poliklinik
         Me.LabelControl10.TabIndex = 25
         Me.LabelControl10.Text = "ID (Auto)"
         '
-        'SimpleButton1
+        'btnCari
         '
-        Me.SimpleButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SimpleButton1.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(470, 13)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(58, 24)
-        Me.SimpleButton1.TabIndex = 23
-        Me.SimpleButton1.Text = "Cari"
+        Me.btnCari.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCari.ImageOptions.Image = CType(resources.GetObject("btnCari.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnCari.Location = New System.Drawing.Point(470, 13)
+        Me.btnCari.Name = "btnCari"
+        Me.btnCari.Size = New System.Drawing.Size(58, 24)
+        Me.btnCari.TabIndex = 23
+        Me.btnCari.Text = "Cari"
         '
         'btnExit
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(680, 296)
+        Me.btnExit.Location = New System.Drawing.Point(787, 280)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 33)
         Me.btnExit.TabIndex = 22
@@ -220,7 +233,7 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(544, 296)
+        Me.btnHapus.Location = New System.Drawing.Point(534, 280)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(75, 33)
         Me.btnHapus.TabIndex = 13
@@ -228,7 +241,7 @@ Partial Class Pelayanan_Poliklinik
         '
         'cmbStatus
         '
-        Me.cmbStatus.Location = New System.Drawing.Point(624, 213)
+        Me.cmbStatus.Location = New System.Drawing.Point(96, 246)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
@@ -237,17 +250,18 @@ Partial Class Pelayanan_Poliklinik
         '
         'mmoSaran
         '
-        Me.mmoSaran.Location = New System.Drawing.Point(96, 246)
+        Me.mmoSaran.Location = New System.Drawing.Point(96, 188)
         Me.mmoSaran.Name = "mmoSaran"
         Me.mmoSaran.Size = New System.Drawing.Size(400, 52)
         Me.mmoSaran.TabIndex = 10
         '
         'mmoTindakan
         '
-        Me.mmoTindakan.Location = New System.Drawing.Point(96, 188)
+        Me.mmoTindakan.Location = New System.Drawing.Point(96, 302)
         Me.mmoTindakan.Name = "mmoTindakan"
         Me.mmoTindakan.Size = New System.Drawing.Size(400, 52)
         Me.mmoTindakan.TabIndex = 9
+        Me.mmoTindakan.Visible = False
         '
         'mmoDiagnosa
         '
@@ -260,7 +274,7 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(544, 248)
+        Me.btnSave.Location = New System.Drawing.Point(534, 232)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 33)
         Me.btnSave.TabIndex = 12
@@ -468,7 +482,7 @@ Partial Class Pelayanan_Poliklinik
     Friend WithEvents btnExit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnHapus As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnSave As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCari As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
@@ -486,4 +500,5 @@ Partial Class Pelayanan_Poliklinik
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtPasien As DevExpress.XtraEditors.TextEdit
     Friend WithEvents btnObat As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnTindakan As DevExpress.XtraEditors.SimpleButton
 End Class

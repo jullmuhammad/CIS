@@ -145,6 +145,12 @@
     <Compile Include="ResepObat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TindakanPelayanan.Designer.vb">
+      <DependentUpon>TindakanPelayanan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TindakanPelayanan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="CariPendaftaran.resx">
       <DependentUpon>CariPendaftaran.vb</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResepObat.resx">
       <DependentUpon>ResepObat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TindakanPelayanan.resx">
+      <DependentUpon>TindakanPelayanan.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\Settings.settings">
@@ -245,6 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cislogo.ico" />
+    <None Include="Resources\stethoscope.png" />
     <None Include="Resources\clinic.png" />
     <None Include="Resources\crowd.png" />
   </ItemGroup>

@@ -34,7 +34,7 @@ Public Class Pelayanan_Poliklinik
 
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles btnCari.Click
         CariPendaftaran.ShowDialog()
         CariPendaftaran.BringToFront()
     End Sub
@@ -70,6 +70,12 @@ Public Class Pelayanan_Poliklinik
 
     Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
         gridtotext()
+    End Sub
+
+    Private Sub btnTindakan_Click(sender As Object, e As EventArgs) Handles btnTindakan.Click
+        TindakanPelayanan.txtIDPelayanan.Text = txtIDPelayanan.Text
+        TindakanPelayanan.ShowDialog()
+        TindakanPelayanan.BringToFront()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

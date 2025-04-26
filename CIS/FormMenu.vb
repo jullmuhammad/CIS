@@ -60,4 +60,12 @@ Partial Public Class FormMenu
         Pelayanan_Poliklinik.Show()
         Pelayanan_Poliklinik.BringToFront()
     End Sub
+
+    Private Sub btnBarangKeluar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnBarangKeluar.ItemClick
+        FarmasiKeluar.TopLevel = False
+        PanelControl1.Controls.Add(FarmasiKeluar)
+        ' FormUsers.Dock = DockStyle.Fill
+        FarmasiKeluar.Show()
+        FarmasiKeluar.BringToFront()
+    End Sub
 End Class

@@ -21,6 +21,8 @@ Partial Class FarmasiKeluar
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FarmasiKeluar))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtIDResep = New DevExpress.XtraEditors.TextEdit()
         Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
@@ -40,14 +42,13 @@ Partial Class FarmasiKeluar
         Me.txtTransID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtIDResep = New DevExpress.XtraEditors.TextEdit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.txtIDResep.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTujuanKeluar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbJenisKeluar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +58,6 @@ Partial Class FarmasiKeluar
         CType(Me.txtTransID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIDResep.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -98,6 +98,22 @@ Partial Class FarmasiKeluar
         Me.SplitContainerControl1.Size = New System.Drawing.Size(887, 400)
         Me.SplitContainerControl1.SplitterPosition = 134
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Location = New System.Drawing.Point(508, 11)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(36, 17)
+        Me.LabelControl3.TabIndex = 52
+        Me.LabelControl3.Text = "Resep"
+        '
+        'txtIDResep
+        '
+        Me.txtIDResep.Location = New System.Drawing.Point(550, 7)
+        Me.txtIDResep.Name = "txtIDResep"
+        Me.txtIDResep.Properties.ReadOnly = True
+        Me.txtIDResep.Size = New System.Drawing.Size(187, 24)
+        Me.txtIDResep.TabIndex = 51
         '
         'btnClear
         '
@@ -206,7 +222,7 @@ Partial Class FarmasiKeluar
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(211, 11)
+        Me.LabelControl1.Location = New System.Drawing.Point(250, 11)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(58, 17)
         Me.LabelControl1.TabIndex = 31
@@ -224,7 +240,7 @@ Partial Class FarmasiKeluar
         '
         Me.btnCari.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCari.ImageOptions.Image = CType(resources.GetObject("btnCari.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnCari.Location = New System.Drawing.Point(704, 7)
+        Me.btnCari.Location = New System.Drawing.Point(743, 7)
         Me.btnCari.Name = "btnCari"
         Me.btnCari.Size = New System.Drawing.Size(58, 24)
         Me.btnCari.TabIndex = 0
@@ -232,7 +248,7 @@ Partial Class FarmasiKeluar
         '
         'txtNoPendaftaran
         '
-        Me.txtNoPendaftaran.Location = New System.Drawing.Point(275, 7)
+        Me.txtNoPendaftaran.Location = New System.Drawing.Point(314, 7)
         Me.txtNoPendaftaran.Name = "txtNoPendaftaran"
         Me.txtNoPendaftaran.Properties.ReadOnly = True
         Me.txtNoPendaftaran.Size = New System.Drawing.Size(187, 24)
@@ -243,7 +259,7 @@ Partial Class FarmasiKeluar
         Me.txtTransID.Location = New System.Drawing.Point(67, 8)
         Me.txtTransID.Name = "txtTransID"
         Me.txtTransID.Properties.ReadOnly = True
-        Me.txtTransID.Size = New System.Drawing.Size(138, 24)
+        Me.txtTransID.Size = New System.Drawing.Size(177, 24)
         Me.txtTransID.TabIndex = 27
         '
         'GridControlData
@@ -261,22 +277,6 @@ Partial Class FarmasiKeluar
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'LabelControl3
-        '
-        Me.LabelControl3.Location = New System.Drawing.Point(469, 11)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(36, 17)
-        Me.LabelControl3.TabIndex = 52
-        Me.LabelControl3.Text = "Resep"
-        '
-        'txtIDResep
-        '
-        Me.txtIDResep.Location = New System.Drawing.Point(511, 7)
-        Me.txtIDResep.Name = "txtIDResep"
-        Me.txtIDResep.Properties.ReadOnly = True
-        Me.txtIDResep.Size = New System.Drawing.Size(187, 24)
-        Me.txtIDResep.TabIndex = 51
-        '
         'FarmasiKeluar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -286,6 +286,7 @@ Partial Class FarmasiKeluar
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.outbound
         Me.Name = "FarmasiKeluar"
         Me.Text = "Farmasi Keluar"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.Panel1.ResumeLayout(False)
         Me.SplitContainerControl1.Panel1.PerformLayout()
@@ -293,6 +294,7 @@ Partial Class FarmasiKeluar
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.txtIDResep.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKeterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTujuanKeluar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbJenisKeluar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -302,7 +304,6 @@ Partial Class FarmasiKeluar
         CType(Me.txtTransID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIDResep.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
