@@ -21,34 +21,34 @@ Partial Class Kasir
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Kasir))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.btnCari = New DevExpress.XtraEditors.SimpleButton()
-        Me.txtNoPendaftaran = New DevExpress.XtraEditors.TextEdit()
-        Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.dtTglBilling = New DevExpress.XtraEditors.DateEdit()
+        Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
         Me.cmbStatus = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnCari = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtNoPendaftaran = New DevExpress.XtraEditors.TextEdit()
+        Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.dtTglPeriksa = New DevExpress.XtraEditors.DateEdit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglPeriksa.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglPeriksa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -61,7 +61,7 @@ Partial Class Kasir
         'SplitContainerControl1.Panel1
         '
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl7)
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglPeriksa)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglBilling)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnPrint)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnExit)
@@ -82,6 +82,81 @@ Partial Class Kasir
         Me.SplitContainerControl1.Size = New System.Drawing.Size(874, 383)
         Me.SplitContainerControl1.SplitterPosition = 104
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Location = New System.Drawing.Point(11, 45)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(47, 17)
+        Me.LabelControl7.TabIndex = 39
+        Me.LabelControl7.Text = "Tanggal"
+        '
+        'dtTglBilling
+        '
+        Me.dtTglBilling.EditValue = Nothing
+        Me.dtTglBilling.Location = New System.Drawing.Point(116, 42)
+        Me.dtTglBilling.Name = "dtTglBilling"
+        Me.dtTglBilling.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglBilling.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglBilling.Size = New System.Drawing.Size(185, 24)
+        Me.dtTglBilling.TabIndex = 38
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrint.ImageOptions.Image = CType(resources.GetObject("btnPrint.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnPrint.Location = New System.Drawing.Point(570, 64)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(106, 33)
+        Me.btnPrint.TabIndex = 37
+        Me.btnPrint.Text = "Cetak Invoice"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Location = New System.Drawing.Point(12, 75)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(72, 17)
+        Me.LabelControl6.TabIndex = 36
+        Me.LabelControl6.Text = "Status Lunas"
+        '
+        'btnExit
+        '
+        Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnExit.Location = New System.Drawing.Point(713, 64)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.TabIndex = 35
+        Me.btnExit.Text = "Exit"
+        '
+        'btnHapus
+        '
+        Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnHapus.Location = New System.Drawing.Point(457, 64)
+        Me.btnHapus.Name = "btnHapus"
+        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.TabIndex = 34
+        Me.btnHapus.Text = "Hapus"
+        '
+        'cmbStatus
+        '
+        Me.cmbStatus.Location = New System.Drawing.Point(116, 72)
+        Me.cmbStatus.Name = "cmbStatus"
+        Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbStatus.Properties.Items.AddRange(New Object() {"1 - Lunas", "0 - Tidak"})
+        Me.cmbStatus.Size = New System.Drawing.Size(185, 24)
+        Me.cmbStatus.TabIndex = 32
+        '
+        'btnSave
+        '
+        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnSave.Location = New System.Drawing.Point(342, 64)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.TabIndex = 33
+        Me.btnSave.Text = "Simpan"
         '
         'LabelControl1
         '
@@ -125,63 +200,6 @@ Partial Class Kasir
         Me.txtIDPelayanan.Size = New System.Drawing.Size(138, 24)
         Me.txtIDPelayanan.TabIndex = 27
         '
-        'LabelControl6
-        '
-        Me.LabelControl6.Location = New System.Drawing.Point(12, 75)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(72, 17)
-        Me.LabelControl6.TabIndex = 36
-        Me.LabelControl6.Text = "Status Lunas"
-        '
-        'btnExit
-        '
-        Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(713, 64)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
-        Me.btnExit.TabIndex = 35
-        Me.btnExit.Text = "Exit"
-        '
-        'btnHapus
-        '
-        Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(457, 64)
-        Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
-        Me.btnHapus.TabIndex = 34
-        Me.btnHapus.Text = "Hapus"
-        '
-        'cmbStatus
-        '
-        Me.cmbStatus.Location = New System.Drawing.Point(116, 72)
-        Me.cmbStatus.Name = "cmbStatus"
-        Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbStatus.Properties.Items.AddRange(New Object() {"1 - Lunas", "2 - Tidak"})
-        Me.cmbStatus.Size = New System.Drawing.Size(185, 24)
-        Me.cmbStatus.TabIndex = 32
-        '
-        'btnSave
-        '
-        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(342, 64)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
-        Me.btnSave.TabIndex = 33
-        Me.btnSave.Text = "Simpan"
-        '
-        'btnPrint
-        '
-        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPrint.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnPrint.Location = New System.Drawing.Point(570, 64)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(106, 33)
-        Me.btnPrint.TabIndex = 37
-        Me.btnPrint.Text = "Cetak Invoice"
-        '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
@@ -196,24 +214,6 @@ Partial Class Kasir
         '
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
-        '
-        'LabelControl7
-        '
-        Me.LabelControl7.Location = New System.Drawing.Point(11, 45)
-        Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(47, 17)
-        Me.LabelControl7.TabIndex = 39
-        Me.LabelControl7.Text = "Tanggal"
-        '
-        'dtTglPeriksa
-        '
-        Me.dtTglPeriksa.EditValue = Nothing
-        Me.dtTglPeriksa.Location = New System.Drawing.Point(116, 42)
-        Me.dtTglPeriksa.Name = "dtTglPeriksa"
-        Me.dtTglPeriksa.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglPeriksa.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglPeriksa.Size = New System.Drawing.Size(185, 24)
-        Me.dtTglPeriksa.TabIndex = 38
         '
         'Kasir
         '
@@ -231,13 +231,13 @@ Partial Class Kasir
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglPeriksa.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglPeriksa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -257,5 +257,5 @@ Partial Class Kasir
     Friend WithEvents GridControlData As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewData As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents dtTglPeriksa As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents dtTglBilling As DevExpress.XtraEditors.DateEdit
 End Class

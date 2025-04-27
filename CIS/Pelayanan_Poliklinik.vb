@@ -120,7 +120,7 @@ Public Class Pelayanan_Poliklinik
         Dim id = Trim(txtIDPelayanan.Text)
         Dim noreg = Trim(txtNoPendaftaran.Text)
         Dim tglperiksa = dtTglPeriksa.DateTime
-        Dim jenislayanan = Trim(txtNoPendaftaran.Text)
+        Dim jenislayanan = Trim(txtJenisDaftar.Text)
         Dim poliklinik = Trim(txtPoliklinikID.Text)
         Dim dokter = Trim(txtDokterID.Text)
         Dim keluhan = Trim(mmoKeluhan.Text)
