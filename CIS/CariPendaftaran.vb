@@ -5,11 +5,16 @@ Public Class CariPendaftaran
     Dim SQL As String
     Dim Proses As New ClassKoneksi
     Dim tblUser, tblPasien, tblPoli, tblCaraBayar, tblRJ, tblDokter, tblKamar As DataTable
-
+    Public tipe As String
     Private Sub GridControlData_DoubleClick(sender As Object, e As EventArgs) Handles GridControlData.DoubleClick
         Try
             If GridViewData.RowCount > 0 Then
-                gridtotext()
+                If tipe = "Kasir" Then
+                    gridtotextkasir()
+                Else
+
+                    gridtotext()
+                End If
             Else
 
             End If
@@ -115,6 +120,18 @@ Public Class CariPendaftaran
                 .txtPoliklinikID.Text = GridViewData.GetFocusedRowCellValue("PoliklinikID").ToString & " - " & GridViewData.GetFocusedRowCellValue("NamaPoliklinik").ToString
                 .txtDokterID.Text = GridViewData.GetFocusedRowCellValue("DokterID").ToString & " - " & GridViewData.GetFocusedRowCellValue("NamaDokter").ToString
                 .mmoKeluhan.Text = GridViewData.GetFocusedRowCellValue("Keluhan").ToString
+
+                .data()
+            End With
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Sub gridtotextkasir()
+        Try
+            With Kasir
+                .txtNoPendaftaran.Text = GridViewData.GetFocusedRowCellValue("NoPendaftaran").ToString
 
                 .data()
             End With

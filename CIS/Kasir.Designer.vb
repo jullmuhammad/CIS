@@ -33,7 +33,7 @@ Partial Class Kasir
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
         Me.btnCari = New DevExpress.XtraEditors.SimpleButton()
         Me.txtNoPendaftaran = New DevExpress.XtraEditors.TextEdit()
-        Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
+        Me.txtBillingID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +46,7 @@ Partial Class Kasir
         CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,7 +72,7 @@ Partial Class Kasir
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl10)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnCari)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtNoPendaftaran)
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtIDPelayanan)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtBillingID)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         '
         'SplitContainerControl1.Panel2
@@ -192,13 +192,13 @@ Partial Class Kasir
         Me.txtNoPendaftaran.Size = New System.Drawing.Size(187, 24)
         Me.txtNoPendaftaran.TabIndex = 28
         '
-        'txtIDPelayanan
+        'txtBillingID
         '
-        Me.txtIDPelayanan.Location = New System.Drawing.Point(68, 12)
-        Me.txtIDPelayanan.Name = "txtIDPelayanan"
-        Me.txtIDPelayanan.Properties.ReadOnly = True
-        Me.txtIDPelayanan.Size = New System.Drawing.Size(138, 24)
-        Me.txtIDPelayanan.TabIndex = 27
+        Me.txtBillingID.Location = New System.Drawing.Point(68, 12)
+        Me.txtBillingID.Name = "txtBillingID"
+        Me.txtBillingID.Properties.ReadOnly = True
+        Me.txtBillingID.Size = New System.Drawing.Size(138, 24)
+        Me.txtBillingID.TabIndex = 27
         '
         'GridControlData
         '
@@ -235,7 +235,7 @@ Partial Class Kasir
         CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -247,7 +247,7 @@ Partial Class Kasir
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnCari As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents txtNoPendaftaran As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents txtIDPelayanan As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtBillingID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnExit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnHapus As DevExpress.XtraEditors.SimpleButton

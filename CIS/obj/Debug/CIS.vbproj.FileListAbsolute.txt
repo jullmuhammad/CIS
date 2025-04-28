@@ -103,3 +103,4 @@ E:\VB\CIS\CIS\obj\Debug\CIS.ResepObat.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.CariResep.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.FarmasiKeluar.resources
 E:\VB\CIS\CIS\obj\Debug\CIS.TindakanPelayanan.resources
+E:\VB\CIS\CIS\obj\Debug\CIS.Kasir.resources
