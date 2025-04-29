@@ -17,7 +17,7 @@ Public Class Kasir
             Try
 
                 ' Cari NamaBarang dari dtBarang
-                Dim found() As DataRow = dtBarang.Select("Harga = '" & kodeBarang.Replace("'", "''") & "'")
+                Dim found() As DataRow = dtBarang.Select("Tindakan = '" & kodeBarang.Replace("'", "''") & "'")
                 If found.Length > 0 Then
                     ' Update kolom NamaBarang pada baris yang sama
                     GridViewData.SetRowCellValue(e.RowHandle, "Harga", found(0)("Harga").ToString())
@@ -155,6 +155,17 @@ Public Class Kasir
             gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Bottom ' Atau Top kalau mau di atas
             'gridView1.OptionsBehavior.EditingMode = GridEditingMode.EditFormInplace ' Boleh juga pakai EditForm kalau mau popup
             gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True
+
+            ' Aktifkan tampilan footer
+            gridView1.OptionsView.ShowFooter = True
+
+            ' Buat summary untuk kolom Subtotal
+            Dim summaryItem As DevExpress.XtraGrid.GridColumnSummaryItem = New DevExpress.XtraGrid.GridColumnSummaryItem()
+            summaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum
+            summaryItem.DisplayFormat = "Total: {0:n0}"  ' Format ribuan tanpa desimal
+
+            ' Set summary ke kolom Subtotal
+            gridView1.Columns("Subtotal").Summary.Add(summaryItem)
         End If
     End Sub
     Private Sub SetupRepositoryLookUpBarang()
@@ -209,7 +220,7 @@ Public Class Kasir
         ' Buat repository
         Dim repoLookupBarang As New RepositoryItemLookUpEdit()
         With repoLookupBarang
-            .DataSource = dtBarang
+            .DataSource = tblRJ
             .DisplayMember = "Kategori"
             .ValueMember = "Kategori"
             .NullText = ""
