@@ -49,6 +49,21 @@ Public Class Kasir
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
+
+    Private Sub Kasir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dtTglBilling.EditValue = Date.Now
+
+        ' Contoh: di Form Load atau setelah inisialisasi
+        dtTglBilling.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglBilling.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglBilling.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglBilling.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+
+        dtTglBilling.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        dtTglBilling.Properties.Mask.UseMaskAsDisplayFormat = True
+    End Sub
+
     Sub PROSESPROC()
         If Trim(txtNoPendaftaran.Text) = "" Then MsgBox("Pilih No Pendaftaran yang dimaksud!") : Exit Sub
 
@@ -92,6 +107,9 @@ Public Class Kasir
         Commandku.Parameters.Add("@status", SqlDbType.VarChar, 150)
         OutSTS.Direction = ParameterDirection.Output
 
+        Dim idOut As SqlClient.SqlParameter =
+        Commandku.Parameters.Add("@idout", SqlDbType.VarChar, 150)
+        idOut.Direction = ParameterDirection.Output
 
         Commandku.CommandTimeout = 1000
         Commandku.ExecuteNonQuery()
@@ -103,6 +121,7 @@ Public Class Kasir
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'data()
             'clear()
+            txtBillingID.Text = idOut.Value.ToString
             aksi = "I"
             DetailProc()
         Else
@@ -127,10 +146,11 @@ Public Class Kasir
                                                   ,a.[Harga]
                                                   ,Jumlah*a.Harga Subtotal
                                               FROM [db_klinik].[dbo].[V_Billing_Detail] a
-                                              left join [dbo].[Transaksi_Billing_D] b
-                                              on b.IDPelayanan=a.IDPelayanan 
                                               left join [dbo].[Transaksi_Billing_H] c
-                                              on b.BillingID=c.BillingID and c.NoRegistrasi='" & nodaftar & "'")
+                                              on c.NoRegistrasi=a.NoPendaftaran
+                                              left join [dbo].[Transaksi_Billing_D] b
+                                              on b.IDPelayanan=a.IDPelayanan and b.BillingID=c.BillingID
+											  where a.NoPendaftaran='" & nodaftar & "'")
 
         If tblPasien.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
@@ -266,7 +286,7 @@ Public Class Kasir
             Dim billid = Trim(txtBillingID.Text)
             Dim kategori = Trim(Convert.ToString(GridViewData.GetRowCellValue(x, "Kategori")))
             Dim deskripsi = Trim(Convert.ToString(GridViewData.GetRowCellValue(x, "Deskripsi")))
-            Dim jumlah = Val(Convert.ToDecimal(GridViewData.GetRowCellValue(x, "Jumlah")))
+            Dim jumlah = Val(Convert.ToInt32(GridViewData.GetRowCellValue(x, "Jumlah")))
             Dim harga = Val(Convert.ToDecimal(GridViewData.GetRowCellValue(x, "Harga")))
             Dim pelayananid = Trim(Convert.ToString(GridViewData.GetRowCellValue(x, "IDPelayanan")))
 

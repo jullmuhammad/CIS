@@ -22,7 +22,6 @@ Partial Class Kasir
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Kasir))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
-        Me.dtTglBilling = New DevExpress.XtraEditors.DateEdit()
         Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
@@ -36,19 +35,20 @@ Partial Class Kasir
         Me.txtBillingID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.dtTglBilling = New DevExpress.XtraEditors.DateEdit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
-        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -60,8 +60,8 @@ Partial Class Kasir
         '
         'SplitContainerControl1.Panel1
         '
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl7)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglBilling)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl7)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnPrint)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnExit)
@@ -90,16 +90,6 @@ Partial Class Kasir
         Me.LabelControl7.Size = New System.Drawing.Size(47, 17)
         Me.LabelControl7.TabIndex = 39
         Me.LabelControl7.Text = "Tanggal"
-        '
-        'dtTglBilling
-        '
-        Me.dtTglBilling.EditValue = Nothing
-        Me.dtTglBilling.Location = New System.Drawing.Point(116, 42)
-        Me.dtTglBilling.Name = "dtTglBilling"
-        Me.dtTglBilling.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglBilling.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglBilling.Size = New System.Drawing.Size(185, 24)
-        Me.dtTglBilling.TabIndex = 38
         '
         'btnPrint
         '
@@ -215,6 +205,16 @@ Partial Class Kasir
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
+        'dtTglBilling
+        '
+        Me.dtTglBilling.EditValue = Nothing
+        Me.dtTglBilling.Location = New System.Drawing.Point(116, 42)
+        Me.dtTglBilling.Name = "dtTglBilling"
+        Me.dtTglBilling.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglBilling.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglBilling.Size = New System.Drawing.Size(185, 24)
+        Me.dtTglBilling.TabIndex = 31
+        '
         'Kasir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -231,13 +231,13 @@ Partial Class Kasir
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
-        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNoPendaftaran.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglBilling.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglBilling.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
