@@ -144,6 +144,12 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterBarang.Designer.vb">
+      <DependentUpon>MasterBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterPasien.Designer.vb">
       <DependentUpon>MasterPasien.vb</DependentUpon>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterBarang.resx">
+      <DependentUpon>MasterBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterPasien.resx">
       <DependentUpon>MasterPasien.vb</DependentUpon>

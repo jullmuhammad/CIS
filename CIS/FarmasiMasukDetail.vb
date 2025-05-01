@@ -22,16 +22,6 @@ Public Class FarmasiMasukDetail
         End If
     End Sub
 
-    Private Sub ckCekBarang_CheckedChanged(sender As Object, e As EventArgs) Handles ckCekBarang.CheckedChanged
-        If ckCekBarang.Checked = True Then
-            cmbKodeBarang.Properties.ReadOnly = True
-            txtNamaBarang.Properties.ReadOnly = False
-        Else
-            cmbKodeBarang.Properties.ReadOnly = False
-            txtNamaBarang.Properties.ReadOnly = True
-        End If
-    End Sub
-
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
@@ -40,8 +30,7 @@ Public Class FarmasiMasukDetail
         If lblid.Text = "" Then
             aksi = "I"
             DetailProc()
-        Else
-            aksi = "U"
+        Else aksi = "U"
             DetailProc()
         End If
     End Sub
@@ -54,6 +43,11 @@ Public Class FarmasiMasukDetail
 
     Private Sub cmbKodeBarang_EditValueChanged(sender As Object, e As EventArgs) Handles cmbKodeBarang.EditValueChanged
         getnamabarang()
+    End Sub
+
+    Private Sub btnTambahBarang_Click(sender As Object, e As EventArgs) Handles btnTambahBarang.Click
+        MasterBarang.ShowDialog()
+        MasterBarang.BringToFront()
     End Sub
 
     Public aksi As String
@@ -172,7 +166,6 @@ Public Class FarmasiMasukDetail
     End Sub
     Sub clear()
         lblid.Text = String.Empty
-        ckCekBarang.Checked = False
         cmbKodeBarang.Text = String.Empty
         cmbKodeBarang.EditValue = String.Empty
         txtNamaBarang.Text = String.Empty
