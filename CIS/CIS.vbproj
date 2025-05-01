@@ -114,6 +114,18 @@
     <Compile Include="FarmasiKeluar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FarmasiMasuk.Designer.vb">
+      <DependentUpon>FarmasiMasuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FarmasiMasuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FarmasiMasukDetail.Designer.vb">
+      <DependentUpon>FarmasiMasukDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FarmasiMasukDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FarmasiKeluar.resx">
       <DependentUpon>FarmasiKeluar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FarmasiMasuk.resx">
+      <DependentUpon>FarmasiMasuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FarmasiMasukDetail.resx">
+      <DependentUpon>FarmasiMasukDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.vb</DependentUpon>

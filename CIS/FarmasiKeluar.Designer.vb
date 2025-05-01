@@ -65,6 +65,7 @@ Partial Class FarmasiKeluar
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
@@ -95,33 +96,36 @@ Partial Class FarmasiKeluar
         '
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(887, 400)
-        Me.SplitContainerControl1.SplitterPosition = 134
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1140, 494)
+        Me.SplitContainerControl1.SplitterPosition = 166
         Me.SplitContainerControl1.TabIndex = 0
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(508, 11)
+        Me.LabelControl3.Location = New System.Drawing.Point(653, 14)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(36, 17)
+        Me.LabelControl3.Size = New System.Drawing.Size(42, 21)
         Me.LabelControl3.TabIndex = 52
         Me.LabelControl3.Text = "Resep"
         '
         'txtIDResep
         '
-        Me.txtIDResep.Location = New System.Drawing.Point(550, 7)
+        Me.txtIDResep.Location = New System.Drawing.Point(707, 9)
+        Me.txtIDResep.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtIDResep.Name = "txtIDResep"
         Me.txtIDResep.Properties.ReadOnly = True
-        Me.txtIDResep.Size = New System.Drawing.Size(187, 24)
+        Me.txtIDResep.Size = New System.Drawing.Size(240, 28)
         Me.txtIDResep.TabIndex = 51
         '
         'btnClear
         '
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClear.Location = New System.Drawing.Point(457, 67)
+        Me.btnClear.Location = New System.Drawing.Point(588, 83)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(83, 24)
+        Me.btnClear.Size = New System.Drawing.Size(107, 30)
         Me.btnClear.TabIndex = 50
         Me.btnClear.Text = "Bersihkan"
         '
@@ -129,9 +133,10 @@ Partial Class FarmasiKeluar
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(773, 85)
+        Me.btnExit.Location = New System.Drawing.Point(994, 105)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 49
         Me.btnExit.Text = "Exit"
         '
@@ -139,9 +144,10 @@ Partial Class FarmasiKeluar
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(674, 85)
+        Me.btnHapus.Location = New System.Drawing.Point(867, 105)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 48
         Me.btnHapus.Text = "Hapus"
         '
@@ -149,90 +155,101 @@ Partial Class FarmasiKeluar
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(570, 85)
+        Me.btnSave.Location = New System.Drawing.Point(733, 105)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 47
         Me.btnSave.Text = "Simpan"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 101)
+        Me.LabelControl2.Location = New System.Drawing.Point(15, 125)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(67, 17)
+        Me.LabelControl2.Size = New System.Drawing.Size(79, 21)
         Me.LabelControl2.TabIndex = 46
         Me.LabelControl2.Text = "Keterangan"
         '
         'txtKeterangan
         '
-        Me.txtKeterangan.Location = New System.Drawing.Point(108, 98)
+        Me.txtKeterangan.Location = New System.Drawing.Point(139, 121)
+        Me.txtKeterangan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtKeterangan.Name = "txtKeterangan"
-        Me.txtKeterangan.Size = New System.Drawing.Size(432, 24)
+        Me.txtKeterangan.Size = New System.Drawing.Size(555, 28)
         Me.txtKeterangan.TabIndex = 4
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(12, 71)
+        Me.LabelControl5.Location = New System.Drawing.Point(15, 88)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(79, 17)
+        Me.LabelControl5.Size = New System.Drawing.Size(95, 21)
         Me.LabelControl5.TabIndex = 44
         Me.LabelControl5.Text = "Tujuan Keluar"
         '
         'txtTujuanKeluar
         '
-        Me.txtTujuanKeluar.Location = New System.Drawing.Point(108, 68)
+        Me.txtTujuanKeluar.Location = New System.Drawing.Point(139, 84)
+        Me.txtTujuanKeluar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTujuanKeluar.Name = "txtTujuanKeluar"
-        Me.txtTujuanKeluar.Size = New System.Drawing.Size(343, 24)
+        Me.txtTujuanKeluar.Size = New System.Drawing.Size(441, 28)
         Me.txtTujuanKeluar.TabIndex = 3
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(280, 41)
+        Me.LabelControl6.Location = New System.Drawing.Point(360, 51)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(69, 17)
+        Me.LabelControl6.Size = New System.Drawing.Size(82, 21)
         Me.LabelControl6.TabIndex = 35
         Me.LabelControl6.Text = "Jenis Keluar"
         '
         'cmbJenisKeluar
         '
-        Me.cmbJenisKeluar.Location = New System.Drawing.Point(355, 38)
+        Me.cmbJenisKeluar.Location = New System.Drawing.Point(456, 47)
+        Me.cmbJenisKeluar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbJenisKeluar.Name = "cmbJenisKeluar"
         Me.cmbJenisKeluar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbJenisKeluar.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
-        Me.cmbJenisKeluar.Size = New System.Drawing.Size(185, 24)
+        Me.cmbJenisKeluar.Size = New System.Drawing.Size(238, 28)
         Me.cmbJenisKeluar.TabIndex = 2
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(10, 41)
+        Me.LabelControl7.Location = New System.Drawing.Point(13, 51)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(88, 17)
+        Me.LabelControl7.Size = New System.Drawing.Size(103, 21)
         Me.LabelControl7.TabIndex = 33
         Me.LabelControl7.Text = "Tanggal Keluar"
         '
         'dtTglKeluar
         '
         Me.dtTglKeluar.EditValue = Nothing
-        Me.dtTglKeluar.Location = New System.Drawing.Point(108, 38)
+        Me.dtTglKeluar.Location = New System.Drawing.Point(139, 47)
+        Me.dtTglKeluar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtTglKeluar.Name = "dtTglKeluar"
         Me.dtTglKeluar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglKeluar.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglKeluar.Size = New System.Drawing.Size(161, 24)
+        Me.dtTglKeluar.Size = New System.Drawing.Size(207, 28)
         Me.dtTglKeluar.TabIndex = 1
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(250, 11)
+        Me.LabelControl1.Location = New System.Drawing.Point(321, 14)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(58, 17)
+        Me.LabelControl1.Size = New System.Drawing.Size(68, 21)
         Me.LabelControl1.TabIndex = 31
         Me.LabelControl1.Text = "No Daftar"
         '
         'LabelControl10
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(10, 10)
+        Me.LabelControl10.Location = New System.Drawing.Point(13, 12)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(51, 17)
+        Me.LabelControl10.Size = New System.Drawing.Size(62, 21)
         Me.LabelControl10.TabIndex = 30
         Me.LabelControl10.Text = "ID (Auto)"
         '
@@ -240,50 +257,57 @@ Partial Class FarmasiKeluar
         '
         Me.btnCari.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCari.ImageOptions.Image = CType(resources.GetObject("btnCari.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnCari.Location = New System.Drawing.Point(743, 7)
+        Me.btnCari.Location = New System.Drawing.Point(955, 9)
+        Me.btnCari.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCari.Name = "btnCari"
-        Me.btnCari.Size = New System.Drawing.Size(58, 24)
+        Me.btnCari.Size = New System.Drawing.Size(75, 30)
         Me.btnCari.TabIndex = 0
         Me.btnCari.Text = "Cari"
         '
         'txtNoPendaftaran
         '
-        Me.txtNoPendaftaran.Location = New System.Drawing.Point(314, 7)
+        Me.txtNoPendaftaran.Location = New System.Drawing.Point(404, 9)
+        Me.txtNoPendaftaran.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNoPendaftaran.Name = "txtNoPendaftaran"
         Me.txtNoPendaftaran.Properties.ReadOnly = True
-        Me.txtNoPendaftaran.Size = New System.Drawing.Size(187, 24)
+        Me.txtNoPendaftaran.Size = New System.Drawing.Size(240, 28)
         Me.txtNoPendaftaran.TabIndex = 28
         '
         'txtTransID
         '
-        Me.txtTransID.Location = New System.Drawing.Point(67, 8)
+        Me.txtTransID.Location = New System.Drawing.Point(86, 10)
+        Me.txtTransID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTransID.Name = "txtTransID"
         Me.txtTransID.Properties.ReadOnly = True
-        Me.txtTransID.Size = New System.Drawing.Size(177, 24)
+        Me.txtTransID.Size = New System.Drawing.Size(228, 28)
         Me.txtTransID.TabIndex = 27
         '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(887, 262)
+        Me.GridControlData.Size = New System.Drawing.Size(1140, 323)
         Me.GridControlData.TabIndex = 3
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
         'GridViewData
         '
+        Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
         'FarmasiKeluar
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(887, 400)
+        Me.ClientSize = New System.Drawing.Size(1140, 494)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.outbound
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FarmasiKeluar"
         Me.Text = "Farmasi Keluar"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

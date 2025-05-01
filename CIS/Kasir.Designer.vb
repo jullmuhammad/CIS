@@ -56,11 +56,12 @@ Partial Class Kasir
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglBilling)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl7)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnPrint)
@@ -78,6 +79,7 @@ Partial Class Kasir
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1124, 473)
@@ -88,7 +90,7 @@ Partial Class Kasir
         '
         Me.dtTglBilling.EditValue = Nothing
         Me.dtTglBilling.Location = New System.Drawing.Point(149, 52)
-        Me.dtTglBilling.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtTglBilling.Margin = New System.Windows.Forms.Padding(4)
         Me.dtTglBilling.Name = "dtTglBilling"
         Me.dtTglBilling.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglBilling.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -98,7 +100,7 @@ Partial Class Kasir
         'LabelControl7
         '
         Me.LabelControl7.Location = New System.Drawing.Point(14, 56)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(55, 21)
         Me.LabelControl7.TabIndex = 39
@@ -109,7 +111,7 @@ Partial Class Kasir
         Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPrint.ImageOptions.Image = CType(resources.GetObject("btnPrint.ImageOptions.Image"), System.Drawing.Image)
         Me.btnPrint.Location = New System.Drawing.Point(733, 79)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(136, 41)
         Me.btnPrint.TabIndex = 37
@@ -118,7 +120,7 @@ Partial Class Kasir
         'LabelControl6
         '
         Me.LabelControl6.Location = New System.Drawing.Point(15, 93)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(88, 21)
         Me.LabelControl6.TabIndex = 36
@@ -129,7 +131,7 @@ Partial Class Kasir
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
         Me.btnExit.Location = New System.Drawing.Point(917, 79)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 35
@@ -140,7 +142,7 @@ Partial Class Kasir
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
         Me.btnHapus.Location = New System.Drawing.Point(588, 79)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 34
@@ -149,7 +151,7 @@ Partial Class Kasir
         'cmbStatus
         '
         Me.cmbStatus.Location = New System.Drawing.Point(149, 89)
-        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Lunas", "Tidak"})
@@ -161,7 +163,7 @@ Partial Class Kasir
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
         Me.btnSave.Location = New System.Drawing.Point(440, 79)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 33
@@ -170,7 +172,7 @@ Partial Class Kasir
         'LabelControl1
         '
         Me.LabelControl1.Location = New System.Drawing.Point(273, 19)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(68, 21)
         Me.LabelControl1.TabIndex = 31
@@ -179,7 +181,7 @@ Partial Class Kasir
         'LabelControl10
         '
         Me.LabelControl10.Location = New System.Drawing.Point(14, 17)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(62, 21)
         Me.LabelControl10.TabIndex = 30
@@ -190,7 +192,7 @@ Partial Class Kasir
         Me.btnCari.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCari.ImageOptions.Image = CType(resources.GetObject("btnCari.ImageOptions.Image"), System.Drawing.Image)
         Me.btnCari.Location = New System.Drawing.Point(603, 15)
-        Me.btnCari.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCari.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCari.Name = "btnCari"
         Me.btnCari.Size = New System.Drawing.Size(75, 30)
         Me.btnCari.TabIndex = 29
@@ -199,7 +201,7 @@ Partial Class Kasir
         'txtNoPendaftaran
         '
         Me.txtNoPendaftaran.Location = New System.Drawing.Point(355, 14)
-        Me.txtNoPendaftaran.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNoPendaftaran.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNoPendaftaran.Name = "txtNoPendaftaran"
         Me.txtNoPendaftaran.Properties.ReadOnly = True
         Me.txtNoPendaftaran.Size = New System.Drawing.Size(240, 28)
@@ -208,7 +210,7 @@ Partial Class Kasir
         'txtBillingID
         '
         Me.txtBillingID.Location = New System.Drawing.Point(87, 15)
-        Me.txtBillingID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtBillingID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtBillingID.Name = "txtBillingID"
         Me.txtBillingID.Properties.ReadOnly = True
         Me.txtBillingID.Size = New System.Drawing.Size(177, 28)
@@ -217,10 +219,10 @@ Partial Class Kasir
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
-        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Name = "GridControlData"
         Me.GridControlData.Size = New System.Drawing.Size(1124, 340)
         Me.GridControlData.TabIndex = 1
@@ -239,7 +241,7 @@ Partial Class Kasir
         Me.ClientSize = New System.Drawing.Size(1124, 473)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.LargeImage = CType(resources.GetObject("Kasir.IconOptions.LargeImage"), System.Drawing.Image)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Kasir"
         Me.Text = "Kasir"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

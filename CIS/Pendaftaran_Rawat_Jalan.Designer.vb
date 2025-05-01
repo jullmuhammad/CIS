@@ -60,9 +60,9 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.cmbPasienID = New DevExpress.XtraEditors.LookUpEdit()
         Me.txtNodaftar = New DevExpress.XtraEditors.TextEdit()
         Me.lblid = New DevExpress.XtraEditors.LabelControl()
+        Me.BarCodeControl1 = New DevExpress.XtraEditors.BarCodeControl()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.BarCodeControl1 = New DevExpress.XtraEditors.BarCodeControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -96,11 +96,12 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnTambahPasien)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.cmbCaraMasuk)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl14)
@@ -144,6 +145,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1161, 553)
@@ -155,7 +157,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.btnTambahPasien.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTambahPasien.ImageOptions.Image = CType(resources.GetObject("btnTambahPasien.ImageOptions.Image"), System.Drawing.Image)
         Me.btnTambahPasien.Location = New System.Drawing.Point(984, 15)
-        Me.btnTambahPasien.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnTambahPasien.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTambahPasien.Name = "btnTambahPasien"
         Me.btnTambahPasien.Size = New System.Drawing.Size(153, 30)
         Me.btnTambahPasien.TabIndex = 47
@@ -164,7 +166,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbCaraMasuk
         '
         Me.cmbCaraMasuk.Location = New System.Drawing.Point(534, 341)
-        Me.cmbCaraMasuk.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbCaraMasuk.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbCaraMasuk.Name = "cmbCaraMasuk"
         Me.cmbCaraMasuk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbCaraMasuk.Properties.Items.AddRange(New Object() {"Mandiri", "Rujukan", "Ambulans"})
@@ -175,7 +177,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl14
         '
         Me.LabelControl14.Location = New System.Drawing.Point(424, 382)
-        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl14.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(90, 21)
         Me.LabelControl14.TabIndex = 46
@@ -184,7 +186,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl13
         '
         Me.LabelControl13.Location = New System.Drawing.Point(424, 345)
-        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl13.Name = "LabelControl13"
         Me.LabelControl13.Size = New System.Drawing.Size(82, 21)
         Me.LabelControl13.TabIndex = 45
@@ -193,7 +195,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtAsalRujukan
         '
         Me.txtAsalRujukan.Location = New System.Drawing.Point(534, 378)
-        Me.txtAsalRujukan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAsalRujukan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAsalRujukan.Name = "txtAsalRujukan"
         Me.txtAsalRujukan.Properties.ReadOnly = True
         Me.txtAsalRujukan.Size = New System.Drawing.Size(411, 28)
@@ -202,7 +204,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl8
         '
         Me.LabelControl8.Location = New System.Drawing.Point(15, 345)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(45, 21)
         Me.LabelControl8.TabIndex = 42
@@ -211,7 +213,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbKamar
         '
         Me.cmbKamar.Location = New System.Drawing.Point(179, 341)
-        Me.cmbKamar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbKamar.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbKamar.Name = "cmbKamar"
         Me.cmbKamar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbKamar.Properties.NullText = ""
@@ -222,7 +224,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl12
         '
         Me.LabelControl12.Location = New System.Drawing.Point(15, 254)
-        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(65, 21)
         Me.LabelControl12.TabIndex = 40
@@ -231,7 +233,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'mmoDiagnosa
         '
         Me.mmoDiagnosa.Location = New System.Drawing.Point(179, 252)
-        Me.mmoDiagnosa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mmoDiagnosa.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoDiagnosa.Name = "mmoDiagnosa"
         Me.mmoDiagnosa.Size = New System.Drawing.Size(593, 82)
         Me.mmoDiagnosa.TabIndex = 12
@@ -239,7 +241,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl11
         '
         Me.LabelControl11.Location = New System.Drawing.Point(18, 56)
-        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(96, 21)
         Me.LabelControl11.TabIndex = 38
@@ -248,7 +250,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbJenisLayanan
         '
         Me.cmbJenisLayanan.Location = New System.Drawing.Point(179, 52)
-        Me.cmbJenisLayanan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbJenisLayanan.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbJenisLayanan.Name = "cmbJenisLayanan"
         Me.cmbJenisLayanan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbJenisLayanan.Properties.Items.AddRange(New Object() {"Rawat Jalan", "Rawat Inap", "IGD"})
@@ -258,7 +260,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl9
         '
         Me.LabelControl9.Location = New System.Drawing.Point(424, 19)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(102, 21)
         Me.LabelControl9.TabIndex = 36
@@ -268,7 +270,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         '
         Me.dtTglDaftar.EditValue = Nothing
         Me.dtTglDaftar.Location = New System.Drawing.Point(544, 15)
-        Me.dtTglDaftar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtTglDaftar.Margin = New System.Windows.Forms.Padding(4)
         Me.dtTglDaftar.Name = "dtTglDaftar"
         Me.dtTglDaftar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglDaftar.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -278,7 +280,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl7
         '
         Me.LabelControl7.Location = New System.Drawing.Point(15, 382)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(122, 21)
         Me.LabelControl7.TabIndex = 32
@@ -287,7 +289,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl6
         '
         Me.LabelControl6.Location = New System.Drawing.Point(15, 166)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(56, 21)
         Me.LabelControl6.TabIndex = 31
@@ -296,7 +298,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl5
         '
         Me.LabelControl5.Location = New System.Drawing.Point(424, 130)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(55, 21)
         Me.LabelControl5.TabIndex = 30
@@ -307,7 +309,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
         Me.btnClear.Location = New System.Drawing.Point(836, 15)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(107, 30)
         Me.btnClear.TabIndex = 29
@@ -316,7 +318,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl4
         '
         Me.LabelControl4.Location = New System.Drawing.Point(15, 130)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(75, 21)
         Me.LabelControl4.TabIndex = 28
@@ -325,7 +327,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl3
         '
         Me.LabelControl3.Location = New System.Drawing.Point(508, 93)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(47, 21)
         Me.LabelControl3.TabIndex = 27
@@ -334,7 +336,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(18, 93)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(63, 21)
         Me.LabelControl2.TabIndex = 26
@@ -343,7 +345,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl1
         '
         Me.LabelControl1.Location = New System.Drawing.Point(424, 56)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(45, 21)
         Me.LabelControl1.TabIndex = 25
@@ -352,7 +354,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'LabelControl10
         '
         Me.LabelControl10.Location = New System.Drawing.Point(15, 19)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(143, 21)
         Me.LabelControl10.TabIndex = 24
@@ -361,9 +363,10 @@ Partial Class Pendaftaran_Rawat_Jalan
         'btnCetak
         '
         Me.btnCetak.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCetak.Enabled = False
         Me.btnCetak.ImageOptions.Image = CType(resources.GetObject("btnCetak.ImageOptions.Image"), System.Drawing.Image)
         Me.btnCetak.Location = New System.Drawing.Point(1040, 303)
-        Me.btnCetak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCetak.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCetak.Name = "btnCetak"
         Me.btnCetak.Size = New System.Drawing.Size(96, 41)
         Me.btnCetak.TabIndex = 18
@@ -374,7 +377,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
         Me.btnExit.Location = New System.Drawing.Point(1040, 362)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 19
@@ -383,9 +386,10 @@ Partial Class Pendaftaran_Rawat_Jalan
         'btnHapus
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHapus.Enabled = False
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
         Me.btnHapus.Location = New System.Drawing.Point(1040, 241)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 17
@@ -396,7 +400,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
         Me.btnSave.Location = New System.Drawing.Point(1040, 180)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 16
@@ -406,7 +410,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         '
         Me.txtStatusKunjungan.EditValue = "Terdaftar"
         Me.txtStatusKunjungan.Location = New System.Drawing.Point(179, 378)
-        Me.txtStatusKunjungan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtStatusKunjungan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStatusKunjungan.Name = "txtStatusKunjungan"
         Me.txtStatusKunjungan.Properties.ReadOnly = True
         Me.txtStatusKunjungan.Size = New System.Drawing.Size(238, 28)
@@ -415,7 +419,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'mmoKeluhan
         '
         Me.mmoKeluhan.Location = New System.Drawing.Point(179, 163)
-        Me.mmoKeluhan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mmoKeluhan.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoKeluhan.Name = "mmoKeluhan"
         Me.mmoKeluhan.Size = New System.Drawing.Size(593, 82)
         Me.mmoKeluhan.TabIndex = 11
@@ -423,7 +427,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtNoJKN
         '
         Me.txtNoJKN.Location = New System.Drawing.Point(494, 126)
-        Me.txtNoJKN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNoJKN.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNoJKN.Name = "txtNoJKN"
         Me.txtNoJKN.Size = New System.Drawing.Size(246, 28)
         Me.txtNoJKN.TabIndex = 10
@@ -431,7 +435,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbCaraBayar
         '
         Me.cmbCaraBayar.Location = New System.Drawing.Point(179, 126)
-        Me.cmbCaraBayar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbCaraBayar.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbCaraBayar.Name = "cmbCaraBayar"
         Me.cmbCaraBayar.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbCaraBayar.Properties.NullText = ""
@@ -441,7 +445,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtDokter
         '
         Me.txtDokter.Location = New System.Drawing.Point(725, 89)
-        Me.txtDokter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDokter.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDokter.Name = "txtDokter"
         Me.txtDokter.Properties.ReadOnly = True
         Me.txtDokter.Size = New System.Drawing.Size(411, 28)
@@ -450,7 +454,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbDokter
         '
         Me.cmbDokter.Location = New System.Drawing.Point(566, 89)
-        Me.cmbDokter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbDokter.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbDokter.Name = "cmbDokter"
         Me.cmbDokter.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDokter.Properties.NullText = ""
@@ -460,7 +464,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtPoliklinik
         '
         Me.txtPoliklinik.Location = New System.Drawing.Point(242, 89)
-        Me.txtPoliklinik.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPoliklinik.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPoliklinik.Name = "txtPoliklinik"
         Me.txtPoliklinik.Properties.ReadOnly = True
         Me.txtPoliklinik.Size = New System.Drawing.Size(252, 28)
@@ -469,7 +473,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbPoliklinik
         '
         Me.cmbPoliklinik.Location = New System.Drawing.Point(179, 89)
-        Me.cmbPoliklinik.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbPoliklinik.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbPoliklinik.Name = "cmbPoliklinik"
         Me.cmbPoliklinik.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbPoliklinik.Properties.NullText = ""
@@ -479,7 +483,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtPasien
         '
         Me.txtPasien.Location = New System.Drawing.Point(725, 52)
-        Me.txtPasien.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPasien.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPasien.Name = "txtPasien"
         Me.txtPasien.Properties.ReadOnly = True
         Me.txtPasien.Size = New System.Drawing.Size(411, 28)
@@ -488,7 +492,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'cmbPasienID
         '
         Me.cmbPasienID.Location = New System.Drawing.Point(480, 52)
-        Me.cmbPasienID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbPasienID.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbPasienID.Name = "cmbPasienID"
         Me.cmbPasienID.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbPasienID.Properties.NullText = ""
@@ -498,7 +502,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         'txtNodaftar
         '
         Me.txtNodaftar.Location = New System.Drawing.Point(179, 15)
-        Me.txtNodaftar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNodaftar.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNodaftar.Name = "txtNodaftar"
         Me.txtNodaftar.Properties.ReadOnly = True
         Me.txtNodaftar.Size = New System.Drawing.Size(238, 28)
@@ -507,29 +511,11 @@ Partial Class Pendaftaran_Rawat_Jalan
         'lblid
         '
         Me.lblid.Location = New System.Drawing.Point(607, 36)
-        Me.lblid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblid.Margin = New System.Windows.Forms.Padding(4)
         Me.lblid.Name = "lblid"
         Me.lblid.Size = New System.Drawing.Size(0, 21)
         Me.lblid.TabIndex = 0
         Me.lblid.Visible = False
-        '
-        'GridControlData
-        '
-        Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GridControlData.Location = New System.Drawing.Point(0, 0)
-        Me.GridControlData.MainView = Me.GridViewData
-        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(1161, 130)
-        Me.GridControlData.TabIndex = 1
-        Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
-        '
-        'GridViewData
-        '
-        Me.GridViewData.DetailHeight = 432
-        Me.GridViewData.GridControl = Me.GridControlData
-        Me.GridViewData.Name = "GridViewData"
         '
         'BarCodeControl1
         '
@@ -547,6 +533,24 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.BarCodeControl1.VerticalTextAlignment = DevExpress.Utils.VertAlignment.Center
         Me.BarCodeControl1.Visible = False
         '
+        'GridControlData
+        '
+        Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
+        Me.GridControlData.Location = New System.Drawing.Point(0, 0)
+        Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
+        Me.GridControlData.Name = "GridControlData"
+        Me.GridControlData.Size = New System.Drawing.Size(1161, 130)
+        Me.GridControlData.TabIndex = 1
+        Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
+        '
+        'GridViewData
+        '
+        Me.GridViewData.DetailHeight = 432
+        Me.GridViewData.GridControl = Me.GridControlData
+        Me.GridViewData.Name = "GridViewData"
+        '
         'Pendaftaran_Rawat_Jalan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -554,7 +558,7 @@ Partial Class Pendaftaran_Rawat_Jalan
         Me.ClientSize = New System.Drawing.Size(1161, 553)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.doctor_patient
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pendaftaran_Rawat_Jalan"
         Me.Text = "Pendaftaran Rawat Jalan/Inap/IGD"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

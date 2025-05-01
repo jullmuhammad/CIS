@@ -41,19 +41,21 @@ Public Class Pendaftaran_Rawat_Jalan
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Close()
     End Sub
+    Sub formatdate()
+        ' Contoh: di Form Load atau setelah inisialisasi
+        dtTglDaftar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglDaftar.Properties.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm"
 
+        dtTglDaftar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglDaftar.Properties.EditFormat.FormatString = "dd-MMM-yyyy HH:mm"
+
+        dtTglDaftar.Properties.Mask.EditMask = "dd-MMM-yyyy HH:mm"
+        dtTglDaftar.Properties.Mask.UseMaskAsDisplayFormat = True
+    End Sub
     Private Sub Pendaftaran_Rawat_Jalan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtTglDaftar.EditValue = Date.Now
 
-        ' Contoh: di Form Load atau setelah inisialisasi
-        dtTglDaftar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglDaftar.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
-
-        dtTglDaftar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglDaftar.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
-
-        dtTglDaftar.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
-        dtTglDaftar.Properties.Mask.UseMaskAsDisplayFormat = True
+        formatdate()
 
         combopasien()
         masterpoliklinik()
@@ -130,6 +132,9 @@ Public Class Pendaftaran_Rawat_Jalan
         Commandku.Parameters.Add("@status", SqlDbType.VarChar, 150)
         OutSTS.Direction = ParameterDirection.Output
 
+        Dim idOut As SqlClient.SqlParameter =
+        Commandku.Parameters.Add("@idOut", SqlDbType.VarChar, 150)
+        idOut.Direction = ParameterDirection.Output
 
         Commandku.CommandTimeout = 1000
         Commandku.ExecuteNonQuery()
@@ -140,7 +145,8 @@ Public Class Pendaftaran_Rawat_Jalan
             Cursor.Current = Cursors.Default
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
             data()
-            clear()
+            txtNodaftar.Text = idOut.Value.ToString
+            'clear()
 
         Else
             Cursor.Current = Cursors.Default
@@ -457,6 +463,19 @@ Public Class Pendaftaran_Rawat_Jalan
 
         End Try
     End Sub
+    Sub ceknodaftar()
+        If txtNodaftar.Text = "" Then
+            btnCetak.Enabled = False
+            btnHapus.Enabled = False
+        Else
+            btnCetak.Enabled = True
+            btnHapus.Enabled = True
+        End If
+    End Sub
+    Private Sub txtNodaftar_EditValueChanged(sender As Object, e As EventArgs) Handles txtNodaftar.EditValueChanged
+        ceknodaftar()
+    End Sub
+
     Sub masterkamar()
 
         tblKamar = Proses.ExecuteQuery("SELECT KodeKamar,NamaKamar,Ruang,Kelas  FROM [db_klinik].[dbo].[M_Kamar]")

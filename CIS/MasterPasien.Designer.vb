@@ -76,11 +76,12 @@ Partial Class MasterPasien
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnClear)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl10)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtIDPasien)
@@ -111,6 +112,7 @@ Partial Class MasterPasien
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1153, 646)
@@ -122,7 +124,7 @@ Partial Class MasterPasien
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
         Me.btnClear.Location = New System.Drawing.Point(336, 15)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(112, 30)
         Me.btnClear.TabIndex = 24
@@ -131,7 +133,7 @@ Partial Class MasterPasien
         'LabelControl10
         '
         Me.LabelControl10.Location = New System.Drawing.Point(15, 19)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(111, 21)
         Me.LabelControl10.TabIndex = 23
@@ -140,7 +142,7 @@ Partial Class MasterPasien
         'txtIDPasien
         '
         Me.txtIDPasien.Location = New System.Drawing.Point(141, 15)
-        Me.txtIDPasien.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIDPasien.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIDPasien.Name = "txtIDPasien"
         Me.txtIDPasien.Properties.ReadOnly = True
         Me.txtIDPasien.Size = New System.Drawing.Size(186, 28)
@@ -149,7 +151,7 @@ Partial Class MasterPasien
         'LabelControl9
         '
         Me.LabelControl9.Location = New System.Drawing.Point(631, 130)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(43, 21)
         Me.LabelControl9.TabIndex = 21
@@ -158,7 +160,7 @@ Partial Class MasterPasien
         'cmbPekerjaan
         '
         Me.cmbPekerjaan.Location = New System.Drawing.Point(762, 89)
-        Me.cmbPekerjaan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbPekerjaan.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbPekerjaan.Name = "cmbPekerjaan"
         Me.cmbPekerjaan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbPekerjaan.Properties.Items.AddRange(New Object() {"P", "L"})
@@ -168,7 +170,7 @@ Partial Class MasterPasien
         'LabelControl8
         '
         Me.LabelControl8.Location = New System.Drawing.Point(631, 93)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(68, 21)
         Me.LabelControl8.TabIndex = 20
@@ -177,7 +179,7 @@ Partial Class MasterPasien
         'LabelControl7
         '
         Me.LabelControl7.Location = New System.Drawing.Point(631, 56)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(114, 21)
         Me.LabelControl7.TabIndex = 19
@@ -186,7 +188,7 @@ Partial Class MasterPasien
         'LabelControl6
         '
         Me.LabelControl6.Location = New System.Drawing.Point(631, 19)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(48, 21)
         Me.LabelControl6.TabIndex = 18
@@ -195,7 +197,7 @@ Partial Class MasterPasien
         'LabelControl5
         '
         Me.LabelControl5.Location = New System.Drawing.Point(15, 201)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(49, 21)
         Me.LabelControl5.TabIndex = 17
@@ -204,7 +206,7 @@ Partial Class MasterPasien
         'LabelControl4
         '
         Me.LabelControl4.Location = New System.Drawing.Point(15, 167)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(24, 21)
         Me.LabelControl4.TabIndex = 16
@@ -213,7 +215,7 @@ Partial Class MasterPasien
         'LabelControl3
         '
         Me.LabelControl3.Location = New System.Drawing.Point(15, 130)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(51, 21)
         Me.LabelControl3.TabIndex = 15
@@ -222,7 +224,7 @@ Partial Class MasterPasien
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(15, 93)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(42, 21)
         Me.LabelControl2.TabIndex = 14
@@ -231,7 +233,7 @@ Partial Class MasterPasien
         'LabelControl1
         '
         Me.LabelControl1.Location = New System.Drawing.Point(15, 56)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(54, 21)
         Me.LabelControl1.TabIndex = 13
@@ -242,7 +244,7 @@ Partial Class MasterPasien
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
         Me.btnExit.Location = New System.Drawing.Point(996, 184)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 13
@@ -253,7 +255,7 @@ Partial Class MasterPasien
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
         Me.btnHapus.Location = New System.Drawing.Point(881, 184)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 12
@@ -264,7 +266,7 @@ Partial Class MasterPasien
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
         Me.btnSave.Location = New System.Drawing.Point(762, 184)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 11
@@ -273,7 +275,7 @@ Partial Class MasterPasien
         'cmbStatus
         '
         Me.cmbStatus.Location = New System.Drawing.Point(762, 126)
-        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Aktif", "Nonaktif"})
@@ -283,7 +285,7 @@ Partial Class MasterPasien
         'cmbGoldarah
         '
         Me.cmbGoldarah.Location = New System.Drawing.Point(762, 52)
-        Me.cmbGoldarah.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbGoldarah.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbGoldarah.Name = "cmbGoldarah"
         Me.cmbGoldarah.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbGoldarah.Properties.Items.AddRange(New Object() {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"})
@@ -293,7 +295,7 @@ Partial Class MasterPasien
         'txtPhone
         '
         Me.txtPhone.Location = New System.Drawing.Point(762, 15)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(238, 28)
         Me.txtPhone.TabIndex = 7
@@ -301,7 +303,7 @@ Partial Class MasterPasien
         'mmoAlamat
         '
         Me.mmoAlamat.Location = New System.Drawing.Point(141, 200)
-        Me.mmoAlamat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mmoAlamat.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoAlamat.Name = "mmoAlamat"
         Me.mmoAlamat.Size = New System.Drawing.Size(494, 89)
         Me.mmoAlamat.TabIndex = 6
@@ -310,7 +312,7 @@ Partial Class MasterPasien
         '
         Me.dtTglLahir.EditValue = Nothing
         Me.dtTglLahir.Location = New System.Drawing.Point(336, 163)
-        Me.dtTglLahir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtTglLahir.Margin = New System.Windows.Forms.Padding(4)
         Me.dtTglLahir.Name = "dtTglLahir"
         Me.dtTglLahir.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglLahir.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -325,7 +327,7 @@ Partial Class MasterPasien
         'txtTempatLahir
         '
         Me.txtTempatLahir.Location = New System.Drawing.Point(141, 163)
-        Me.txtTempatLahir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTempatLahir.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTempatLahir.Name = "txtTempatLahir"
         Me.txtTempatLahir.Size = New System.Drawing.Size(186, 28)
         Me.txtTempatLahir.TabIndex = 4
@@ -333,7 +335,7 @@ Partial Class MasterPasien
         'cmbGender
         '
         Me.cmbGender.Location = New System.Drawing.Point(141, 126)
-        Me.cmbGender.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbGender.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbGender.Properties.Items.AddRange(New Object() {"P", "L"})
@@ -343,7 +345,7 @@ Partial Class MasterPasien
         'txtNamaLengkap
         '
         Me.txtNamaLengkap.Location = New System.Drawing.Point(141, 89)
-        Me.txtNamaLengkap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNamaLengkap.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNamaLengkap.Name = "txtNamaLengkap"
         Me.txtNamaLengkap.Size = New System.Drawing.Size(474, 28)
         Me.txtNamaLengkap.TabIndex = 2
@@ -351,7 +353,7 @@ Partial Class MasterPasien
         'txtNIK
         '
         Me.txtNIK.Location = New System.Drawing.Point(141, 52)
-        Me.txtNIK.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNIK.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNIK.Name = "txtNIK"
         Me.txtNIK.Size = New System.Drawing.Size(347, 28)
         Me.txtNIK.TabIndex = 1
@@ -359,7 +361,7 @@ Partial Class MasterPasien
         'lblid
         '
         Me.lblid.Location = New System.Drawing.Point(807, 68)
-        Me.lblid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblid.Margin = New System.Windows.Forms.Padding(4)
         Me.lblid.Name = "lblid"
         Me.lblid.Size = New System.Drawing.Size(0, 21)
         Me.lblid.TabIndex = 0
@@ -368,10 +370,10 @@ Partial Class MasterPasien
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
-        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Name = "GridControlData"
         Me.GridControlData.Size = New System.Drawing.Size(1153, 340)
         Me.GridControlData.TabIndex = 0
@@ -390,7 +392,7 @@ Partial Class MasterPasien
         Me.ClientSize = New System.Drawing.Size(1153, 646)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.crowd
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MasterPasien"
         Me.Text = "Data Pasien"
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()

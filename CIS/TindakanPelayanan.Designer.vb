@@ -21,23 +21,23 @@ Partial Class TindakanPelayanan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TindakanPelayanan))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtID = New DevExpress.XtraEditors.TextEdit()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
-        Me.txtNamaTindakan = New DevExpress.XtraEditors.TextEdit()
-        Me.cmbKodeTindakan = New DevExpress.XtraEditors.LookUpEdit()
-        Me.txtTarif = New DevExpress.XtraEditors.TextEdit()
-        Me.txtJumlah = New DevExpress.XtraEditors.TextEdit()
-        Me.mmoKet = New DevExpress.XtraEditors.MemoEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
         Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.mmoKet = New DevExpress.XtraEditors.MemoEdit()
+        Me.txtJumlah = New DevExpress.XtraEditors.TextEdit()
+        Me.txtTarif = New DevExpress.XtraEditors.TextEdit()
+        Me.txtNamaTindakan = New DevExpress.XtraEditors.TextEdit()
+        Me.cmbKodeTindakan = New DevExpress.XtraEditors.LookUpEdit()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtIDPelayanan = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,13 +46,13 @@ Partial Class TindakanPelayanan
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
-        CType(Me.txtID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mmoKet.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtJumlah.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTarif.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNamaTindakan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbKodeTindakan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtTarif.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtJumlah.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mmoKet.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,10 +62,12 @@ Partial Class TindakanPelayanan
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl5)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl4)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl3)
@@ -87,94 +89,68 @@ Partial Class TindakanPelayanan
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(904, 445)
-        Me.SplitContainerControl1.SplitterPosition = 190
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1162, 550)
+        Me.SplitContainerControl1.SplitterPosition = 235
         Me.SplitContainerControl1.TabIndex = 0
         '
-        'LabelControl10
+        'LabelControl5
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(11, 14)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(51, 17)
-        Me.LabelControl10.TabIndex = 27
-        Me.LabelControl10.Text = "ID (Auto)"
+        Me.LabelControl5.Location = New System.Drawing.Point(14, 127)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(79, 21)
+        Me.LabelControl5.TabIndex = 53
+        Me.LabelControl5.Text = "Keterangan"
         '
-        'txtID
+        'LabelControl4
         '
-        Me.txtID.Location = New System.Drawing.Point(85, 12)
-        Me.txtID.Name = "txtID"
-        Me.txtID.Properties.ReadOnly = True
-        Me.txtID.Size = New System.Drawing.Size(105, 24)
-        Me.txtID.TabIndex = 26
+        Me.LabelControl4.Location = New System.Drawing.Point(324, 93)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(25, 21)
+        Me.LabelControl4.TabIndex = 52
+        Me.LabelControl4.Text = "Qty"
         '
-        'LabelControl1
+        'LabelControl3
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(198, 14)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(74, 17)
-        Me.LabelControl1.TabIndex = 40
-        Me.LabelControl1.Text = "ID Pelayanan"
+        Me.LabelControl3.Location = New System.Drawing.Point(14, 93)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(32, 21)
+        Me.LabelControl3.TabIndex = 51
+        Me.LabelControl3.Text = "Tarif"
         '
-        'txtIDPelayanan
+        'LabelControl2
         '
-        Me.txtIDPelayanan.Location = New System.Drawing.Point(278, 12)
-        Me.txtIDPelayanan.Name = "txtIDPelayanan"
-        Me.txtIDPelayanan.Properties.ReadOnly = True
-        Me.txtIDPelayanan.Size = New System.Drawing.Size(206, 24)
-        Me.txtIDPelayanan.TabIndex = 39
+        Me.LabelControl2.Location = New System.Drawing.Point(14, 56)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(63, 21)
+        Me.LabelControl2.TabIndex = 50
+        Me.LabelControl2.Text = "Tindakan"
         '
-        'txtNamaTindakan
+        'btnClear
         '
-        Me.txtNamaTindakan.Location = New System.Drawing.Point(143, 42)
-        Me.txtNamaTindakan.Name = "txtNamaTindakan"
-        Me.txtNamaTindakan.Properties.ReadOnly = True
-        Me.txtNamaTindakan.Size = New System.Drawing.Size(341, 24)
-        Me.txtNamaTindakan.TabIndex = 42
-        '
-        'cmbKodeTindakan
-        '
-        Me.cmbKodeTindakan.Location = New System.Drawing.Point(85, 42)
-        Me.cmbKodeTindakan.Name = "cmbKodeTindakan"
-        Me.cmbKodeTindakan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbKodeTindakan.Properties.NullText = ""
-        Me.cmbKodeTindakan.Size = New System.Drawing.Size(53, 24)
-        Me.cmbKodeTindakan.TabIndex = 41
-        '
-        'txtTarif
-        '
-        Me.txtTarif.Location = New System.Drawing.Point(84, 72)
-        Me.txtTarif.Name = "txtTarif"
-        Me.txtTarif.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtTarif.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtTarif.Size = New System.Drawing.Size(162, 24)
-        Me.txtTarif.TabIndex = 43
-        '
-        'txtJumlah
-        '
-        Me.txtJumlah.EditValue = "1"
-        Me.txtJumlah.Location = New System.Drawing.Point(278, 72)
-        Me.txtJumlah.Name = "txtJumlah"
-        Me.txtJumlah.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtJumlah.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtJumlah.Size = New System.Drawing.Size(56, 24)
-        Me.txtJumlah.TabIndex = 44
-        '
-        'mmoKet
-        '
-        Me.mmoKet.Location = New System.Drawing.Point(84, 102)
-        Me.mmoKet.Name = "mmoKet"
-        Me.mmoKet.Size = New System.Drawing.Size(400, 68)
-        Me.mmoKet.TabIndex = 45
+        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnClear.Location = New System.Drawing.Point(634, 15)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(107, 30)
+        Me.btnClear.TabIndex = 49
+        Me.btnClear.Text = "Bersihkan"
         '
         'btnExit
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(721, 115)
+        Me.btnExit.Location = New System.Drawing.Point(927, 142)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 48
         Me.btnExit.Text = "Exit"
         '
@@ -182,9 +158,10 @@ Partial Class TindakanPelayanan
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(613, 115)
+        Me.btnHapus.Location = New System.Drawing.Point(788, 142)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 47
         Me.btnHapus.Text = "Hapus"
         '
@@ -192,76 +169,123 @@ Partial Class TindakanPelayanan
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(501, 115)
+        Me.btnSave.Location = New System.Drawing.Point(644, 142)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 46
         Me.btnSave.Text = "Simpan"
         '
-        'btnClear
+        'mmoKet
         '
-        Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClear.Location = New System.Drawing.Point(493, 12)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(83, 24)
-        Me.btnClear.TabIndex = 49
-        Me.btnClear.Text = "Bersihkan"
+        Me.mmoKet.Location = New System.Drawing.Point(108, 126)
+        Me.mmoKet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.mmoKet.Name = "mmoKet"
+        Me.mmoKet.Size = New System.Drawing.Size(514, 84)
+        Me.mmoKet.TabIndex = 45
         '
-        'LabelControl2
+        'txtJumlah
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(11, 45)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(52, 17)
-        Me.LabelControl2.TabIndex = 50
-        Me.LabelControl2.Text = "Tindakan"
+        Me.txtJumlah.EditValue = "1"
+        Me.txtJumlah.Location = New System.Drawing.Point(357, 89)
+        Me.txtJumlah.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtJumlah.Name = "txtJumlah"
+        Me.txtJumlah.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtJumlah.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtJumlah.Size = New System.Drawing.Size(72, 28)
+        Me.txtJumlah.TabIndex = 44
         '
-        'LabelControl3
+        'txtTarif
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(11, 75)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(26, 17)
-        Me.LabelControl3.TabIndex = 51
-        Me.LabelControl3.Text = "Tarif"
+        Me.txtTarif.Location = New System.Drawing.Point(108, 89)
+        Me.txtTarif.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTarif.Name = "txtTarif"
+        Me.txtTarif.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtTarif.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtTarif.Size = New System.Drawing.Size(208, 28)
+        Me.txtTarif.TabIndex = 43
         '
-        'LabelControl4
+        'txtNamaTindakan
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(252, 75)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(20, 17)
-        Me.LabelControl4.TabIndex = 52
-        Me.LabelControl4.Text = "Qty"
+        Me.txtNamaTindakan.Location = New System.Drawing.Point(184, 52)
+        Me.txtNamaTindakan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNamaTindakan.Name = "txtNamaTindakan"
+        Me.txtNamaTindakan.Properties.ReadOnly = True
+        Me.txtNamaTindakan.Size = New System.Drawing.Size(438, 28)
+        Me.txtNamaTindakan.TabIndex = 42
         '
-        'LabelControl5
+        'cmbKodeTindakan
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(11, 103)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(67, 17)
-        Me.LabelControl5.TabIndex = 53
-        Me.LabelControl5.Text = "Keterangan"
+        Me.cmbKodeTindakan.Location = New System.Drawing.Point(109, 52)
+        Me.cmbKodeTindakan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbKodeTindakan.Name = "cmbKodeTindakan"
+        Me.cmbKodeTindakan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbKodeTindakan.Properties.NullText = ""
+        Me.cmbKodeTindakan.Size = New System.Drawing.Size(68, 28)
+        Me.cmbKodeTindakan.TabIndex = 41
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(255, 17)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(90, 21)
+        Me.LabelControl1.TabIndex = 40
+        Me.LabelControl1.Text = "ID Pelayanan"
+        '
+        'txtIDPelayanan
+        '
+        Me.txtIDPelayanan.Location = New System.Drawing.Point(357, 15)
+        Me.txtIDPelayanan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIDPelayanan.Name = "txtIDPelayanan"
+        Me.txtIDPelayanan.Properties.ReadOnly = True
+        Me.txtIDPelayanan.Size = New System.Drawing.Size(265, 28)
+        Me.txtIDPelayanan.TabIndex = 39
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(14, 17)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(62, 21)
+        Me.LabelControl10.TabIndex = 27
+        Me.LabelControl10.Text = "ID (Auto)"
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(109, 15)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Properties.ReadOnly = True
+        Me.txtID.Size = New System.Drawing.Size(135, 28)
+        Me.txtID.TabIndex = 26
         '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(904, 251)
+        Me.GridControlData.Size = New System.Drawing.Size(1162, 310)
         Me.GridControlData.TabIndex = 3
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
         'GridViewData
         '
+        Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
         'TindakanPelayanan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(904, 445)
+        Me.ClientSize = New System.Drawing.Size(1162, 550)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.stethoscope
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "TindakanPelayanan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tindakan Pelayanan"
@@ -272,13 +296,13 @@ Partial Class TindakanPelayanan
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
-        CType(Me.txtID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mmoKet.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtJumlah.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTarif.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNamaTindakan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbKodeTindakan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtTarif.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtJumlah.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mmoKet.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtIDPelayanan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

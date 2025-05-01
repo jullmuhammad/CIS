@@ -76,4 +76,12 @@ Partial Public Class FormMenu
         Kasir.Show()
         Kasir.BringToFront()
     End Sub
+
+    Private Sub btnBarangMasuk_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnBarangMasuk.ItemClick
+        FarmasiMasuk.TopLevel = False
+        PanelControl1.Controls.Add(FarmasiMasuk)
+        ' FormUsers.Dock = DockStyle.Fill
+        FarmasiMasuk.Show()
+        FarmasiMasuk.BringToFront()
+    End Sub
 End Class

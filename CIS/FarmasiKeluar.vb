@@ -26,10 +26,21 @@ Public Class FarmasiKeluar
             HeaderProc()
         End If
     End Sub
+    Sub formatdate()
+        dtTglKeluar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglKeluar.Properties.DisplayFormat.FormatString = "dd-MMM-yyyy"
 
+        dtTglKeluar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglKeluar.Properties.EditFormat.FormatString = "dd-MMM-yyyy"
+
+        dtTglKeluar.Properties.Mask.EditMask = "dd-MMM-yyyy"
+        dtTglKeluar.Properties.Mask.UseMaskAsDisplayFormat = True
+    End Sub
     Private Sub FarmasiKeluar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtTglKeluar.EditValue = Date.Now
         combojeniskeluar()
+        formatdate()
+
     End Sub
 
     Public aksi As String
@@ -87,7 +98,7 @@ Public Class FarmasiKeluar
         Dim transid = Trim(txtTransID.Text)
         Dim idresep = Trim(txtIDResep.Text)
         Dim nodaftar = Trim(txtNoPendaftaran.Text)
-        Dim tglkeluar = dtTglKeluar.DateTime
+        Dim tglkeluar = dtTglKeluar.Text
         Dim jeniskeluar = Trim(cmbJenisKeluar.Text)
         Dim tujuankeluar = Trim(txtTujuanKeluar.Text)
         Dim ket = Trim(txtKeterangan.Text)
@@ -149,6 +160,22 @@ Public Class FarmasiKeluar
 
 
     End Sub
+
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        ' Tampilkan pesan konfirmasi
+        Dim result As DialogResult = XtraMessageBox.Show("Apakah Anda yakin ingin menghapus data ini?",
+                                                     "Konfirmasi Hapus",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question)
+
+        ' Cek hasil konfirmasi
+        If result = DialogResult.Yes Then
+            ' Lakukan proses penghapusan data
+            aksi = "D"
+            HeaderProc()
+        End If
+    End Sub
+
     Sub dataobat()
         Dim resepid = Trim(txtIDResep.Text)
         Dim transid = Trim(txtTransID.Text)
@@ -434,4 +461,5 @@ Public Class FarmasiKeluar
             End Try
         End If
     End Sub
+
 End Class

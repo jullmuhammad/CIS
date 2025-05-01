@@ -87,10 +87,12 @@ Partial Class Pelayanan_Poliklinik
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnTindakan)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnObat)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl12)
@@ -118,19 +120,21 @@ Partial Class Pelayanan_Poliklinik
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(962, 439)
-        Me.SplitContainerControl1.SplitterPosition = 340
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1338, 542)
+        Me.SplitContainerControl1.SplitterPosition = 420
         Me.SplitContainerControl1.TabIndex = 0
         '
         'btnTindakan
         '
         Me.btnTindakan.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTindakan.ImageOptions.Image = Global.CIS.My.Resources.Resources.stethoscope
-        Me.btnTindakan.Location = New System.Drawing.Point(656, 280)
+        Me.btnTindakan.Location = New System.Drawing.Point(843, 346)
+        Me.btnTindakan.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTindakan.Name = "btnTindakan"
-        Me.btnTindakan.Size = New System.Drawing.Size(96, 33)
+        Me.btnTindakan.Size = New System.Drawing.Size(123, 41)
         Me.btnTindakan.TabIndex = 34
         Me.btnTindakan.Text = "Tindakan"
         '
@@ -138,74 +142,83 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnObat.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnObat.ImageOptions.Image = CType(resources.GetObject("btnObat.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnObat.Location = New System.Drawing.Point(656, 232)
+        Me.btnObat.Location = New System.Drawing.Point(843, 287)
+        Me.btnObat.Margin = New System.Windows.Forms.Padding(4)
         Me.btnObat.Name = "btnObat"
-        Me.btnObat.Size = New System.Drawing.Size(75, 33)
+        Me.btnObat.Size = New System.Drawing.Size(96, 41)
         Me.btnObat.TabIndex = 33
         Me.btnObat.Text = "Resep"
         '
         'LabelControl12
         '
-        Me.LabelControl12.Location = New System.Drawing.Point(12, 190)
+        Me.LabelControl12.Location = New System.Drawing.Point(15, 235)
+        Me.LabelControl12.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl12.Name = "LabelControl12"
-        Me.LabelControl12.Size = New System.Drawing.Size(33, 17)
+        Me.LabelControl12.Size = New System.Drawing.Size(40, 21)
         Me.LabelControl12.TabIndex = 32
         Me.LabelControl12.Text = "Saran"
         '
         'LabelControl11
         '
-        Me.LabelControl11.Location = New System.Drawing.Point(12, 305)
+        Me.LabelControl11.Location = New System.Drawing.Point(15, 377)
+        Me.LabelControl11.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl11.Name = "LabelControl11"
-        Me.LabelControl11.Size = New System.Drawing.Size(52, 17)
+        Me.LabelControl11.Size = New System.Drawing.Size(63, 21)
         Me.LabelControl11.TabIndex = 31
         Me.LabelControl11.Text = "Tindakan"
         Me.LabelControl11.Visible = False
         '
         'LabelControl9
         '
-        Me.LabelControl9.Location = New System.Drawing.Point(12, 132)
+        Me.LabelControl9.Location = New System.Drawing.Point(15, 163)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(55, 17)
+        Me.LabelControl9.Size = New System.Drawing.Size(65, 21)
         Me.LabelControl9.TabIndex = 30
         Me.LabelControl9.Text = "Diagnosa"
         '
         'LabelControl8
         '
-        Me.LabelControl8.Location = New System.Drawing.Point(12, 74)
+        Me.LabelControl8.Location = New System.Drawing.Point(15, 91)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(73, 34)
+        Me.LabelControl8.Size = New System.Drawing.Size(89, 42)
         Me.LabelControl8.TabIndex = 29
         Me.LabelControl8.Text = "Pemeriksaan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Fisik"
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(12, 45)
+        Me.LabelControl7.Location = New System.Drawing.Point(15, 56)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(92, 17)
+        Me.LabelControl7.Size = New System.Drawing.Size(109, 21)
         Me.LabelControl7.TabIndex = 28
         Me.LabelControl7.Text = "Tanggal Periksa"
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(12, 248)
+        Me.LabelControl6.Location = New System.Drawing.Point(15, 306)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(79, 17)
+        Me.LabelControl6.Size = New System.Drawing.Size(95, 21)
         Me.LabelControl6.TabIndex = 27
         Me.LabelControl6.Text = "Status Selesai"
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(213, 16)
+        Me.LabelControl1.Location = New System.Drawing.Point(274, 20)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(58, 17)
+        Me.LabelControl1.Size = New System.Drawing.Size(68, 21)
         Me.LabelControl1.TabIndex = 26
         Me.LabelControl1.Text = "No Daftar"
         '
         'LabelControl10
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(12, 15)
+        Me.LabelControl10.Location = New System.Drawing.Point(15, 19)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(51, 17)
+        Me.LabelControl10.Size = New System.Drawing.Size(62, 21)
         Me.LabelControl10.TabIndex = 25
         Me.LabelControl10.Text = "ID (Auto)"
         '
@@ -213,9 +226,10 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnCari.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCari.ImageOptions.Image = CType(resources.GetObject("btnCari.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnCari.Location = New System.Drawing.Point(470, 13)
+        Me.btnCari.Location = New System.Drawing.Point(604, 16)
+        Me.btnCari.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCari.Name = "btnCari"
-        Me.btnCari.Size = New System.Drawing.Size(58, 24)
+        Me.btnCari.Size = New System.Drawing.Size(75, 30)
         Me.btnCari.TabIndex = 23
         Me.btnCari.Text = "Cari"
         '
@@ -223,9 +237,10 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(787, 280)
+        Me.btnExit.Location = New System.Drawing.Point(1012, 346)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 22
         Me.btnExit.Text = "Exit"
         '
@@ -233,68 +248,76 @@ Partial Class Pelayanan_Poliklinik
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(534, 280)
+        Me.btnHapus.Location = New System.Drawing.Point(687, 346)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 13
         Me.btnHapus.Text = "Hapus"
         '
         'cmbStatus
         '
-        Me.cmbStatus.Location = New System.Drawing.Point(96, 246)
+        Me.cmbStatus.Location = New System.Drawing.Point(123, 304)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
-        Me.cmbStatus.Size = New System.Drawing.Size(185, 24)
+        Me.cmbStatus.Size = New System.Drawing.Size(238, 28)
         Me.cmbStatus.TabIndex = 11
         '
         'mmoSaran
         '
-        Me.mmoSaran.Location = New System.Drawing.Point(96, 188)
+        Me.mmoSaran.Location = New System.Drawing.Point(123, 232)
+        Me.mmoSaran.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoSaran.Name = "mmoSaran"
-        Me.mmoSaran.Size = New System.Drawing.Size(400, 52)
+        Me.mmoSaran.Size = New System.Drawing.Size(514, 64)
         Me.mmoSaran.TabIndex = 10
         '
         'mmoTindakan
         '
-        Me.mmoTindakan.Location = New System.Drawing.Point(96, 302)
+        Me.mmoTindakan.Location = New System.Drawing.Point(123, 373)
+        Me.mmoTindakan.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoTindakan.Name = "mmoTindakan"
-        Me.mmoTindakan.Size = New System.Drawing.Size(400, 52)
+        Me.mmoTindakan.Size = New System.Drawing.Size(514, 64)
         Me.mmoTindakan.TabIndex = 9
         Me.mmoTindakan.Visible = False
         '
         'mmoDiagnosa
         '
-        Me.mmoDiagnosa.Location = New System.Drawing.Point(96, 130)
+        Me.mmoDiagnosa.Location = New System.Drawing.Point(123, 161)
+        Me.mmoDiagnosa.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoDiagnosa.Name = "mmoDiagnosa"
-        Me.mmoDiagnosa.Size = New System.Drawing.Size(400, 52)
+        Me.mmoDiagnosa.Size = New System.Drawing.Size(514, 64)
         Me.mmoDiagnosa.TabIndex = 8
         '
         'btnSave
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(534, 232)
+        Me.btnSave.Location = New System.Drawing.Point(687, 287)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 12
         Me.btnSave.Text = "Simpan"
         '
         'mmoPemeriksaanFisik
         '
-        Me.mmoPemeriksaanFisik.Location = New System.Drawing.Point(96, 72)
+        Me.mmoPemeriksaanFisik.Location = New System.Drawing.Point(123, 89)
+        Me.mmoPemeriksaanFisik.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoPemeriksaanFisik.Name = "mmoPemeriksaanFisik"
-        Me.mmoPemeriksaanFisik.Size = New System.Drawing.Size(400, 52)
+        Me.mmoPemeriksaanFisik.Size = New System.Drawing.Size(514, 64)
         Me.mmoPemeriksaanFisik.TabIndex = 7
         '
         'dtTglPeriksa
         '
         Me.dtTglPeriksa.EditValue = Nothing
-        Me.dtTglPeriksa.Location = New System.Drawing.Point(110, 42)
+        Me.dtTglPeriksa.Location = New System.Drawing.Point(141, 52)
+        Me.dtTglPeriksa.Margin = New System.Windows.Forms.Padding(4)
         Me.dtTglPeriksa.Name = "dtTglPeriksa"
         Me.dtTglPeriksa.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglPeriksa.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglPeriksa.Size = New System.Drawing.Size(210, 24)
+        Me.dtTglPeriksa.Size = New System.Drawing.Size(270, 28)
         Me.dtTglPeriksa.TabIndex = 6
         '
         'PanelControl1
@@ -309,129 +332,146 @@ Partial Class Pelayanan_Poliklinik
         Me.PanelControl1.Controls.Add(Me.txtDokterID)
         Me.PanelControl1.Controls.Add(Me.txtPoliklinikID)
         Me.PanelControl1.Controls.Add(Me.txtJenisDaftar)
-        Me.PanelControl1.Location = New System.Drawing.Point(534, 12)
+        Me.PanelControl1.Location = New System.Drawing.Point(687, 15)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(451, 198)
+        Me.PanelControl1.Size = New System.Drawing.Size(706, 245)
         Me.PanelControl1.TabIndex = 5
         '
         'LabelControl13
         '
-        Me.LabelControl13.Location = New System.Drawing.Point(10, 38)
+        Me.LabelControl13.Location = New System.Drawing.Point(13, 47)
+        Me.LabelControl13.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(37, 17)
+        Me.LabelControl13.Size = New System.Drawing.Size(45, 21)
         Me.LabelControl13.TabIndex = 32
         Me.LabelControl13.Text = "Pasien"
         '
         'txtPasien
         '
-        Me.txtPasien.Location = New System.Drawing.Point(99, 35)
+        Me.txtPasien.Location = New System.Drawing.Point(127, 43)
+        Me.txtPasien.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPasien.Name = "txtPasien"
         Me.txtPasien.Properties.ReadOnly = True
-        Me.txtPasien.Size = New System.Drawing.Size(275, 24)
+        Me.txtPasien.Size = New System.Drawing.Size(354, 28)
         Me.txtPasien.TabIndex = 31
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(9, 126)
+        Me.LabelControl5.Location = New System.Drawing.Point(12, 156)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(46, 17)
+        Me.LabelControl5.Size = New System.Drawing.Size(56, 21)
         Me.LabelControl5.TabIndex = 30
         Me.LabelControl5.Text = "Keluhan"
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(10, 98)
+        Me.LabelControl4.Location = New System.Drawing.Point(13, 121)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(39, 17)
+        Me.LabelControl4.Size = New System.Drawing.Size(47, 21)
         Me.LabelControl4.TabIndex = 29
         Me.LabelControl4.Text = "Dokter"
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(10, 68)
+        Me.LabelControl3.Location = New System.Drawing.Point(13, 84)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(50, 17)
+        Me.LabelControl3.Size = New System.Drawing.Size(63, 21)
         Me.LabelControl3.TabIndex = 28
         Me.LabelControl3.Text = "Poliklinik"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(9, 8)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 10)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(68, 17)
+        Me.LabelControl2.Size = New System.Drawing.Size(81, 21)
         Me.LabelControl2.TabIndex = 27
         Me.LabelControl2.Text = "Jenis Daftar"
         '
         'mmoKeluhan
         '
-        Me.mmoKeluhan.Location = New System.Drawing.Point(99, 125)
+        Me.mmoKeluhan.Location = New System.Drawing.Point(127, 154)
+        Me.mmoKeluhan.Margin = New System.Windows.Forms.Padding(4)
         Me.mmoKeluhan.Name = "mmoKeluhan"
         Me.mmoKeluhan.Properties.ReadOnly = True
-        Me.mmoKeluhan.Size = New System.Drawing.Size(461, 61)
+        Me.mmoKeluhan.Size = New System.Drawing.Size(593, 75)
         Me.mmoKeluhan.TabIndex = 12
         '
         'txtDokterID
         '
-        Me.txtDokterID.Location = New System.Drawing.Point(99, 95)
+        Me.txtDokterID.Location = New System.Drawing.Point(127, 117)
+        Me.txtDokterID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDokterID.Name = "txtDokterID"
         Me.txtDokterID.Properties.ReadOnly = True
-        Me.txtDokterID.Size = New System.Drawing.Size(275, 24)
+        Me.txtDokterID.Size = New System.Drawing.Size(354, 28)
         Me.txtDokterID.TabIndex = 8
         '
         'txtPoliklinikID
         '
-        Me.txtPoliklinikID.Location = New System.Drawing.Point(99, 65)
+        Me.txtPoliklinikID.Location = New System.Drawing.Point(127, 80)
+        Me.txtPoliklinikID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPoliklinikID.Name = "txtPoliklinikID"
         Me.txtPoliklinikID.Properties.ReadOnly = True
-        Me.txtPoliklinikID.Size = New System.Drawing.Size(275, 24)
+        Me.txtPoliklinikID.Size = New System.Drawing.Size(354, 28)
         Me.txtPoliklinikID.TabIndex = 7
         '
         'txtJenisDaftar
         '
-        Me.txtJenisDaftar.Location = New System.Drawing.Point(99, 5)
+        Me.txtJenisDaftar.Location = New System.Drawing.Point(127, 6)
+        Me.txtJenisDaftar.Margin = New System.Windows.Forms.Padding(4)
         Me.txtJenisDaftar.Name = "txtJenisDaftar"
         Me.txtJenisDaftar.Properties.ReadOnly = True
-        Me.txtJenisDaftar.Size = New System.Drawing.Size(144, 24)
+        Me.txtJenisDaftar.Size = New System.Drawing.Size(185, 28)
         Me.txtJenisDaftar.TabIndex = 6
         '
         'txtNoPendaftaran
         '
-        Me.txtNoPendaftaran.Location = New System.Drawing.Point(277, 12)
+        Me.txtNoPendaftaran.Location = New System.Drawing.Point(356, 15)
+        Me.txtNoPendaftaran.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNoPendaftaran.Name = "txtNoPendaftaran"
         Me.txtNoPendaftaran.Properties.ReadOnly = True
-        Me.txtNoPendaftaran.Size = New System.Drawing.Size(187, 24)
+        Me.txtNoPendaftaran.Size = New System.Drawing.Size(240, 28)
         Me.txtNoPendaftaran.TabIndex = 4
         '
         'txtIDPelayanan
         '
-        Me.txtIDPelayanan.Location = New System.Drawing.Point(69, 13)
+        Me.txtIDPelayanan.Location = New System.Drawing.Point(89, 16)
+        Me.txtIDPelayanan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIDPelayanan.Name = "txtIDPelayanan"
         Me.txtIDPelayanan.Properties.ReadOnly = True
-        Me.txtIDPelayanan.Size = New System.Drawing.Size(138, 24)
+        Me.txtIDPelayanan.Size = New System.Drawing.Size(177, 28)
         Me.txtIDPelayanan.TabIndex = 3
         '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(962, 95)
+        Me.GridControlData.Size = New System.Drawing.Size(1338, 117)
         Me.GridControlData.TabIndex = 2
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
         'GridViewData
         '
+        Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
         'Pelayanan_Poliklinik
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(962, 439)
+        Me.ClientSize = New System.Drawing.Size(1338, 542)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.clinic
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Pelayanan_Poliklinik"
         Me.Text = "Pelayanan Poliklinik"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

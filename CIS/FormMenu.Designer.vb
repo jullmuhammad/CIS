@@ -70,16 +70,16 @@
         '
         'ribbonControl1
         '
-        Me.ribbonControl1.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(35, 39, 35, 39)
+        Me.ribbonControl1.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(45, 48, 45, 48)
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
         Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.ribbonControl1.SearchEditItem, Me.btnLogout, Me.btnExit, Me.btnChangePwd, Me.btnPasien, Me.btnKamar, Me.btnDokter, Me.btnBarang, Me.btnUser, Me.btnRawatJalan, Me.btnRekamMedis, Me.btnTindakanRM, Me.btnObatRM, Me.btnBarangMasuk, Me.btnBarangKeluar, Me.txtUsername, Me.BarStaticItem1, Me.txtRole, Me.txtUserID, Me.btnKasir, Me.btnPelayananPoli})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ribbonControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.ribbonControl1.MaxItemId = 23
         Me.ribbonControl1.Name = "ribbonControl1"
-        Me.ribbonControl1.OptionsMenuMinWidth = 385
+        Me.ribbonControl1.OptionsMenuMinWidth = 495
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rpSystem, Me.rpMaster, Me.rpTransaksi})
-        Me.ribbonControl1.Size = New System.Drawing.Size(877, 163)
+        Me.ribbonControl1.Size = New System.Drawing.Size(1128, 197)
         Me.ribbonControl1.StatusBar = Me.RibbonStatusBar1
         '
         'btnLogout
@@ -145,7 +145,7 @@
         '
         'btnRawatJalan
         '
-        Me.btnRawatJalan.Caption = "Rawat Jalan/Inap/IGD"
+        Me.btnRawatJalan.Caption = "Pendaftaran"
         Me.btnRawatJalan.Id = 9
         Me.btnRawatJalan.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.doctor_patient
         Me.btnRawatJalan.Name = "btnRawatJalan"
@@ -318,32 +318,36 @@
         Me.RibbonStatusBar1.ItemLinks.Add(Me.BarStaticItem1)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.txtRole)
         Me.RibbonStatusBar1.ItemLinks.Add(Me.txtUserID)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 518)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 642)
+        Me.RibbonStatusBar1.Margin = New System.Windows.Forms.Padding(4)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl1
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(877, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1128, 31)
         '
         'lblIP
         '
-        Me.lblIP.Location = New System.Drawing.Point(566, 186)
+        Me.lblIP.Location = New System.Drawing.Point(728, 230)
+        Me.lblIP.Margin = New System.Windows.Forms.Padding(4)
         Me.lblIP.Name = "lblIP"
-        Me.lblIP.Size = New System.Drawing.Size(0, 17)
+        Me.lblIP.Size = New System.Drawing.Size(0, 21)
         Me.lblIP.TabIndex = 2
         Me.lblIP.Visible = False
         '
         'lblFolder
         '
-        Me.lblFolder.Location = New System.Drawing.Point(438, 264)
+        Me.lblFolder.Location = New System.Drawing.Point(563, 326)
+        Me.lblFolder.Margin = New System.Windows.Forms.Padding(4)
         Me.lblFolder.Name = "lblFolder"
-        Me.lblFolder.Size = New System.Drawing.Size(0, 17)
+        Me.lblFolder.Size = New System.Drawing.Size(0, 21)
         Me.lblFolder.TabIndex = 3
         Me.lblFolder.Visible = False
         '
         'lblemail
         '
-        Me.lblemail.Location = New System.Drawing.Point(446, 272)
+        Me.lblemail.Location = New System.Drawing.Point(573, 336)
+        Me.lblemail.Margin = New System.Windows.Forms.Padding(4)
         Me.lblemail.Name = "lblemail"
-        Me.lblemail.Size = New System.Drawing.Size(0, 17)
+        Me.lblemail.Size = New System.Drawing.Size(0, 21)
         Me.lblemail.TabIndex = 4
         Me.lblemail.Visible = False
         '
@@ -351,16 +355,17 @@
         '
         Me.PanelControl1.AutoSize = True
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 163)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 197)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(877, 355)
+        Me.PanelControl1.Size = New System.Drawing.Size(1128, 445)
         Me.PanelControl1.TabIndex = 7
         '
         'FormMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 545)
+        Me.ClientSize = New System.Drawing.Size(1128, 673)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.lblemail)
         Me.Controls.Add(Me.lblFolder)
@@ -368,7 +373,7 @@
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.ribbonControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.cislogo
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormMenu"
         Me.Ribbon = Me.ribbonControl1
         Me.StatusBar = Me.RibbonStatusBar1

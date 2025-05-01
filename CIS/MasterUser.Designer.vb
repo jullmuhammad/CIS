@@ -21,43 +21,43 @@ Partial Class MasterUser
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterUser))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.lblid = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnFoto = New DevExpress.XtraEditors.ButtonEdit()
+        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.cmbStatus = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.cmbRole = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.txtEmail = New DevExpress.XtraEditors.TextEdit()
         Me.txtPassword = New DevExpress.XtraEditors.TextEdit()
         Me.txtUsername = New DevExpress.XtraEditors.TextEdit()
         Me.txtUserid = New DevExpress.XtraEditors.TextEdit()
-        Me.cmbRole = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.cmbStatus = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
-        Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
-        Me.btnFoto = New DevExpress.XtraEditors.ButtonEdit()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
-        Me.lblid = New DevExpress.XtraEditors.LabelControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.btnFoto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPassword.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUsername.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUserid.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbRole.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnFoto.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -65,10 +65,12 @@ Partial Class MasterUser
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
         '
+        Me.SplitContainerControl1.Panel1.AutoScroll = True
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.lblid)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnFoto)
@@ -92,66 +94,112 @@ Partial Class MasterUser
         '
         'SplitContainerControl1.Panel2
         '
+        Me.SplitContainerControl1.Panel2.AutoScroll = True
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(885, 482)
-        Me.SplitContainerControl1.SplitterPosition = 255
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1138, 595)
+        Me.SplitContainerControl1.SplitterPosition = 315
         Me.SplitContainerControl1.TabIndex = 0
         '
-        'txtEmail
+        'lblid
         '
-        Me.txtEmail.Location = New System.Drawing.Point(114, 102)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(261, 24)
-        Me.txtEmail.TabIndex = 3
+        Me.lblid.Location = New System.Drawing.Point(450, 19)
+        Me.lblid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblid.Name = "lblid"
+        Me.lblid.Size = New System.Drawing.Size(0, 21)
+        Me.lblid.TabIndex = 33
+        Me.lblid.Visible = False
         '
-        'txtPassword
+        'LabelControl6
         '
-        Me.txtPassword.Location = New System.Drawing.Point(114, 72)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Properties.UseSystemPasswordChar = True
-        Me.txtPassword.Size = New System.Drawing.Size(329, 24)
-        Me.txtPassword.TabIndex = 2
+        Me.LabelControl6.Location = New System.Drawing.Point(563, 199)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(31, 21)
+        Me.LabelControl6.TabIndex = 32
+        Me.LabelControl6.Text = "Foto"
         '
-        'txtUsername
+        'btnFoto
         '
-        Me.txtUsername.Location = New System.Drawing.Point(114, 42)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(329, 24)
-        Me.txtUsername.TabIndex = 1
+        Me.btnFoto.Location = New System.Drawing.Point(616, 195)
+        Me.btnFoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnFoto.Name = "btnFoto"
+        Me.btnFoto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.btnFoto.Properties.ContextImageOptions.Image = CType(resources.GetObject("btnFoto.Properties.ContextImageOptions.Image"), System.Drawing.Image)
+        Me.btnFoto.Size = New System.Drawing.Size(311, 28)
+        Me.btnFoto.TabIndex = 31
         '
-        'txtUserid
+        'PictureEdit1
         '
-        Me.txtUserid.Location = New System.Drawing.Point(114, 12)
-        Me.txtUserid.Name = "txtUserid"
-        Me.txtUserid.Size = New System.Drawing.Size(172, 24)
-        Me.txtUserid.TabIndex = 0
+        Me.PictureEdit1.Location = New System.Drawing.Point(616, 15)
+        Me.PictureEdit1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureEdit1.Name = "PictureEdit1"
+        Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
+        Me.PictureEdit1.Size = New System.Drawing.Size(165, 169)
+        Me.PictureEdit1.TabIndex = 30
         '
-        'cmbRole
+        'LabelControl5
         '
-        Me.cmbRole.Location = New System.Drawing.Point(114, 132)
-        Me.cmbRole.Name = "cmbRole"
-        Me.cmbRole.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbRole.Properties.Items.AddRange(New Object() {"Admin", "User"})
-        Me.cmbRole.Size = New System.Drawing.Size(131, 24)
-        Me.cmbRole.TabIndex = 4
+        Me.LabelControl5.Location = New System.Drawing.Point(15, 204)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(43, 21)
+        Me.LabelControl5.TabIndex = 29
+        Me.LabelControl5.Text = "Status"
         '
-        'cmbStatus
+        'LabelControl4
         '
-        Me.cmbStatus.Location = New System.Drawing.Point(114, 162)
-        Me.cmbStatus.Name = "cmbStatus"
-        Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbStatus.Properties.Items.AddRange(New Object() {"True", "False"})
-        Me.cmbStatus.Size = New System.Drawing.Size(51, 24)
-        Me.cmbStatus.TabIndex = 5
+        Me.LabelControl4.Location = New System.Drawing.Point(15, 167)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(31, 21)
+        Me.LabelControl4.TabIndex = 28
+        Me.LabelControl4.Text = "Role"
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Location = New System.Drawing.Point(15, 130)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(38, 21)
+        Me.LabelControl3.TabIndex = 27
+        Me.LabelControl3.Text = "Email"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Location = New System.Drawing.Point(15, 93)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(67, 21)
+        Me.LabelControl2.TabIndex = 26
+        Me.LabelControl2.Text = "Password"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(15, 56)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(71, 21)
+        Me.LabelControl1.TabIndex = 25
+        Me.LabelControl1.Text = "Username"
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(15, 19)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(51, 21)
+        Me.LabelControl10.TabIndex = 24
+        Me.LabelControl10.Text = "User ID"
         '
         'btnExit
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(532, 208)
+        Me.btnExit.Location = New System.Drawing.Point(684, 257)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 16
         Me.btnExit.Text = "Exit"
         '
@@ -159,9 +207,10 @@ Partial Class MasterUser
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(442, 208)
+        Me.btnHapus.Location = New System.Drawing.Point(568, 257)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 15
         Me.btnHapus.Text = "Hapus"
         '
@@ -169,115 +218,92 @@ Partial Class MasterUser
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(350, 208)
+        Me.btnSave.Location = New System.Drawing.Point(450, 257)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 14
         Me.btnSave.Text = "Simpan"
         '
-        'LabelControl10
+        'cmbStatus
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(12, 15)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(43, 17)
-        Me.LabelControl10.TabIndex = 24
-        Me.LabelControl10.Text = "User ID"
+        Me.cmbStatus.Location = New System.Drawing.Point(147, 200)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStatus.Name = "cmbStatus"
+        Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbStatus.Properties.Items.AddRange(New Object() {"True", "False"})
+        Me.cmbStatus.Size = New System.Drawing.Size(66, 28)
+        Me.cmbStatus.TabIndex = 5
         '
-        'LabelControl1
+        'cmbRole
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 45)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(59, 17)
-        Me.LabelControl1.TabIndex = 25
-        Me.LabelControl1.Text = "Username"
+        Me.cmbRole.Location = New System.Drawing.Point(147, 163)
+        Me.cmbRole.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbRole.Name = "cmbRole"
+        Me.cmbRole.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbRole.Properties.Items.AddRange(New Object() {"Admin", "User"})
+        Me.cmbRole.Size = New System.Drawing.Size(168, 28)
+        Me.cmbRole.TabIndex = 4
         '
-        'LabelControl2
+        'txtEmail
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 75)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(56, 17)
-        Me.LabelControl2.TabIndex = 26
-        Me.LabelControl2.Text = "Password"
+        Me.txtEmail.Location = New System.Drawing.Point(147, 126)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(336, 28)
+        Me.txtEmail.TabIndex = 3
         '
-        'LabelControl3
+        'txtPassword
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 105)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(31, 17)
-        Me.LabelControl3.TabIndex = 27
-        Me.LabelControl3.Text = "Email"
+        Me.txtPassword.Location = New System.Drawing.Point(147, 89)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Properties.UseSystemPasswordChar = True
+        Me.txtPassword.Size = New System.Drawing.Size(423, 28)
+        Me.txtPassword.TabIndex = 2
         '
-        'LabelControl4
+        'txtUsername
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(12, 135)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(26, 17)
-        Me.LabelControl4.TabIndex = 28
-        Me.LabelControl4.Text = "Role"
+        Me.txtUsername.Location = New System.Drawing.Point(147, 52)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(423, 28)
+        Me.txtUsername.TabIndex = 1
         '
-        'LabelControl5
+        'txtUserid
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(12, 165)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(35, 17)
-        Me.LabelControl5.TabIndex = 29
-        Me.LabelControl5.Text = "Status"
+        Me.txtUserid.Location = New System.Drawing.Point(147, 15)
+        Me.txtUserid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUserid.Name = "txtUserid"
+        Me.txtUserid.Size = New System.Drawing.Size(221, 28)
+        Me.txtUserid.TabIndex = 0
         '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(885, 223)
+        Me.GridControlData.Size = New System.Drawing.Size(1138, 275)
         Me.GridControlData.TabIndex = 1
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
         'GridViewData
         '
+        Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'PictureEdit1
-        '
-        Me.PictureEdit1.Location = New System.Drawing.Point(479, 12)
-        Me.PictureEdit1.Name = "PictureEdit1"
-        Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Size = New System.Drawing.Size(128, 137)
-        Me.PictureEdit1.TabIndex = 30
-        '
-        'btnFoto
-        '
-        Me.btnFoto.Location = New System.Drawing.Point(479, 158)
-        Me.btnFoto.Name = "btnFoto"
-        Me.btnFoto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.btnFoto.Properties.ContextImageOptions.Image = CType(resources.GetObject("btnFoto.Properties.ContextImageOptions.Image"), System.Drawing.Image)
-        Me.btnFoto.Size = New System.Drawing.Size(242, 24)
-        Me.btnFoto.TabIndex = 31
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Location = New System.Drawing.Point(438, 161)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(26, 17)
-        Me.LabelControl6.TabIndex = 32
-        Me.LabelControl6.Text = "Foto"
-        '
-        'lblid
-        '
-        Me.lblid.Location = New System.Drawing.Point(350, 15)
-        Me.lblid.Name = "lblid"
-        Me.lblid.Size = New System.Drawing.Size(0, 17)
-        Me.lblid.TabIndex = 33
-        Me.lblid.Visible = False
-        '
         'MasterUser
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(885, 482)
+        Me.ClientSize = New System.Drawing.Size(1138, 595)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.LargeImage = CType(resources.GetObject("MasterUser.IconOptions.LargeImage"), System.Drawing.Image)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MasterUser"
         Me.Text = "Master User"
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -287,16 +313,16 @@ Partial Class MasterUser
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.btnFoto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRole.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPassword.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUsername.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUserid.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbRole.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnFoto.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

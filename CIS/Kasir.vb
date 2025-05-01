@@ -207,7 +207,12 @@ Public Class Kasir
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
 
             Dim id As GridColumn = gridView1.Columns("ID")
+            Dim harga As GridColumn = gridView1.Columns("Harga")
+            Dim subtotal As GridColumn = gridView1.Columns("Subtotal")
+
             id.Visible = False
+            harga.OptionsColumn.ReadOnly = True
+            subtotal.OptionsColumn.ReadOnly = True
 
             gridView1.Appearance.HeaderPanel.Font = New Font("Segoe UI", 11, FontStyle.Regular)
             gridView1.Appearance.Row.Font = New Font("Segoe UI", 11, FontStyle.Regular)
