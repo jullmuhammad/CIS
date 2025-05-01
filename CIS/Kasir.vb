@@ -11,7 +11,7 @@ Public Class Kasir
     Dim tblUser, tblPasien, tblPoli, tblCaraBayar, tblRJ, tblDokter, tblKamar, dtBarang As DataTable
 
     Private Sub GridViewData_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridViewData.CellValueChanged
-        If e.Column.FieldName = "Harga" Then
+        If e.Column.FieldName = "Deskripsi" Then
             Dim kodeBarang As String = e.Value.ToString()
 
             Try
@@ -21,16 +21,29 @@ Public Class Kasir
                 If found.Length > 0 Then
                     ' Update kolom NamaBarang pada baris yang sama
                     GridViewData.SetRowCellValue(e.RowHandle, "Harga", found(0)("Harga").ToString())
-                    'GridViewData.SetRowCellValue(e.RowHandle, "Stok", found(0)("Stok").ToString())
+                    GridViewData.SetRowCellValue(e.RowHandle, "Jumlah", "1")
                 Else
                     ' Kalau tidak ketemu, kosongkan
                     GridViewData.SetRowCellValue(e.RowHandle, "Harga", "0")
+                    GridViewData.SetRowCellValue(e.RowHandle, "Jumlah", "0")
                     ' GridViewData.SetRowCellValue(e.RowHandle, "Stok", "")
                 End If
 
             Catch ex As Exception
 
             End Try
+        End If
+        If e.Column.FieldName = "Jumlah" Then
+            Dim jml As String = e.Value.ToString()
+            Dim selectedharga As Integer = CInt(GridViewData.GetRowCellValue(e.RowHandle, "Harga"))
+            If jml <> "" Then
+                ' Update kolom NamaBarang pada baris yang sama
+                GridViewData.SetRowCellValue(e.RowHandle, "Subtotal", (selectedharga * jml))
+            Else
+                ' Kalau tidak ketemu, kosongkan
+                GridViewData.SetRowCellValue(e.RowHandle, "Subtotal", "0")
+                ' GridViewData.SetRowCellValue(e.RowHandle, "Stok", "")
+            End If
         End If
     End Sub
 
@@ -59,14 +72,14 @@ Public Class Kasir
         dtTglBilling.EditValue = Date.Now
 
         ' Contoh: di Form Load atau setelah inisialisasi
-        'dtTglBilling.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        'dtTglBilling.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
+        dtTglBilling.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglBilling.Properties.DisplayFormat.FormatString = "dd-MMM-yyyy"
 
-        'dtTglBilling.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        'dtTglBilling.Properties.EditFormat.FormatString = "dd/MM/yyyy"
+        dtTglBilling.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        dtTglBilling.Properties.EditFormat.FormatString = "dd-MMM-yyyy"
 
-        'dtTglBilling.Properties.Mask.EditMask = "dd/MM/yyyy"
-        'dtTglBilling.Properties.Mask.UseMaskAsDisplayFormat = True
+        dtTglBilling.Properties.Mask.EditMask = "dd-MMM-yyyy"
+        dtTglBilling.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
@@ -131,7 +144,10 @@ Public Class Kasir
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'data()
             'clear()
-            txtBillingID.Text = idOut.Value.ToString
+            If aksi = "I" Then
+                txtBillingID.Text = idOut.Value.ToString
+            End If
+
             aksi = "I"
             DetailProc()
         Else
@@ -148,6 +164,7 @@ Public Class Kasir
 
     End Sub
     Sub data()
+        GridViewData.Columns.Clear()
         Dim nodaftar = Trim(txtNoPendaftaran.Text)
         Dim billid = Trim(txtBillingID.Text)
         tblPasien = Proses.ExecuteQuery("SELECT  b.DetailBillingID ID,a.[IDPelayanan]
@@ -161,11 +178,30 @@ Public Class Kasir
                                               on c.NoRegistrasi=a.NoPendaftaran
                                               left join [dbo].[Transaksi_Billing_D] b
                                               on b.IDPelayanan=a.IDPelayanan and b.BillingID=c.BillingID and b.Deskripsi=a.Deskripsi
-											  where a.NoPendaftaran='" & nodaftar & "' and b.BillingID='" & billid & "'")
+											  where a.NoPendaftaran='" & nodaftar & "' and b.BillingID='" & billid & "'
+                                              union all
+                                              SELECT 
+                                                    b.DetailBillingID AS ID,
+                                                    b.[IDPelayanan],
+                                                    b.Kategori,
+                                                    b.[Deskripsi],
+                                                    b.Qty,
+                                                    b.[Harga],
+                                                    b.Qty * b.Harga AS Subtotal
+                                                FROM [dbo].[Transaksi_Billing_D] b
+                                                LEFT JOIN [dbo].[Transaksi_Billing_H] c 
+                                                    ON c.BillingID = b.BillingID
+                                                LEFT JOIN [db_klinik].[dbo].[V_Billing_Detail] a 
+                                                    ON a.IDPelayanan = b.IDPelayanan 
+                                                    AND a.NoPendaftaran = c.NoRegistrasi 
+                                                    AND a.Deskripsi = b.Deskripsi
+                                                WHERE c.BillingID = '" & billid & "'
+                                                    AND a.IDPelayanan IS NULL;")
 
         If tblPasien.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
         Else
+
             GridControlData.DataSource = tblPasien
 
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
@@ -197,6 +233,13 @@ Public Class Kasir
 
             ' Set summary ke kolom Subtotal
             gridView1.Columns("Subtotal").Summary.Add(summaryItem)
+
+            Dim colHarga As GridColumn = GridViewData.Columns("Harga")
+            Dim colsubtot As GridColumn = GridViewData.Columns("Subtotal")
+            colHarga.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            colHarga.DisplayFormat.FormatString = "N0" ' Format angka (misal: 1.000)
+            colsubtot.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+            colsubtot.DisplayFormat.FormatString = "N0" ' Format angka (misal: 1.000)
         End If
     End Sub
     Private Sub SetupRepositoryLookUpBarang()

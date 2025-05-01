@@ -212,6 +212,16 @@ Public Class MasterPasien
         gridtotxt()
     End Sub
 
+    Private Sub MasterPasien_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim formIsopen As Boolean = Application.OpenForms().OfType(Of Pendaftaran_Rawat_Jalan)().Any()
+
+        If formIsopen Then
+            Pendaftaran_Rawat_Jalan.combopasien()
+        Else
+
+        End If
+    End Sub
+
     Sub gridtotxt()
         Try
             txtIDPasien.Text = GridViewData.GetFocusedRowCellValue("ID").ToString

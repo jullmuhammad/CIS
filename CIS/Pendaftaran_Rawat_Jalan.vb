@@ -1,7 +1,11 @@
-﻿Imports DevExpress.XtraEditors
+﻿Imports System.Drawing.Imaging
+Imports System.IO
+Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
+Imports Excel = Microsoft.Office.Interop.Excel
+Imports System.Runtime.InteropServices
 
 Public Class Pendaftaran_Rawat_Jalan
     Dim SQL As String
@@ -91,7 +95,7 @@ Public Class Pendaftaran_Rawat_Jalan
         Dim keluhan = Trim(mmoKeluhan.Text)
         Dim diagnosa = Trim(mmoDiagnosa.Text)
         Dim kamarid = Trim(cmbKamar.Text)
-        Dim caramasuk = Trim(cmbCaramasuk.Text)
+        Dim caramasuk = Trim(cmbCaraMasuk.Text)
         Dim asalrujukan = Trim(txtAsalRujukan.Text)
         Dim statuskunjungan = Trim(txtStatusKunjungan.Text)
         Dim tglpulang = DBNull.Value
@@ -256,7 +260,7 @@ Public Class Pendaftaran_Rawat_Jalan
         mmoDiagnosa.Text = String.Empty
         cmbKamar.EditValue = String.Empty
         cmbKamar.Text = String.Empty
-        cmbCaramasuk.Text = String.Empty
+        cmbCaraMasuk.Text = String.Empty
         txtAsalRujukan.Text = String.Empty
         txtStatusKunjungan.Text = "Terdaftar"
 
@@ -327,15 +331,15 @@ Public Class Pendaftaran_Rawat_Jalan
 
         If jenlay = "Rawat Jalan" Then
             cmbKamar.Properties.ReadOnly = True
-            cmbCaramasuk.Properties.ReadOnly = True
+            cmbCaraMasuk.Properties.ReadOnly = True
             txtAsalRujukan.Properties.ReadOnly = True
         ElseIf jenlay = "Rawat Inap" Then
             cmbKamar.Properties.ReadOnly = False
-            cmbCaramasuk.Properties.ReadOnly = True
+            cmbCaraMasuk.Properties.ReadOnly = True
             txtAsalRujukan.Properties.ReadOnly = True
         Else
             cmbKamar.Properties.ReadOnly = True
-            cmbCaramasuk.Properties.ReadOnly = False
+            cmbCaraMasuk.Properties.ReadOnly = False
             txtAsalRujukan.Properties.ReadOnly = False
         End If
     End Sub
@@ -422,6 +426,12 @@ Public Class Pendaftaran_Rawat_Jalan
         cmbCaraBayar.Properties.NullText = ""
 
     End Sub
+
+    Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
+        Dim nodaftar = Trim(txtNodaftar.Text)
+        nyieunbarcodeheula(nodaftar)
+    End Sub
+
     Sub gridtotext()
         Try
             lblid.Text = GridViewData.GetFocusedRowCellValue("ID").ToString
@@ -439,7 +449,7 @@ Public Class Pendaftaran_Rawat_Jalan
             mmoKeluhan.Text = GridViewData.GetFocusedRowCellValue("Keluhan").ToString
             mmoDiagnosa.Text = GridViewData.GetFocusedRowCellValue("Diagnosa").ToString
             cmbKamar.Text = GridViewData.GetFocusedRowCellValue("KodeKamar").ToString
-            cmbCaramasuk.Text = GridViewData.GetFocusedRowCellValue("CaraMasuk").ToString
+            cmbCaraMasuk.Text = GridViewData.GetFocusedRowCellValue("CaraMasuk").ToString
             txtAsalRujukan.Text = GridViewData.GetFocusedRowCellValue("AsalRujukan").ToString
             txtStatusKunjungan.Text = GridViewData.GetFocusedRowCellValue("StatusKunjungan").ToString
 
@@ -461,6 +471,216 @@ Public Class Pendaftaran_Rawat_Jalan
         cmbKamar.Properties.HeaderClickMode = HeaderClickMode.AutoSearch
         cmbKamar.Properties.CaseSensitiveSearch = True
         cmbKamar.Properties.NullText = ""
+
+    End Sub
+    Sub nyieunbarcodeheula(nodaftar As String)
+        Dim filepath = Application.StartupPath & "\Images\" & nodaftar & ".png"
+        BarCodeControl1.AutoModule = True
+        BarCodeControl1.Text = nodaftar
+
+        If File.Exists(filepath) Then
+            File.Delete(filepath)
+        End If
+
+        Using bmp As New Bitmap(BarCodeControl1.Width, BarCodeControl1.Height)
+            BarCodeControl1.DrawToBitmap(bmp, New Rectangle(0, 0, BarCodeControl1.Width, BarCodeControl1.Height))
+            bmp.Save(filepath, ImageFormat.Png)
+        End Using
+
+        exceltanpainterop(nodaftar)
+    End Sub
+    Public Sub PrintTiketToExcelTemplate(nodaftar As String)
+        Dim excelApp As Excel.Application = Nothing
+        Dim excelWorkbook As Excel.Workbook = Nothing
+        Dim excelWorksheet As Excel.Worksheet = Nothing
+        Dim filepath = Application.StartupPath & "\Images\" & nodaftar & ".png"
+        Try
+            ' 1. Buka template Excel
+            excelApp = New Excel.Application()
+            excelWorkbook = excelApp.Workbooks.Open(Application.StartupPath & "\Template\Tiket_Registrasi.xlt")
+            excelWorksheet = CType(excelWorkbook.Sheets(1), Excel.Worksheet)
+
+            tblDokter = Proses.ExecuteQuery("SELECT [NoPendaftaran]
+                                                  ,convert(date,[TanggalDaftar],113) Tgl
+	                                              ,convert(time,[TanggalDaftar],113) Jam
+                                                  ,PasienID
+	                                              ,b.NamaLengkap Pasien
+                                                  ,c.NamaPoliklinik
+                                                  ,[DokterID]
+                                                  ,d.Nama Dokter
+                                                  ,convert(varchar(12),b.TanggalLahir,113) TTL
+	                                              ,DATEDIFF(hour,TanggalLahir,GETDATE())/8766 Umur
+                                              FROM [db_klinik].[dbo].[T_Pendaftaran] a
+                                              left join [dbo].[M_Pasien] b
+                                              on b.ID=a.PasienID
+                                              left join [dbo].[M_Poliklinik] c
+                                              on c.PoliklinikID=a.PoliklinikID
+                                               left join [dbo].[M_Dokter] d
+                                               on d.ID=a.DokterID
+                                               where a.NoPendaftaran='" & nodaftar & "'")
+            ' 2. Isi data ke template
+            With excelWorksheet
+
+                If tblDokter.Rows.Count = 0 Then
+
+                Else
+                    ' Contoh isi data
+                    .Range("A5").Value = Trim(tblDokter.Rows(0).Item("Tgl").ToString)
+                    .Range("E5").Value = Trim(tblDokter.Rows(0).Item("Jam").ToString)
+                    .Range("A6").Value = Trim(tblDokter.Rows(0).Item("Pasien").ToString)
+                    .Range("A7").Value = Trim(tblDokter.Rows(0).Item("PasienID").ToString)
+                    .Range("A8").Value = Trim(tblDokter.Rows(0).Item("TTL").ToString) & " / " & Trim(tblDokter.Rows(0).Item("Umur").ToString) & " tahun"
+                    .Range("A14").Value = nodaftar
+                    .Range("A16").Value = Trim(tblDokter.Rows(0).Item("NamaPoliklinik").ToString)
+                    .Range("A17").Value = Trim(tblDokter.Rows(0).Item("Dokter").ToString)
+                    ' ... isi data lainnya
+                    If File.Exists(filepath) Then
+                        InsertPicture(filepath, .Range("A" & CStr(9) & ":F" & CStr(13)))
+
+
+                    End If
+                End If
+
+            End With
+
+
+            ' 3. Setting printer dan langsung cetak
+            'excelWorksheet.PrintOut(
+            '    Copies:=1,
+            '    Preview:=False,
+            '    ActivePrinter:="Nama Printer Anda", ' Ganti dengan nama printer
+            '    Collate:=True)
+            excelWorksheet.PrintOut(1, 1, 1, False) ' Print langsung
+
+            excelApp.Visible = False
+            excelApp.DisplayAlerts = False
+            ' 4. Tutup tanpa menyimpan perubahan
+            excelWorkbook.Close(SaveChanges:=False)
+            excelApp.Quit()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            ' 5. Bersihkan COM Object
+            ReleaseObject(excelWorksheet)
+            ReleaseObject(excelWorkbook)
+            ReleaseObject(excelApp)
+        End Try
+    End Sub
+
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            If obj IsNot Nothing Then
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+                obj = Nothing
+            End If
+        Catch ex As Exception
+            obj = Nothing
+        End Try
+    End Sub
+    Function InsertPicture(ByVal FName As String, ByVal Where As Microsoft.Office.Interop.Excel.Range,
+  Optional ByVal LinkToFile As Boolean = False,
+  Optional ByVal SaveWithDocument As Boolean = True,
+  Optional ByVal LockAspectRatio As Boolean = True) As Microsoft.Office.Interop.Excel.Shape
+        'Inserts the picture file FName as link or permanently into Where
+        Dim S As Microsoft.Office.Interop.Excel.Shape
+        'Dim SaveScreenUpdating, SaveCursor
+        'SaveCursor = Application.Cursor
+        'SaveScreenUpdating = Application.ScreenUpdating
+        'Application.Cursor = xlWait
+        'Application.ScreenUpdating = False
+        With Where
+            'Insert in original size
+            S = Where.Parent.Shapes.AddPicture(
+              FName, LinkToFile, SaveWithDocument, .Left, .Top, -1, -1)
+            'Keep the proportions?
+            S.LockAspectRatio = LockAspectRatio
+            'Scale it to fit the cell
+            S.Width = .Width
+            If S.Height > .Height Or Not LockAspectRatio Then S.Height = .Height
+        End With
+        InsertPicture = S
+        'Application.Cursor = SaveCursor
+        'Application.ScreenUpdating = SaveScreenUpdating
+    End Function
+    Sub exceltanpainterop(nodaftar As String)
+        Dim excelApp As Object = Nothing
+        Dim workbook As Object = Nothing
+        Dim worksheet As Object = Nothing
+        Dim filepath = Application.StartupPath & "\Images\" & nodaftar & ".png"
+        Try
+            excelApp = CreateObject("Excel.Application")
+            Dim templatepath As String = Application.StartupPath & "\Template\Tiket_Registrasi.xlt"
+            workbook = excelApp.Workbooks.Open(templatepath)
+            worksheet = workbook.Sheets(1)
+
+            tblDokter = Proses.ExecuteQuery("SELECT [NoPendaftaran]
+                                                  ,convert(date,[TanggalDaftar],113) Tgl
+	                                              ,convert(time,[TanggalDaftar],113) Jam
+                                                  ,[PasienID]
+	                                              ,b.NamaLengkap Pasien
+                                                  ,c.NamaPoliklinik
+                                                  ,[DokterID]
+                                                  ,d.Nama Dokter
+                                                  ,convert(varchar(12),b.TanggalLahir,113) TTL
+	                                              ,DATEDIFF(hour,TanggalLahir,GETDATE())/8766 Umur
+                                              FROM [db_klinik].[dbo].[T_Pendaftaran] a
+                                              left join [dbo].[M_Pasien] b
+                                              on b.ID=a.PasienID
+                                              left join [dbo].[M_Poliklinik] c
+                                              on c.PoliklinikID=a.PoliklinikID
+                                               left join [dbo].[M_Dokter] d
+                                               on d.ID=a.DokterID
+                                               where a.NoPendaftaran='" & nodaftar & "'")
+            ' 2. Isi data ke template
+            With worksheet
+
+                If tblDokter.Rows.Count = 0 Then
+
+                Else
+                    ' Contoh isi data
+                    .Range("A5").Value = Trim(tblDokter.Rows(0).Item("Tgl").ToString)
+                    .Range("E5").Value = Trim(tblDokter.Rows(0).Item("Jam").ToString)
+                    .Range("A6").Value = Trim(tblDokter.Rows(0).Item("Pasien").ToString) & " (" & Trim(tblDokter.Rows(0).Item("PasienID").ToString) & ")"
+                    .Range("A7").Value = Trim(tblDokter.Rows(0).Item("TTL").ToString) & " / " & Trim(tblDokter.Rows(0).Item("Umur").ToString) & " tahun"
+                    .Range("A13").Value = nodaftar
+                    .Range("A15").Value = Trim(tblDokter.Rows(0).Item("NamaPoliklinik").ToString)
+                    .Range("A16").Value = Trim(tblDokter.Rows(0).Item("Dokter").ToString)
+                    ' ... isi data lainnya
+                    If File.Exists(filepath) Then
+                        InsertPicture(filepath, .Range("A" & CStr(8) & ":F" & CStr(12)))
+
+
+                    End If
+                End If
+
+            End With
+
+
+            ' 3. Setting printer dan langsung cetak
+            'excelWorksheet.PrintOut(
+            '    Copies:=1,
+            '    Preview:=False,
+            '    ActivePrinter:="Nama Printer Anda", ' Ganti dengan nama printer
+            '    Collate:=True)
+            worksheet.PrintOut(1, 1, 1, False) ' Print langsung
+
+            excelApp.Visible = False
+            excelApp.DisplayAlerts = False
+            ' 4. Tutup tanpa menyimpan perubahan
+            workbook.Close(SaveChanges:=False)
+            excelApp.Quit()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            ' 5. Bersihkan COM Object
+            ReleaseObject(worksheet)
+            ReleaseObject(workbook)
+            ReleaseObject(excelApp)
+        End Try
 
     End Sub
 End Class

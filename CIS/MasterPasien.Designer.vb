@@ -76,6 +76,7 @@ Partial Class MasterPasien
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
@@ -112,114 +113,127 @@ Partial Class MasterPasien
         '
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(897, 523)
-        Me.SplitContainerControl1.SplitterPosition = 244
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1153, 646)
+        Me.SplitContainerControl1.SplitterPosition = 301
         Me.SplitContainerControl1.TabIndex = 0
         '
         'btnClear
         '
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClear.Location = New System.Drawing.Point(261, 12)
+        Me.btnClear.Location = New System.Drawing.Point(336, 15)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(87, 24)
+        Me.btnClear.Size = New System.Drawing.Size(112, 30)
         Me.btnClear.TabIndex = 24
         Me.btnClear.Text = "Bersihkan"
         '
         'LabelControl10
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(12, 15)
+        Me.LabelControl10.Location = New System.Drawing.Point(15, 19)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(92, 17)
+        Me.LabelControl10.Size = New System.Drawing.Size(111, 21)
         Me.LabelControl10.TabIndex = 23
         Me.LabelControl10.Text = "ID Pasien (Auto)"
         '
         'txtIDPasien
         '
-        Me.txtIDPasien.Location = New System.Drawing.Point(110, 12)
+        Me.txtIDPasien.Location = New System.Drawing.Point(141, 15)
+        Me.txtIDPasien.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtIDPasien.Name = "txtIDPasien"
         Me.txtIDPasien.Properties.ReadOnly = True
-        Me.txtIDPasien.Size = New System.Drawing.Size(145, 24)
+        Me.txtIDPasien.Size = New System.Drawing.Size(186, 28)
         Me.txtIDPasien.TabIndex = 1
         '
         'LabelControl9
         '
-        Me.LabelControl9.Location = New System.Drawing.Point(491, 105)
+        Me.LabelControl9.Location = New System.Drawing.Point(631, 130)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(35, 17)
+        Me.LabelControl9.Size = New System.Drawing.Size(43, 21)
         Me.LabelControl9.TabIndex = 21
         Me.LabelControl9.Text = "Status"
         '
         'cmbPekerjaan
         '
-        Me.cmbPekerjaan.Location = New System.Drawing.Point(593, 72)
+        Me.cmbPekerjaan.Location = New System.Drawing.Point(762, 89)
+        Me.cmbPekerjaan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbPekerjaan.Name = "cmbPekerjaan"
         Me.cmbPekerjaan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbPekerjaan.Properties.Items.AddRange(New Object() {"P", "L"})
-        Me.cmbPekerjaan.Size = New System.Drawing.Size(185, 24)
+        Me.cmbPekerjaan.Size = New System.Drawing.Size(238, 28)
         Me.cmbPekerjaan.TabIndex = 9
         '
         'LabelControl8
         '
-        Me.LabelControl8.Location = New System.Drawing.Point(491, 75)
+        Me.LabelControl8.Location = New System.Drawing.Point(631, 93)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(56, 17)
+        Me.LabelControl8.Size = New System.Drawing.Size(68, 21)
         Me.LabelControl8.TabIndex = 20
         Me.LabelControl8.Text = "Pekerjaan"
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(491, 45)
+        Me.LabelControl7.Location = New System.Drawing.Point(631, 56)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(96, 17)
+        Me.LabelControl7.Size = New System.Drawing.Size(114, 21)
         Me.LabelControl7.TabIndex = 19
         Me.LabelControl7.Text = "Golongan Darah"
         '
         'LabelControl6
         '
-        Me.LabelControl6.Location = New System.Drawing.Point(491, 15)
+        Me.LabelControl6.Location = New System.Drawing.Point(631, 19)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(41, 17)
+        Me.LabelControl6.Size = New System.Drawing.Size(48, 21)
         Me.LabelControl6.TabIndex = 18
         Me.LabelControl6.Text = "No. HP"
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(12, 163)
+        Me.LabelControl5.Location = New System.Drawing.Point(15, 201)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(40, 17)
+        Me.LabelControl5.Size = New System.Drawing.Size(49, 21)
         Me.LabelControl5.TabIndex = 17
         Me.LabelControl5.Text = "Alamat"
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(12, 135)
+        Me.LabelControl4.Location = New System.Drawing.Point(15, 167)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(20, 17)
+        Me.LabelControl4.Size = New System.Drawing.Size(24, 21)
         Me.LabelControl4.TabIndex = 16
         Me.LabelControl4.Text = "TTL"
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 105)
+        Me.LabelControl3.Location = New System.Drawing.Point(15, 130)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(43, 17)
+        Me.LabelControl3.Size = New System.Drawing.Size(51, 21)
         Me.LabelControl3.TabIndex = 15
         Me.LabelControl3.Text = "Gender"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 75)
+        Me.LabelControl2.Location = New System.Drawing.Point(15, 93)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(35, 17)
+        Me.LabelControl2.Size = New System.Drawing.Size(42, 21)
         Me.LabelControl2.TabIndex = 14
         Me.LabelControl2.Text = "Nama"
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 45)
+        Me.LabelControl1.Location = New System.Drawing.Point(15, 56)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(47, 17)
+        Me.LabelControl1.Size = New System.Drawing.Size(54, 21)
         Me.LabelControl1.TabIndex = 13
         Me.LabelControl1.Text = "No. KTP"
         '
@@ -227,9 +241,10 @@ Partial Class MasterPasien
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(775, 149)
+        Me.btnExit.Location = New System.Drawing.Point(996, 184)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 33)
+        Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 13
         Me.btnExit.Text = "Exit"
         '
@@ -237,9 +252,10 @@ Partial Class MasterPasien
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(685, 149)
+        Me.btnHapus.Location = New System.Drawing.Point(881, 184)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(75, 33)
+        Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 12
         Me.btnHapus.Text = "Hapus"
         '
@@ -247,48 +263,54 @@ Partial Class MasterPasien
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(593, 149)
+        Me.btnSave.Location = New System.Drawing.Point(762, 184)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 33)
+        Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 11
         Me.btnSave.Text = "Simpan"
         '
         'cmbStatus
         '
-        Me.cmbStatus.Location = New System.Drawing.Point(593, 102)
+        Me.cmbStatus.Location = New System.Drawing.Point(762, 126)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Aktif", "Nonaktif"})
-        Me.cmbStatus.Size = New System.Drawing.Size(185, 24)
+        Me.cmbStatus.Size = New System.Drawing.Size(238, 28)
         Me.cmbStatus.TabIndex = 10
         '
         'cmbGoldarah
         '
-        Me.cmbGoldarah.Location = New System.Drawing.Point(593, 42)
+        Me.cmbGoldarah.Location = New System.Drawing.Point(762, 52)
+        Me.cmbGoldarah.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbGoldarah.Name = "cmbGoldarah"
         Me.cmbGoldarah.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbGoldarah.Properties.Items.AddRange(New Object() {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"})
-        Me.cmbGoldarah.Size = New System.Drawing.Size(53, 24)
+        Me.cmbGoldarah.Size = New System.Drawing.Size(68, 28)
         Me.cmbGoldarah.TabIndex = 8
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(593, 12)
+        Me.txtPhone.Location = New System.Drawing.Point(762, 15)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(185, 24)
+        Me.txtPhone.Size = New System.Drawing.Size(238, 28)
         Me.txtPhone.TabIndex = 7
         '
         'mmoAlamat
         '
-        Me.mmoAlamat.Location = New System.Drawing.Point(110, 162)
+        Me.mmoAlamat.Location = New System.Drawing.Point(141, 200)
+        Me.mmoAlamat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.mmoAlamat.Name = "mmoAlamat"
-        Me.mmoAlamat.Size = New System.Drawing.Size(384, 72)
+        Me.mmoAlamat.Size = New System.Drawing.Size(494, 89)
         Me.mmoAlamat.TabIndex = 6
         '
         'dtTglLahir
         '
         Me.dtTglLahir.EditValue = Nothing
-        Me.dtTglLahir.Location = New System.Drawing.Point(261, 132)
+        Me.dtTglLahir.Location = New System.Drawing.Point(336, 163)
+        Me.dtTglLahir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtTglLahir.Name = "dtTglLahir"
         Me.dtTglLahir.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglLahir.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -297,69 +319,78 @@ Partial Class MasterPasien
         Me.dtTglLahir.Properties.EditFormat.FormatString = "yyyy-MM-dd"
         Me.dtTglLahir.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.dtTglLahir.Properties.MaskSettings.Set("mask", "dd MMM yyyy")
-        Me.dtTglLahir.Size = New System.Drawing.Size(158, 24)
+        Me.dtTglLahir.Size = New System.Drawing.Size(203, 28)
         Me.dtTglLahir.TabIndex = 5
         '
         'txtTempatLahir
         '
-        Me.txtTempatLahir.Location = New System.Drawing.Point(110, 132)
+        Me.txtTempatLahir.Location = New System.Drawing.Point(141, 163)
+        Me.txtTempatLahir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTempatLahir.Name = "txtTempatLahir"
-        Me.txtTempatLahir.Size = New System.Drawing.Size(145, 24)
+        Me.txtTempatLahir.Size = New System.Drawing.Size(186, 28)
         Me.txtTempatLahir.TabIndex = 4
         '
         'cmbGender
         '
-        Me.cmbGender.Location = New System.Drawing.Point(110, 102)
+        Me.cmbGender.Location = New System.Drawing.Point(141, 126)
+        Me.cmbGender.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbGender.Name = "cmbGender"
         Me.cmbGender.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbGender.Properties.Items.AddRange(New Object() {"P", "L"})
-        Me.cmbGender.Size = New System.Drawing.Size(53, 24)
+        Me.cmbGender.Size = New System.Drawing.Size(68, 28)
         Me.cmbGender.TabIndex = 3
         '
         'txtNamaLengkap
         '
-        Me.txtNamaLengkap.Location = New System.Drawing.Point(110, 72)
+        Me.txtNamaLengkap.Location = New System.Drawing.Point(141, 89)
+        Me.txtNamaLengkap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNamaLengkap.Name = "txtNamaLengkap"
-        Me.txtNamaLengkap.Size = New System.Drawing.Size(369, 24)
+        Me.txtNamaLengkap.Size = New System.Drawing.Size(474, 28)
         Me.txtNamaLengkap.TabIndex = 2
         '
         'txtNIK
         '
-        Me.txtNIK.Location = New System.Drawing.Point(110, 42)
+        Me.txtNIK.Location = New System.Drawing.Point(141, 52)
+        Me.txtNIK.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNIK.Name = "txtNIK"
-        Me.txtNIK.Size = New System.Drawing.Size(270, 24)
+        Me.txtNIK.Size = New System.Drawing.Size(347, 28)
         Me.txtNIK.TabIndex = 1
         '
         'lblid
         '
-        Me.lblid.Location = New System.Drawing.Point(628, 55)
+        Me.lblid.Location = New System.Drawing.Point(807, 68)
+        Me.lblid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lblid.Name = "lblid"
-        Me.lblid.Size = New System.Drawing.Size(0, 17)
+        Me.lblid.Size = New System.Drawing.Size(0, 21)
         Me.lblid.TabIndex = 0
         Me.lblid.Visible = False
         '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(897, 275)
+        Me.GridControlData.Size = New System.Drawing.Size(1153, 340)
         Me.GridControlData.TabIndex = 0
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
         'GridViewData
         '
+        Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
         'MasterPasien
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(897, 523)
+        Me.ClientSize = New System.Drawing.Size(1153, 646)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.crowd
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MasterPasien"
         Me.Text = "Data Pasien"
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()

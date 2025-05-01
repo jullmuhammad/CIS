@@ -152,7 +152,7 @@ Partial Class Kasir
         Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbStatus.Properties.Items.AddRange(New Object() {"1 - Lunas", "0 - Tidak"})
+        Me.cmbStatus.Properties.Items.AddRange(New Object() {"Lunas", "Tidak"})
         Me.cmbStatus.Size = New System.Drawing.Size(238, 28)
         Me.cmbStatus.TabIndex = 32
         '
@@ -242,6 +242,7 @@ Partial Class Kasir
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Kasir"
         Me.Text = "Kasir"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.Panel1.ResumeLayout(False)
         Me.SplitContainerControl1.Panel1.PerformLayout()
