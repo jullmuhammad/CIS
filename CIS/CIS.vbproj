@@ -85,6 +85,12 @@
     <Compile Include="CariPendaftaran.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CariPendaftaranKasir.Designer.vb">
+      <DependentUpon>CariPendaftaranKasir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CariPendaftaranKasir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CariResep.Designer.vb">
       <DependentUpon>CariResep.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,9 @@
     </Compile>
     <EmbeddedResource Include="CariPendaftaran.resx">
       <DependentUpon>CariPendaftaran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CariPendaftaranKasir.resx">
+      <DependentUpon>CariPendaftaranKasir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CariResep.resx">
       <DependentUpon>CariResep.vb</DependentUpon>

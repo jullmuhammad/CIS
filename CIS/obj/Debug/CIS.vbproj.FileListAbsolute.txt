@@ -210,3 +210,4 @@ C:\vs2017\CIS\CIS\obj\Debug\CIS.vbproj.CoreCompileInputs.cache
 C:\vs2017\CIS\CIS\obj\Debug\CIS.vbproj.CopyComplete
 C:\vs2017\CIS\CIS\obj\Debug\CIS.exe
 C:\vs2017\CIS\CIS\obj\Debug\CIS.pdb
+C:\vs2017\CIS\CIS\obj\Debug\CIS.CariPendaftaranKasir.resources

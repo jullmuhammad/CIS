@@ -35,14 +35,19 @@ Public Class Kasir
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        aksi = "I"
-        PROSESPROC()
+        If txtBillingID.Text = "" Then
+            aksi = "I"
+            PROSESPROC()
+        Else
+            aksi = "U"
+            PROSESPROC()
+        End If
     End Sub
 
     Private Sub btnCari_Click(sender As Object, e As EventArgs) Handles btnCari.Click
-        CariPendaftaran.tipe = "Kasir"
-        CariPendaftaran.ShowDialog()
-        CariPendaftaran.BringToFront()
+
+        CariPendaftaranKasir.ShowDialog()
+        CariPendaftaranKasir.BringToFront()
     End Sub
 
     Dim aksi As String
@@ -54,14 +59,19 @@ Public Class Kasir
         dtTglBilling.EditValue = Date.Now
 
         ' Contoh: di Form Load atau setelah inisialisasi
-        dtTglBilling.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglBilling.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+        'dtTglBilling.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        'dtTglBilling.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
 
-        dtTglBilling.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglBilling.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+        'dtTglBilling.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        'dtTglBilling.Properties.EditFormat.FormatString = "dd/MM/yyyy"
 
-        dtTglBilling.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
-        dtTglBilling.Properties.Mask.UseMaskAsDisplayFormat = True
+        'dtTglBilling.Properties.Mask.EditMask = "dd/MM/yyyy"
+        'dtTglBilling.Properties.Mask.UseMaskAsDisplayFormat = True
+    End Sub
+
+    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        aksi = "D"
+        PROSESPROC()
     End Sub
 
     Sub PROSESPROC()
@@ -139,6 +149,7 @@ Public Class Kasir
     End Sub
     Sub data()
         Dim nodaftar = Trim(txtNoPendaftaran.Text)
+        Dim billid = Trim(txtBillingID.Text)
         tblPasien = Proses.ExecuteQuery("SELECT  b.DetailBillingID ID,a.[IDPelayanan]
                                                   ,a.[Kategori]
                                                   ,a.[Deskripsi]
@@ -149,8 +160,8 @@ Public Class Kasir
                                               left join [dbo].[Transaksi_Billing_H] c
                                               on c.NoRegistrasi=a.NoPendaftaran
                                               left join [dbo].[Transaksi_Billing_D] b
-                                              on b.IDPelayanan=a.IDPelayanan and b.BillingID=c.BillingID
-											  where a.NoPendaftaran='" & nodaftar & "'")
+                                              on b.IDPelayanan=a.IDPelayanan and b.BillingID=c.BillingID and b.Deskripsi=a.Deskripsi
+											  where a.NoPendaftaran='" & nodaftar & "' and b.BillingID='" & billid & "'")
 
         If tblPasien.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing

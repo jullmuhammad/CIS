@@ -156,7 +156,7 @@ Public Class Login
         getConnStringDB()
         txtPassword.Properties.AppearanceFocused.BackColor = Color.Transparent
         'TestEncryptDecrypt()
-        Debug.Print(Encrypt("SurindoAdmin@"))
+
 
     End Sub
     Sub TestEncryptDecrypt()
