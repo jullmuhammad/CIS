@@ -83,7 +83,6 @@ Public Class CariResep
             ' Obtain created columns.
             'Dim id As GridColumn = gridView1.Columns("ID")
 
-
             ' Make the grid read-only.
             gridView1.OptionsBehavior.Editable = False
             ' Prevent the focused cell from being highlighted.

@@ -276,6 +276,7 @@ Partial Class FarmasiMasuk
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.warehouse
         Me.Name = "FarmasiMasuk"
         Me.Text = "Farmasi Masuk"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.Panel1.ResumeLayout(False)
         Me.SplitContainerControl1.Panel1.PerformLayout()

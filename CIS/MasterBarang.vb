@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 Public Class MasterBarang
     Private dtBarang As DataTable
@@ -46,6 +47,10 @@ Public Class MasterBarang
             aksi = "D"
             SimpanProc()
         End If
+    End Sub
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -151,7 +156,7 @@ Public Class MasterBarang
         tblObat = Proses.ExecuteQuery("SELECT [KodeBarang]
                                           ,[NamaBarang]
                                           ,[Jenis]
-                                          ,[Satuan]
+                                          ,a.[Satuan] + ' - ' + b.Satuan Satuan
                                           ,[HargaSatuan]
                                           ,[Stok]
                                           ,[HargaJual]
@@ -159,7 +164,9 @@ Public Class MasterBarang
                                           ,[UserCreated]
                                           ,[PC]
                                           ,[UpdatedAt]
-                                      FROM [db_klinik].[dbo].[M_Barang]")
+                                      FROM [db_klinik].[dbo].[M_Barang] a
+									  left join [dbo].[M_Satuan] b
+									  on b.KodeSatuan=a.Satuan")
 
         If tblObat.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
@@ -170,7 +177,10 @@ Public Class MasterBarang
 
             ' Obtain created columns.
             'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim created As GridColumn = gridView1.Columns("CreatedAt")
 
+            created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+            created.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm:ss"
 
             'id.Visible = False
 
@@ -193,5 +203,19 @@ Public Class MasterBarang
         txtStok.Text = "0"
         txtHargaBeli.Text = "0"
         txtHargaJual.Text = "0"
+    End Sub
+    Sub gridtotext()
+        Try
+            txtKodeBarang.Text = GridViewData.GetFocusedRowCellValue("KodeBarang").ToString
+            txtNamaBarang.Text = GridViewData.GetFocusedRowCellValue("NamaBarang").ToString
+            cmbJenis.Text = GridViewData.GetFocusedRowCellValue("Jenis").ToString
+            cmbSatuan.Text = GridViewData.GetFocusedRowCellValue("Satuan").ToString
+            txtHargaBeli.Text = GridViewData.GetFocusedRowCellValue("HargaSatuan").ToString
+            txtStok.Text = GridViewData.GetFocusedRowCellValue("Stok").ToString
+            txtHargaJual.Text = GridViewData.GetFocusedRowCellValue("HargaJual").ToString
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

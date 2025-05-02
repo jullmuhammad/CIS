@@ -215,19 +215,19 @@ Public Class Pelayanan_Poliklinik
             ' Obtain created columns.
             'Dim id As GridColumn = gridView1.Columns("ID")
             'Dim noreg As GridColumn = gridView1.Columns("NoPendaftaran")
-            'Dim tgl As GridColumn = gridView1.Columns("TanggalDaftar")
+            Dim tgl As GridColumn = gridView1.Columns("TanggalPeriksa")
             'Dim pasien As GridColumn = gridView1.Columns("PasienID")
             'Dim namapasien As GridColumn = gridView1.Columns("NamaPasien")
-            'Dim created As GridColumn = gridView1.Columns("CreatedAt")
+            Dim created As GridColumn = gridView1.Columns("CreatedAt")
             'Dim polid As GridColumn = gridView1.Columns("PoliklinikID")
             'Dim dokid As GridColumn = gridView1.Columns("DokterID")
             'Dim kamarid As GridColumn = gridView1.Columns("KamarID")
 
-            'created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-            'created.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
+            created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+            created.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
 
-            'tgl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-            'tgl.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
+            tgl.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+            tgl.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
 
             'id.Visible = False
             'pasien.Visible = False

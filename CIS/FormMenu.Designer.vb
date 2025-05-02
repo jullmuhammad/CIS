@@ -298,6 +298,7 @@
         Me.rpgRekamMedis.ItemLinks.Add(Me.btnObatRM)
         Me.rpgRekamMedis.Name = "rpgRekamMedis"
         Me.rpgRekamMedis.Text = "Rekam Medis"
+        Me.rpgRekamMedis.Visible = False
         '
         'rpgTransFarmasi
         '

@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class ResepObat
@@ -115,7 +116,7 @@ Public Class ResepObat
             Cursor.Current = Cursors.Default
 
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                txtIDResep.Text = Trim(OutId.Value.ToString)
+            txtIDResep.Text = Trim(OutId.Value.ToString)
             'Data()
             'clear()
 
@@ -312,7 +313,10 @@ Public Class ResepObat
 
             ' Obtain created columns.
             'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim created As GridColumn = gridView1.Columns("CreatedAt")
 
+            created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+            created.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm:ss"
             ' Make the grid read-only.
             gridView1.OptionsBehavior.Editable = False
             ' Prevent the focused cell from being highlighted.

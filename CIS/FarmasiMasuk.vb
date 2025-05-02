@@ -206,7 +206,7 @@ Public Class FarmasiMasuk
                                           FROM [db_klinik].[dbo].[Farmasi_Barang_Masuk_H] a
 										  left join [dbo].[M_Supplier] b
 										  on b.SupplierID=a.SupplierID
-                                          order by TanggalMasuk desc
+                                          order by TanggalMasuk asc
                                     ")
 
         If tblPasien.Rows.Count = 0 Then
@@ -218,7 +218,10 @@ Public Class FarmasiMasuk
 
             ' Obtain created columns.
             'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim created As GridColumn = gridView1.Columns("CreatedAt")
 
+            created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+            created.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm:ss"
 
             'id.Visible = False
 

@@ -21,11 +21,12 @@ Partial Class FarmasiMasukDetail
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FarmasiMasukDetail))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.btnTambahBarang = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.txtNoBatch = New DevExpress.XtraEditors.TextEdit()
-        Me.dtTglMasuk = New DevExpress.XtraEditors.DateEdit()
+        Me.dtTglExp = New DevExpress.XtraEditors.DateEdit()
         Me.txtHargaBeli = New DevExpress.XtraEditors.TextEdit()
         Me.lblid = New DevExpress.XtraEditors.LabelControl()
         Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
@@ -41,7 +42,6 @@ Partial Class FarmasiMasukDetail
         Me.txtTransID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.btnTambahBarang = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -49,8 +49,8 @@ Partial Class FarmasiMasukDetail
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.txtNoBatch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglMasuk.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dtTglMasuk.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglExp.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtTglExp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQty.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +75,7 @@ Partial Class FarmasiMasukDetail
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl4)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtNoBatch)
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglMasuk)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtTglExp)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtHargaBeli)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.lblid)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnClear)
@@ -99,6 +99,17 @@ Partial Class FarmasiMasukDetail
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1305, 596)
         Me.SplitContainerControl1.SplitterPosition = 164
         Me.SplitContainerControl1.TabIndex = 1
+        '
+        'btnTambahBarang
+        '
+        Me.btnTambahBarang.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnTambahBarang.ImageOptions.Image = CType(resources.GetObject("btnTambahBarang.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnTambahBarang.Location = New System.Drawing.Point(717, 47)
+        Me.btnTambahBarang.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTambahBarang.Name = "btnTambahBarang"
+        Me.btnTambahBarang.Size = New System.Drawing.Size(139, 30)
+        Me.btnTambahBarang.TabIndex = 62
+        Me.btnTambahBarang.Text = "Tambah Barang"
         '
         'LabelControl5
         '
@@ -135,16 +146,16 @@ Partial Class FarmasiMasukDetail
         Me.txtNoBatch.Size = New System.Drawing.Size(260, 28)
         Me.txtNoBatch.TabIndex = 58
         '
-        'dtTglMasuk
+        'dtTglExp
         '
-        Me.dtTglMasuk.EditValue = Nothing
-        Me.dtTglMasuk.Location = New System.Drawing.Point(139, 121)
-        Me.dtTglMasuk.Margin = New System.Windows.Forms.Padding(4)
-        Me.dtTglMasuk.Name = "dtTglMasuk"
-        Me.dtTglMasuk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglMasuk.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.dtTglMasuk.Size = New System.Drawing.Size(228, 28)
-        Me.dtTglMasuk.TabIndex = 57
+        Me.dtTglExp.EditValue = Nothing
+        Me.dtTglExp.Location = New System.Drawing.Point(139, 121)
+        Me.dtTglExp.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtTglExp.Name = "dtTglExp"
+        Me.dtTglExp.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglExp.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.dtTglExp.Size = New System.Drawing.Size(228, 28)
+        Me.dtTglExp.TabIndex = 57
         '
         'txtHargaBeli
         '
@@ -292,17 +303,6 @@ Partial Class FarmasiMasukDetail
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'btnTambahBarang
-        '
-        Me.btnTambahBarang.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTambahBarang.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnTambahBarang.Location = New System.Drawing.Point(717, 47)
-        Me.btnTambahBarang.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnTambahBarang.Name = "btnTambahBarang"
-        Me.btnTambahBarang.Size = New System.Drawing.Size(139, 30)
-        Me.btnTambahBarang.TabIndex = 62
-        Me.btnTambahBarang.Text = "Tambah Barang"
-        '
         'FarmasiMasukDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -320,8 +320,8 @@ Partial Class FarmasiMasukDetail
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.txtNoBatch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglMasuk.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dtTglMasuk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglExp.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtTglExp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtQty.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -350,7 +350,7 @@ Partial Class FarmasiMasukDetail
     Friend WithEvents lblid As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtHargaBeli As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtNoBatch As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents dtTglMasuk As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents dtTglExp As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl

@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class FarmasiMasukDetail
@@ -52,6 +53,15 @@ Public Class FarmasiMasukDetail
     End Sub
 
     Public aksi As String
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        clear()
+    End Sub
+
     Dim shostname As String = System.Net.Dns.GetHostName
     Sub DetailProc()
         If txtTransID.Text = "" Then MsgBox("Buat dulu transaksi masuk!") : Exit Sub
@@ -79,7 +89,7 @@ Public Class FarmasiMasukDetail
         Dim namabrg = Trim(txtNamaBarang.Text)
         Dim jumlah = Val(txtQty.Text)
         Dim harga = Val(txtHargaBeli.Text)
-        Dim tglexp = Trim(dtTglMasuk.Text)
+        Dim tglexp = Trim(dtTglExp.Text)
         Dim batchno = Trim(txtNoBatch.Text)
 
         Dim userid = Trim(FormMenu.txtUserID.Caption)
@@ -129,6 +139,7 @@ Public Class FarmasiMasukDetail
     Sub data()
         Dim transid = Trim(txtTransID.Text)
         tblPasien = Proses.ExecuteQuery("SELECT [ID]
+                                              ,ROW_NUMBER() OVER (ORDER BY KodeBarang ASC) AS No
                                               ,[TransID]
                                               ,[KodeBarang]
                                               ,[NamaBarang]
@@ -149,10 +160,10 @@ Public Class FarmasiMasukDetail
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
 
             ' Obtain created columns.
-            'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim id As GridColumn = gridView1.Columns("ID")
 
 
-            'id.Visible = False
+            id.Visible = False
 
             ' Make the grid read-only.
             gridView1.OptionsBehavior.Editable = False
@@ -193,13 +204,31 @@ Public Class FarmasiMasukDetail
     Sub getnamabarang()
         Dim kdbrg = Trim(cmbKodeBarang.Text)
 
-        tblObat = Proses.ExecuteQuery("SELECT [KodeBarang],[NamaBarang] FROM [db_klinik].[dbo].[M_Barang] where KodeBarang='" & kdbrg & "'")
+        tblObat = Proses.ExecuteQuery("SELECT [KodeBarang],[NamaBarang],HargaSatuan FROM [db_klinik].[dbo].[M_Barang] where KodeBarang='" & kdbrg & "'")
 
         If tblObat.Rows.Count = 0 Then
             txtNamaBarang.Text = ""
+            txtHargaBeli.Text = "0"
         Else
             txtNamaBarang.Text = Trim(tblObat.Rows(0).Item("NamaBarang").ToString)
+            txtHargaBeli.Text = Trim(tblObat.Rows(0).Item("HargaSatuan").ToString)
         End If
 
+    End Sub
+    Sub gridtotext()
+        Try
+            txtTransID.Text = GridViewData.GetFocusedRowCellValue("TransID").ToString
+            dtTglExp.Text = GridViewData.GetFocusedRowCellValue("TanggalExp").ToString
+            cmbKodeBarang.Text = GridViewData.GetFocusedRowCellValue("KodeBarang").ToString
+            cmbKodeBarang.EditValue = GridViewData.GetFocusedRowCellValue("KodeBarang").ToString
+            txtNamaBarang.Text = GridViewData.GetFocusedRowCellValue("NamaBarang").ToString
+            txtQty.Text = GridViewData.GetFocusedRowCellValue("QtyMasuk").ToString
+            txtHargaBeli.Text = GridViewData.GetFocusedRowCellValue("HargaBeli").ToString
+            txtNoBatch.Text = GridViewData.GetFocusedRowCellValue("BatchNo").ToString
+            lblid.Text = GridViewData.GetFocusedRowCellValue("ID").ToString
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
