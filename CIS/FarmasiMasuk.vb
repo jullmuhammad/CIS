@@ -68,11 +68,16 @@ Public Class FarmasiMasuk
 
         FarmasiMasukDetail.txtTransID.Text = txtTransID.Text
         FarmasiMasukDetail.data()
-        FarmasiMasukDetail.ShowDialog()
+        FarmasiMasukDetail.Show()
         FarmasiMasukDetail.BringToFront()
     End Sub
 
     Dim shostname As String = System.Net.Dns.GetHostName
+
+    Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
+        gridtotext()
+    End Sub
+
     Private Sub FarmasiMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         formatdate()
         dtTglMasuk.EditValue = Date.Now
@@ -190,14 +195,17 @@ Public Class FarmasiMasuk
     Sub data()
 
         tblPasien = Proses.ExecuteQuery("SELECT TOP(100)  [TransID]
-                                              ,[TanggalMasuk]
+                                              ,convert(varchar(20),[TanggalMasuk],113) TanggalMasuk
                                               ,[NoFaktur]
-                                              ,[SupplierID]
+                                              ,b.KodeSupplier
+											  ,b.NamaSupplier
                                               ,[Keterangan]
-                                              ,[CreatedAt]
-                                              ,[UserCreated]
-                                              ,[PC]
-                                          FROM [db_klinik].[dbo].[Farmasi_Barang_Masuk_H]
+                                              ,a.[CreatedAt]
+                                              ,a.[UserCreated]
+                                              ,a.[PC]
+                                          FROM [db_klinik].[dbo].[Farmasi_Barang_Masuk_H] a
+										  left join [dbo].[M_Supplier] b
+										  on b.SupplierID=a.SupplierID
                                           order by TanggalMasuk desc
                                     ")
 
@@ -232,5 +240,17 @@ Public Class FarmasiMasuk
         cmbSupplier.EditValue = String.Empty
         txtSupplier.Text = String.Empty
         txtKet.Text = String.Empty
+    End Sub
+    Sub gridtotext()
+        Try
+            txtTransID.Text = GridViewData.GetFocusedRowCellValue("TransID").ToString
+            dtTglMasuk.Text = GridViewData.GetFocusedRowCellValue("TanggalMasuk").ToString
+            txtNoFaktur.Text = GridViewData.GetFocusedRowCellValue("NoFaktur").ToString
+            cmbSupplier.Text = GridViewData.GetFocusedRowCellValue("KodeSupplier").ToString
+            cmbSupplier.EditValue = GridViewData.GetFocusedRowCellValue("KodeSupplier").ToString
+            txtKet.EditValue = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

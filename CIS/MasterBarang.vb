@@ -28,6 +28,16 @@ Public Class MasterBarang
         clear()
     End Sub
 
+    Private Sub MasterBarang_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Dim formIsopen As Boolean = Application.OpenForms().OfType(Of FarmasiMasukDetail)().Any()
+
+        If formIsopen Then
+            FarmasiMasukDetail.combobarang()
+        Else
+
+        End If
+    End Sub
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If txtKodeBarang.Text = "" Then
             aksi = "I"
@@ -151,7 +161,7 @@ Public Class MasterBarang
                                           ,[UpdatedAt]
                                       FROM [db_klinik].[dbo].[M_Barang]")
 
-        If tblPasien.Rows.Count = 0 Then
+        If tblObat.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
         Else
             GridControlData.DataSource = tblObat

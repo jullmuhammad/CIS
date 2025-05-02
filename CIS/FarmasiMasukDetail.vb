@@ -48,6 +48,7 @@ Public Class FarmasiMasukDetail
     Private Sub btnTambahBarang_Click(sender As Object, e As EventArgs) Handles btnTambahBarang.Click
         MasterBarang.ShowDialog()
         MasterBarang.BringToFront()
+
     End Sub
 
     Public aksi As String

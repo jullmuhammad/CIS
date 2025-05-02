@@ -229,6 +229,10 @@ Public Class ResepObat
         gridtotext()
     End Sub
 
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        clear()
+    End Sub
+
     Sub clear()
 
         lbliddetail.Text = String.Empty

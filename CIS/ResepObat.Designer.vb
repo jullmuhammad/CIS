@@ -79,7 +79,7 @@ Partial Class ResepObat
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         '
         'SplitContainerControl1.Panel1
@@ -129,7 +129,7 @@ Partial Class ResepObat
         Me.btnTambahResep.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnTambahResep.ImageOptions.Image = CType(resources.GetObject("btnTambahResep.ImageOptions.Image"), System.Drawing.Image)
         Me.btnTambahResep.Location = New System.Drawing.Point(766, 4)
-        Me.btnTambahResep.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnTambahResep.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTambahResep.Name = "btnTambahResep"
         Me.btnTambahResep.Size = New System.Drawing.Size(136, 41)
         Me.btnTambahResep.TabIndex = 48
@@ -138,7 +138,7 @@ Partial Class ResepObat
         'lbliddetail
         '
         Me.lbliddetail.Location = New System.Drawing.Point(735, 137)
-        Me.lbliddetail.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lbliddetail.Margin = New System.Windows.Forms.Padding(4)
         Me.lbliddetail.Name = "lbliddetail"
         Me.lbliddetail.Size = New System.Drawing.Size(0, 21)
         Me.lbliddetail.TabIndex = 47
@@ -147,7 +147,7 @@ Partial Class ResepObat
         'LabelControl10
         '
         Me.LabelControl10.Location = New System.Drawing.Point(15, 243)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl10.Name = "LabelControl10"
         Me.LabelControl10.Size = New System.Drawing.Size(79, 21)
         Me.LabelControl10.TabIndex = 46
@@ -156,7 +156,7 @@ Partial Class ResepObat
         'LabelControl8
         '
         Me.LabelControl8.Location = New System.Drawing.Point(15, 206)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(88, 21)
         Me.LabelControl8.TabIndex = 45
@@ -165,7 +165,7 @@ Partial Class ResepObat
         'LabelControl7
         '
         Me.LabelControl7.Location = New System.Drawing.Point(303, 169)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(48, 21)
         Me.LabelControl7.TabIndex = 44
@@ -174,7 +174,7 @@ Partial Class ResepObat
         'LabelControl6
         '
         Me.LabelControl6.Location = New System.Drawing.Point(15, 169)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(50, 21)
         Me.LabelControl6.TabIndex = 43
@@ -183,7 +183,7 @@ Partial Class ResepObat
         'LabelControl5
         '
         Me.LabelControl5.Location = New System.Drawing.Point(15, 132)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(38, 21)
         Me.LabelControl5.TabIndex = 42
@@ -192,7 +192,7 @@ Partial Class ResepObat
         'LabelControl4
         '
         Me.LabelControl4.Location = New System.Drawing.Point(15, 96)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(34, 21)
         Me.LabelControl4.TabIndex = 41
@@ -201,7 +201,7 @@ Partial Class ResepObat
         'LabelControl3
         '
         Me.LabelControl3.Location = New System.Drawing.Point(449, 44)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(89, 21)
         Me.LabelControl3.TabIndex = 40
@@ -210,7 +210,7 @@ Partial Class ResepObat
         'LabelControl2
         '
         Me.LabelControl2.Location = New System.Drawing.Point(15, 44)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(101, 21)
         Me.LabelControl2.TabIndex = 39
@@ -219,7 +219,7 @@ Partial Class ResepObat
         'LabelControl1
         '
         Me.LabelControl1.Location = New System.Drawing.Point(402, 7)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(90, 21)
         Me.LabelControl1.TabIndex = 38
@@ -228,7 +228,7 @@ Partial Class ResepObat
         'LabelControl9
         '
         Me.LabelControl9.Location = New System.Drawing.Point(15, 7)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(106, 21)
         Me.LabelControl9.TabIndex = 37
@@ -239,7 +239,7 @@ Partial Class ResepObat
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
         Me.btnClear.Location = New System.Drawing.Point(535, 127)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(107, 30)
         Me.btnClear.TabIndex = 33
@@ -250,7 +250,7 @@ Partial Class ResepObat
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
         Me.btnExit.Location = New System.Drawing.Point(846, 229)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
         Me.btnExit.TabIndex = 32
@@ -261,7 +261,7 @@ Partial Class ResepObat
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
         Me.btnHapus.Location = New System.Drawing.Point(846, 161)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
         Me.btnHapus.TabIndex = 31
@@ -272,7 +272,7 @@ Partial Class ResepObat
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
         Me.btnSave.Location = New System.Drawing.Point(846, 95)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
         Me.btnSave.TabIndex = 30
@@ -281,7 +281,7 @@ Partial Class ResepObat
         'txtKet
         '
         Me.txtKet.Location = New System.Drawing.Point(116, 240)
-        Me.txtKet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtKet.Margin = New System.Windows.Forms.Padding(4)
         Me.txtKet.Name = "txtKet"
         Me.txtKet.Size = New System.Drawing.Size(657, 28)
         Me.txtKet.TabIndex = 20
@@ -289,7 +289,7 @@ Partial Class ResepObat
         'txtAturanPakai
         '
         Me.txtAturanPakai.Location = New System.Drawing.Point(116, 203)
-        Me.txtAturanPakai.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAturanPakai.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAturanPakai.Name = "txtAturanPakai"
         Me.txtAturanPakai.Size = New System.Drawing.Size(657, 28)
         Me.txtAturanPakai.TabIndex = 19
@@ -297,7 +297,7 @@ Partial Class ResepObat
         'cmbSatuan
         '
         Me.cmbSatuan.Location = New System.Drawing.Point(361, 166)
-        Me.cmbSatuan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSatuan.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbSatuan.Name = "cmbSatuan"
         Me.cmbSatuan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSatuan.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
@@ -307,7 +307,7 @@ Partial Class ResepObat
         'txtJumlah
         '
         Me.txtJumlah.Location = New System.Drawing.Point(116, 166)
-        Me.txtJumlah.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtJumlah.Margin = New System.Windows.Forms.Padding(4)
         Me.txtJumlah.Name = "txtJumlah"
         Me.txtJumlah.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtJumlah.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -317,7 +317,7 @@ Partial Class ResepObat
         'txtDosis
         '
         Me.txtDosis.Location = New System.Drawing.Point(116, 128)
-        Me.txtDosis.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDosis.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDosis.Name = "txtDosis"
         Me.txtDosis.Size = New System.Drawing.Size(411, 28)
         Me.txtDosis.TabIndex = 16
@@ -325,7 +325,7 @@ Partial Class ResepObat
         'txtNamaObat
         '
         Me.txtNamaObat.Location = New System.Drawing.Point(361, 93)
-        Me.txtNamaObat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNamaObat.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNamaObat.Name = "txtNamaObat"
         Me.txtNamaObat.Properties.ReadOnly = True
         Me.txtNamaObat.Size = New System.Drawing.Size(411, 28)
@@ -334,7 +334,7 @@ Partial Class ResepObat
         'cmbKodeObat
         '
         Me.cmbKodeObat.Location = New System.Drawing.Point(116, 91)
-        Me.cmbKodeObat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbKodeObat.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbKodeObat.Name = "cmbKodeObat"
         Me.cmbKodeObat.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbKodeObat.Properties.NullText = ""
@@ -345,7 +345,7 @@ Partial Class ResepObat
         '
         Me.SeparatorControl1.AutoSizeMode = True
         Me.SeparatorControl1.Location = New System.Drawing.Point(5, 72)
-        Me.SeparatorControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SeparatorControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.SeparatorControl1.Name = "SeparatorControl1"
         Me.SeparatorControl1.Padding = New System.Windows.Forms.Padding(12, 11, 12, 11)
         Me.SeparatorControl1.Size = New System.Drawing.Size(962, 24)
@@ -354,7 +354,7 @@ Partial Class ResepObat
         'cmbStatus
         '
         Me.cmbStatus.Location = New System.Drawing.Point(553, 41)
-        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
@@ -365,7 +365,7 @@ Partial Class ResepObat
         '
         Me.dtTglResep.EditValue = Nothing
         Me.dtTglResep.Location = New System.Drawing.Point(171, 41)
-        Me.dtTglResep.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dtTglResep.Margin = New System.Windows.Forms.Padding(4)
         Me.dtTglResep.Name = "dtTglResep"
         Me.dtTglResep.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglResep.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -375,7 +375,7 @@ Partial Class ResepObat
         'txtIDPelayanan
         '
         Me.txtIDPelayanan.Location = New System.Drawing.Point(505, 4)
-        Me.txtIDPelayanan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIDPelayanan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIDPelayanan.Name = "txtIDPelayanan"
         Me.txtIDPelayanan.Properties.ReadOnly = True
         Me.txtIDPelayanan.Size = New System.Drawing.Size(240, 28)
@@ -384,7 +384,7 @@ Partial Class ResepObat
         'txtIDResep
         '
         Me.txtIDResep.Location = New System.Drawing.Point(171, 4)
-        Me.txtIDResep.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtIDResep.Margin = New System.Windows.Forms.Padding(4)
         Me.txtIDResep.Name = "txtIDResep"
         Me.txtIDResep.Properties.ReadOnly = True
         Me.txtIDResep.Size = New System.Drawing.Size(177, 28)
@@ -393,10 +393,10 @@ Partial Class ResepObat
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Location = New System.Drawing.Point(0, 0)
         Me.GridControlData.MainView = Me.GridViewData
-        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Name = "GridControlData"
         Me.GridControlData.Size = New System.Drawing.Size(1048, 297)
         Me.GridControlData.TabIndex = 2
@@ -415,7 +415,7 @@ Partial Class ResepObat
         Me.ClientSize = New System.Drawing.Size(1048, 595)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = Global.CIS.My.Resources.Resources.medicine
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ResepObat"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Resep Obat"

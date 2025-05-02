@@ -21,39 +21,39 @@ Partial Class MasterBarang
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterBarang))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
-        Me.txtKodeBarang = New DevExpress.XtraEditors.TextEdit()
-        Me.txtNamaBarang = New DevExpress.XtraEditors.TextEdit()
-        Me.cmbJenis = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.cmbSatuan = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.txtStok = New DevExpress.XtraEditors.TextEdit()
-        Me.txtHargaBeli = New DevExpress.XtraEditors.TextEdit()
-        Me.txtHargaJual = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.btnClear = New DevExpress.XtraEditors.SimpleButton()
         Me.btnExit = New DevExpress.XtraEditors.SimpleButton()
         Me.btnHapus = New DevExpress.XtraEditors.SimpleButton()
         Me.btnSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtHargaJual = New DevExpress.XtraEditors.TextEdit()
+        Me.txtHargaBeli = New DevExpress.XtraEditors.TextEdit()
+        Me.txtStok = New DevExpress.XtraEditors.TextEdit()
+        Me.cmbSatuan = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.cmbJenis = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.txtNamaBarang = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl()
+        Me.txtKodeBarang = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
-        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
         CType(Me.SplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel2.SuspendLayout()
         Me.SplitContainerControl1.SuspendLayout()
-        CType(Me.txtKodeBarang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbJenis.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbSatuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtStok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtHargaJual.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtStok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbSatuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbJenis.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtKodeBarang.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -95,86 +95,65 @@ Partial Class MasterBarang
         Me.SplitContainerControl1.SplitterPosition = 196
         Me.SplitContainerControl1.TabIndex = 0
         '
-        'LabelControl10
+        'LabelControl6
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(13, 15)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(88, 21)
-        Me.LabelControl10.TabIndex = 34
-        Me.LabelControl10.Text = "Kode Barang"
+        Me.LabelControl6.Location = New System.Drawing.Point(395, 124)
+        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(73, 21)
+        Me.LabelControl6.TabIndex = 48
+        Me.LabelControl6.Text = "Harga Jual"
         '
-        'txtKodeBarang
+        'LabelControl5
         '
-        Me.txtKodeBarang.Location = New System.Drawing.Point(140, 13)
-        Me.txtKodeBarang.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtKodeBarang.Name = "txtKodeBarang"
-        Me.txtKodeBarang.Properties.ReadOnly = True
-        Me.txtKodeBarang.Size = New System.Drawing.Size(173, 28)
-        Me.txtKodeBarang.TabIndex = 33
+        Me.LabelControl5.Location = New System.Drawing.Point(395, 88)
+        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(94, 21)
+        Me.LabelControl5.TabIndex = 47
+        Me.LabelControl5.Text = "Harga Satuan"
         '
-        'txtNamaBarang
+        'LabelControl4
         '
-        Me.txtNamaBarang.Location = New System.Drawing.Point(140, 49)
-        Me.txtNamaBarang.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtNamaBarang.Name = "txtNamaBarang"
-        Me.txtNamaBarang.Size = New System.Drawing.Size(505, 28)
-        Me.txtNamaBarang.TabIndex = 0
+        Me.LabelControl4.Location = New System.Drawing.Point(13, 160)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(31, 21)
+        Me.LabelControl4.TabIndex = 46
+        Me.LabelControl4.Text = "Stok"
         '
-        'cmbJenis
+        'LabelControl3
         '
-        Me.cmbJenis.Location = New System.Drawing.Point(140, 85)
-        Me.cmbJenis.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmbJenis.Name = "cmbJenis"
-        Me.cmbJenis.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbJenis.Properties.Items.AddRange(New Object() {"Alat Kesehatan", "Obat"})
-        Me.cmbJenis.Size = New System.Drawing.Size(238, 28)
-        Me.cmbJenis.TabIndex = 1
+        Me.LabelControl3.Location = New System.Drawing.Point(13, 124)
+        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(48, 21)
+        Me.LabelControl3.TabIndex = 45
+        Me.LabelControl3.Text = "Satuan"
         '
-        'cmbSatuan
+        'LabelControl2
         '
-        Me.cmbSatuan.Location = New System.Drawing.Point(140, 121)
-        Me.cmbSatuan.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmbSatuan.Name = "cmbSatuan"
-        Me.cmbSatuan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbSatuan.Properties.Items.AddRange(New Object() {"Alat Kesehatan", "Obat"})
-        Me.cmbSatuan.Size = New System.Drawing.Size(238, 28)
-        Me.cmbSatuan.TabIndex = 2
+        Me.LabelControl2.Location = New System.Drawing.Point(13, 88)
+        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(34, 21)
+        Me.LabelControl2.TabIndex = 44
+        Me.LabelControl2.Text = "Jenis"
         '
-        'txtStok
+        'LabelControl1
         '
-        Me.txtStok.Location = New System.Drawing.Point(140, 157)
-        Me.txtStok.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtStok.Name = "txtStok"
-        Me.txtStok.Properties.ReadOnly = True
-        Me.txtStok.Size = New System.Drawing.Size(104, 28)
-        Me.txtStok.TabIndex = 42
-        '
-        'txtHargaBeli
-        '
-        Me.txtHargaBeli.Location = New System.Drawing.Point(508, 85)
-        Me.txtHargaBeli.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtHargaBeli.Name = "txtHargaBeli"
-        Me.txtHargaBeli.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtHargaBeli.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtHargaBeli.Size = New System.Drawing.Size(260, 28)
-        Me.txtHargaBeli.TabIndex = 3
-        '
-        'txtHargaJual
-        '
-        Me.txtHargaJual.Location = New System.Drawing.Point(508, 121)
-        Me.txtHargaJual.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtHargaJual.Name = "txtHargaJual"
-        Me.txtHargaJual.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtHargaJual.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.txtHargaJual.Size = New System.Drawing.Size(260, 28)
-        Me.txtHargaJual.TabIndex = 4
+        Me.LabelControl1.Location = New System.Drawing.Point(13, 52)
+        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(95, 21)
+        Me.LabelControl1.TabIndex = 43
+        Me.LabelControl1.Text = "Nama Barang"
         '
         'btnClear
         '
         Me.btnClear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClear.ImageOptions.Image = CType(resources.GetObject("btnClear.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnClear.Location = New System.Drawing.Point(321, 13)
+        Me.btnClear.Location = New System.Drawing.Point(321, 11)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(107, 30)
@@ -214,6 +193,81 @@ Partial Class MasterBarang
         Me.btnSave.TabIndex = 5
         Me.btnSave.Text = "Simpan"
         '
+        'txtHargaJual
+        '
+        Me.txtHargaJual.Location = New System.Drawing.Point(508, 121)
+        Me.txtHargaJual.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtHargaJual.Name = "txtHargaJual"
+        Me.txtHargaJual.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtHargaJual.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtHargaJual.Size = New System.Drawing.Size(260, 28)
+        Me.txtHargaJual.TabIndex = 4
+        '
+        'txtHargaBeli
+        '
+        Me.txtHargaBeli.Location = New System.Drawing.Point(508, 85)
+        Me.txtHargaBeli.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtHargaBeli.Name = "txtHargaBeli"
+        Me.txtHargaBeli.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtHargaBeli.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.txtHargaBeli.Size = New System.Drawing.Size(260, 28)
+        Me.txtHargaBeli.TabIndex = 3
+        '
+        'txtStok
+        '
+        Me.txtStok.Location = New System.Drawing.Point(140, 157)
+        Me.txtStok.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtStok.Name = "txtStok"
+        Me.txtStok.Properties.ReadOnly = True
+        Me.txtStok.Size = New System.Drawing.Size(104, 28)
+        Me.txtStok.TabIndex = 42
+        '
+        'cmbSatuan
+        '
+        Me.cmbSatuan.Location = New System.Drawing.Point(140, 121)
+        Me.cmbSatuan.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSatuan.Name = "cmbSatuan"
+        Me.cmbSatuan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbSatuan.Properties.Items.AddRange(New Object() {"Alat Kesehatan", "Obat"})
+        Me.cmbSatuan.Size = New System.Drawing.Size(238, 28)
+        Me.cmbSatuan.TabIndex = 2
+        '
+        'cmbJenis
+        '
+        Me.cmbJenis.Location = New System.Drawing.Point(140, 85)
+        Me.cmbJenis.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbJenis.Name = "cmbJenis"
+        Me.cmbJenis.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbJenis.Properties.Items.AddRange(New Object() {"Alat Kesehatan", "Obat"})
+        Me.cmbJenis.Size = New System.Drawing.Size(238, 28)
+        Me.cmbJenis.TabIndex = 1
+        '
+        'txtNamaBarang
+        '
+        Me.txtNamaBarang.Location = New System.Drawing.Point(140, 49)
+        Me.txtNamaBarang.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNamaBarang.Name = "txtNamaBarang"
+        Me.txtNamaBarang.Size = New System.Drawing.Size(505, 28)
+        Me.txtNamaBarang.TabIndex = 0
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(13, 15)
+        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(88, 21)
+        Me.LabelControl10.TabIndex = 34
+        Me.LabelControl10.Text = "Kode Barang"
+        '
+        'txtKodeBarang
+        '
+        Me.txtKodeBarang.Location = New System.Drawing.Point(140, 13)
+        Me.txtKodeBarang.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtKodeBarang.Name = "txtKodeBarang"
+        Me.txtKodeBarang.Properties.ReadOnly = True
+        Me.txtKodeBarang.Size = New System.Drawing.Size(173, 28)
+        Me.txtKodeBarang.TabIndex = 33
+        '
         'GridControlData
         '
         Me.GridControlData.Dock = System.Windows.Forms.DockStyle.Fill
@@ -232,60 +286,6 @@ Partial Class MasterBarang
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
-        'LabelControl1
-        '
-        Me.LabelControl1.Location = New System.Drawing.Point(13, 52)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(95, 21)
-        Me.LabelControl1.TabIndex = 43
-        Me.LabelControl1.Text = "Nama Barang"
-        '
-        'LabelControl2
-        '
-        Me.LabelControl2.Location = New System.Drawing.Point(13, 88)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(34, 21)
-        Me.LabelControl2.TabIndex = 44
-        Me.LabelControl2.Text = "Jenis"
-        '
-        'LabelControl3
-        '
-        Me.LabelControl3.Location = New System.Drawing.Point(13, 124)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(48, 21)
-        Me.LabelControl3.TabIndex = 45
-        Me.LabelControl3.Text = "Satuan"
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Location = New System.Drawing.Point(13, 160)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(31, 21)
-        Me.LabelControl4.TabIndex = 46
-        Me.LabelControl4.Text = "Stok"
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Location = New System.Drawing.Point(395, 88)
-        Me.LabelControl5.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(94, 21)
-        Me.LabelControl5.TabIndex = 47
-        Me.LabelControl5.Text = "Harga Satuan"
-        '
-        'LabelControl6
-        '
-        Me.LabelControl6.Location = New System.Drawing.Point(395, 124)
-        Me.LabelControl6.Margin = New System.Windows.Forms.Padding(4)
-        Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(73, 21)
-        Me.LabelControl6.TabIndex = 48
-        Me.LabelControl6.Text = "Harga Jual"
-        '
         'MasterBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -303,13 +303,13 @@ Partial Class MasterBarang
         Me.SplitContainerControl1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
-        CType(Me.txtKodeBarang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbJenis.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbSatuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtStok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtHargaJual.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtHargaBeli.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtStok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbSatuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbJenis.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNamaBarang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtKodeBarang.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
