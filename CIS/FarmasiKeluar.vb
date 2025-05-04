@@ -142,9 +142,11 @@ Public Class FarmasiKeluar
             If aksi = "I" Then
                 dataobat()
                 txtTransID.Text = Trim(OutId.Value.ToString)
-            Else
+            ElseIf aksi = "U" Then
                 aksi = "I"
                 DetailProc()
+            Else
+                clear()
             End If
 
         Else
@@ -173,6 +175,33 @@ Public Class FarmasiKeluar
             ' Lakukan proses penghapusan data
             aksi = "D"
             HeaderProc()
+        End If
+    End Sub
+    Dim xrow As Integer = -1
+    Private Sub GridControlData_MouseDown(sender As Object, e As MouseEventArgs) Handles GridControlData.MouseDown
+        If e.Button = MouseButtons.Right Then
+            Dim view = TryCast(GridViewData, DevExpress.XtraGrid.Views.Grid.GridView)
+            Dim hitInfo = view.CalcHitInfo(e.Location)
+
+            If hitInfo.InRow Then
+                xrow = hitInfo.RowHandle ' Simpan index row yang diklik kanan
+                view.FocusedRowHandle = xrow
+                ContextMenuStrip1.Show(GridControlData, e.Location)
+            End If
+        End If
+    End Sub
+
+    Private Sub HapusToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HapusToolStripMenuItem.Click
+        Dim view As DevExpress.XtraGrid.Views.Grid.GridView = TryCast(GridControlData.FocusedView, DevExpress.XtraGrid.Views.Grid.GridView)
+        If view IsNot Nothing AndAlso view.FocusedRowHandle >= 0 Then
+            If xrow >= 0 Then
+                aksi = "D" ' ← ini penting, agar stored procedure tahu ini penghapusan
+                HapusDetailProc() ' Prosedur kamu tadi
+
+                ' Hapus dari grid
+                GridViewData.DeleteRow(xrow)
+                xrow = -1 ' reset index
+            End If
         End If
     End Sub
 
@@ -349,6 +378,82 @@ Public Class FarmasiKeluar
 
         Next
         dataobat()
+    End Sub
+    Sub HapusDetailProc()
+        If txtTransID.Text = "" Then MsgBox("Buat dulu transaksi keluar!") : Exit Sub
+        Dim row = TryCast(GridViewData.GetRow(xrow), DataRowView)
+        If row Is Nothing Then Exit Sub
+
+        Cursor.Current = Cursors.WaitCursor
+
+        Dim P, S, DB As String
+        P = Trim(Login.lblP.Text)
+        DB = Trim(Login.lblDB.Text)
+        S = Trim(Login.lblS.Text)
+
+        Dim connectionString As String = "Data Source= " & S & ";Initial Catalog=" & DB & "; Persist Security Info=True; User ID=sa; Password=" & P & ""
+        Dim Database As New SqlClient.SqlConnection(connectionString)
+        Database.Open()
+        ' ----- Membuat command dasar
+        Dim Commandku As New SqlClient.SqlCommand()
+        Commandku.CommandType = CommandType.StoredProcedure
+        Commandku.Connection = Database
+
+        Commandku.CommandText = "sp_Farmasi_Barang_Keluar_D"
+
+        Dim id = Trim(row("ID").ToString())
+        Dim kodebarang = Trim(row("KodeBarang").ToString())
+        Dim namabrg = Trim(row("NamaBarang").ToString())
+        Dim jumlah = Val(Convert.ToDecimal(row("Jumlah")))
+        Dim transid = Trim(txtTransID.Text)
+
+        Dim userid = Trim(FormMenu.txtUserID.Caption)
+
+        Commandku.Parameters.AddWithValue("@id", id)
+        Commandku.Parameters.AddWithValue("@transid", transid)
+        Commandku.Parameters.AddWithValue("@kodebarang", kodebarang)
+        Commandku.Parameters.AddWithValue("@namabrg", namabrg)
+        Commandku.Parameters.AddWithValue("@qty", jumlah)
+        Commandku.Parameters.AddWithValue("@aksi", aksi)
+
+        Dim outMsg As SqlClient.SqlParameter =
+                Commandku.Parameters.Add("@message", SqlDbType.VarChar, 60)
+        outMsg.Direction = ParameterDirection.Output
+
+        Dim OutSTS As SqlClient.SqlParameter =
+                Commandku.Parameters.Add("@status", SqlDbType.VarChar, 150)
+        OutSTS.Direction = ParameterDirection.Output
+
+        'Debug.Print("Insert Baris ke-" & x)
+        'Debug.Print("ID: " & id)
+        'Debug.Print("Kode: " & kodebarang)
+        'Debug.Print("Nama: " & namabrg)
+        'Debug.Print("Jumlah: " & jumlah)
+
+        Commandku.CommandTimeout = 1000
+        Commandku.ExecuteNonQuery()
+
+
+
+        If Trim(OutSTS.Value.ToString) = "OK" Then
+            Cursor.Current = Cursors.Default
+
+            'XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'Data()
+            'clear()
+
+        Else
+            Cursor.Current = Cursors.Default
+            'XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+
+        End If
+        ' ----- Bersih - bersih.
+        Commandku = Nothing
+        Database.Close()
+        Database.Dispose()
+
+
     End Sub
     Private Function IsValidRow(view As GridView, rowHandle As Integer) As Boolean
         If view.IsNewItemRow(rowHandle) Then Return False
