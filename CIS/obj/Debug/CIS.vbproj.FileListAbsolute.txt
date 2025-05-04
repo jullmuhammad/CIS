@@ -190,7 +190,6 @@ C:\vs2017\CIS\CIS\bin\Debug\de\DevExpress.Office.v21.2.Core.resources.dll
 C:\vs2017\CIS\CIS\bin\Debug\es\DevExpress.Office.v21.2.Core.resources.dll
 C:\vs2017\CIS\CIS\bin\Debug\ja\DevExpress.Office.v21.2.Core.resources.dll
 C:\vs2017\CIS\CIS\bin\Debug\ru\DevExpress.Office.v21.2.Core.resources.dll
-C:\vs2017\CIS\CIS\obj\Debug\CIS.vbprojAssemblyReference.cache
 C:\vs2017\CIS\CIS\obj\Debug\CIS.CariPendaftaran.resources
 C:\vs2017\CIS\CIS\obj\Debug\CIS.CariResep.resources
 C:\vs2017\CIS\CIS\obj\Debug\CIS.FarmasiKeluar.resources
