@@ -278,7 +278,9 @@ Public Class FarmasiMasuk
             ' 1. Buka template Excel
             excelApp = CreateObject("Excel.Application")
             Dim templatepath As String = Application.StartupPath & "\Template\Bukti_Penerimaan_Barang.xlt"
+#Disable Warning BC42017 ' Late bound resolution
             workbook = excelApp.Workbooks.Open(templatepath)
+            '#Enable Warning BC42017 ' Late bound resolution
             worksheet = workbook.Sheets(1)
 
             tblDokter = Proses.ExecuteQuery("SELECT [ID]
@@ -376,6 +378,7 @@ Public Class FarmasiMasuk
             ReleaseObject(workbook)
             ReleaseObject(excelApp)
         End Try
+#Enable Warning BC42017 ' Late bound resolution
     End Sub
     Private Sub ReleaseObject(ByVal obj As Object)
         Try

@@ -79,7 +79,7 @@ Public Class CariPendaftaranKasir
                                       on kmr.[KamarID]=a.[KamarID]
 									  left join [dbo].[Transaksi_Billing_H] bill
 									  on bill.NoRegistrasi=a.NoPendaftaran
-                                       where StatusKunjungan='Terdaftar'
+                                       where StatusKunjungan in ('Dalam Pemeriksaan','Sedang di Farmasi')
 									   and bill.NoRegistrasi is null
                                         order by TanggalDaftar desc
                                     ")
@@ -121,7 +121,7 @@ Public Class CariPendaftaranKasir
                                       on kmr.[KamarID]=a.[KamarID]
 									  left join [dbo].[Transaksi_Billing_H] bill
 									  on bill.NoRegistrasi=a.NoPendaftaran
-                                       where StatusKunjungan='Terdaftar'
+                                       where StatusKunjungan='Menunggu Pembayaran'
 									   and bill.NoRegistrasi is not null
                                         order by TanggalDaftar desc
                                     ")
@@ -184,6 +184,7 @@ Public Class CariPendaftaranKasir
                 '.dtTglBilling.EditValue = GridViewData.GetFocusedRowCellValue("TanggalBilling").ToString
                 .cmbStatus.Text = GridViewData.GetFocusedRowCellValue("StatusLunas").ToString
                 'MsgBox(GridViewData.GetFocusedRowCellValue("TanggalBilling").ToString)
+                .cmbStatus.SelectedIndex = 1
                 .data()
             End With
             Me.Close()

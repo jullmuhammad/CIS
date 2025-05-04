@@ -142,6 +142,8 @@ Public Class FarmasiKeluar
             If aksi = "I" Then
                 dataobat()
                 txtTransID.Text = Trim(OutId.Value.ToString)
+                aksi = "I"
+                DetailProc()
             ElseIf aksi = "U" Then
                 aksi = "I"
                 DetailProc()

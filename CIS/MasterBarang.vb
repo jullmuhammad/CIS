@@ -44,7 +44,7 @@ Public Class MasterBarang
             aksi = "I"
             SimpanProc()
         Else
-            aksi = "D"
+            aksi = "U"
             SimpanProc()
         End If
     End Sub

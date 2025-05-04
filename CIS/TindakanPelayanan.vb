@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class TindakanPelayanan
@@ -143,8 +144,9 @@ Public Class TindakanPelayanan
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
 
             ' Obtain created columns.
-            'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim id As GridColumn = gridView1.Columns("ID")
 
+            id.Visible = False
             ' Make the grid read-only.
             gridView1.OptionsBehavior.Editable = False
             ' Prevent the focused cell from being highlighted.

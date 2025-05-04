@@ -301,6 +301,7 @@ Partial Class ResepObat
         Me.cmbSatuan.Name = "cmbSatuan"
         Me.cmbSatuan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSatuan.Properties.Items.AddRange(New Object() {"Proses", "Selesai"})
+        Me.cmbSatuan.Properties.ReadOnly = True
         Me.cmbSatuan.Size = New System.Drawing.Size(238, 28)
         Me.cmbSatuan.TabIndex = 18
         '

@@ -62,7 +62,7 @@ Public Class CariPendaftaran
 									  on dr.ID=a.DokterID
                                       left join [dbo].[M_Kamar] kmr
                                       on kmr.[KamarID]=a.[KamarID]
-                                       where StatusKunjungan='Terdaftar'
+                                       where StatusKunjungan in ('Terdaftar','Dalam Pemeriksaan')
                                         order by TanggalDaftar desc
                                     ")
 

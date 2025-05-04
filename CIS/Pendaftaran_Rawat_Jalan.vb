@@ -552,6 +552,7 @@ Public Class Pendaftaran_Rawat_Jalan
         Try
             excelApp = CreateObject("Excel.Application")
             Dim templatepath As String = Application.StartupPath & "\Template\Tiket_Registrasi.xlt"
+#Disable Warning BC42017
             workbook = excelApp.Workbooks.Open(templatepath)
             worksheet = workbook.Sheets(1)
 
@@ -621,6 +622,6 @@ Public Class Pendaftaran_Rawat_Jalan
             ReleaseObject(workbook)
             ReleaseObject(excelApp)
         End Try
-
+#Enable Warning BC42017
     End Sub
 End Class

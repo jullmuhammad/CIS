@@ -89,12 +89,12 @@ Public Class Pelayanan_Poliklinik
 
         ' Contoh: di Form Load atau setelah inisialisasi
         dtTglPeriksa.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglPeriksa.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+        dtTglPeriksa.Properties.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm"
 
         dtTglPeriksa.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglPeriksa.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+        dtTglPeriksa.Properties.EditFormat.FormatString = "dd-MMM-yyyy HH:mm"
 
-        dtTglPeriksa.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        dtTglPeriksa.Properties.Mask.EditMask = "dd-MMM-yyyy HH:mm"
         dtTglPeriksa.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
     Sub PROSESPROC()
@@ -278,7 +278,12 @@ Public Class Pelayanan_Poliklinik
             mmoDiagnosa.Text = GridViewData.GetFocusedRowCellValue("Diagnosa").ToString
             mmoTindakan.Text = GridViewData.GetFocusedRowCellValue("Tindakan").ToString
             mmoSaran.Text = GridViewData.GetFocusedRowCellValue("Saran").ToString
-            cmbStatus.Text = GridViewData.GetFocusedRowCellValue("StatusSelesai").ToString
+
+            If GridViewData.GetFocusedRowCellValue("StatusSelesai").ToString = "False" Then
+                cmbStatus.Text = "Proses"
+            Else
+                cmbStatus.Text = "Selesai"
+            End If
 
         Catch ex As Exception
 

@@ -43,12 +43,12 @@ Public Class ResepObat
 
         ' Contoh: di Form Load atau setelah inisialisasi
         dtTglResep.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglResep.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+        dtTglResep.Properties.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm"
 
         dtTglResep.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        dtTglResep.Properties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+        dtTglResep.Properties.EditFormat.FormatString = "dd-MMM-yyyy HH:mm"
 
-        dtTglResep.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm"
+        dtTglResep.Properties.Mask.EditMask = "dd-MMM-yyyy HH:mm"
         dtTglResep.Properties.Mask.UseMaskAsDisplayFormat = True
     End Sub
 
@@ -61,7 +61,7 @@ Public Class ResepObat
     End Sub
     Sub HeaderProc()
         If Trim(Pelayanan_Poliklinik.txtIDPelayanan.Text) = "" Then MsgBox("Pilih pelayanan mana yang akan ditambahkan resep!") : Exit Sub
-        If Trim(txtIDResep.Text) = "" Then MsgBox("Silahkan Buat Resep terlebih dahulu!") : Exit Sub
+        'If Trim(txtIDResep.Text) = "" Then MsgBox("Silahkan Buat Resep terlebih dahulu!") : Exit Sub
 
         Cursor.Current = Cursors.WaitCursor
 
@@ -116,7 +116,10 @@ Public Class ResepObat
             Cursor.Current = Cursors.Default
 
             XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            txtIDResep.Text = Trim(OutId.Value.ToString)
+            If aksi = "I" Then
+                txtIDResep.Text = Trim(OutId.Value.ToString)
+
+            End If
             'Data()
             'clear()
 
@@ -264,12 +267,13 @@ Public Class ResepObat
     End Sub
     Sub getnamaobat()
         Dim kodeobat = Trim(cmbKodeObat.Text)
-        Dim tblobat As DataTable = Proses.ExecuteQuery("SELECT [KodeBarang] KodeObat,[NamaBarang] NamaObat  FROM [db_klinik].[dbo].[M_Barang] where KodeBarang='" & kodeobat & "'")
+        Dim tblobat As DataTable = Proses.ExecuteQuery("SELECT [KodeBarang] KodeObat,[NamaBarang] NamaObat, Satuan  FROM [db_klinik].[dbo].[M_Barang] where KodeBarang='" & kodeobat & "'")
 
         If tblobat.Rows.Count = 0 Then
             txtNamaObat.Text = ""
         Else
             txtNamaObat.Text = Trim(tblobat.Rows(0).Item("NamaObat").ToString)
+            cmbSatuan.Text = Trim(tblobat.Rows(0).Item("Satuan").ToString)
         End If
     End Sub
     Sub combosatuan()
@@ -312,9 +316,10 @@ Public Class ResepObat
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
 
             ' Obtain created columns.
-            'Dim id As GridColumn = gridView1.Columns("ID")
+            Dim id As GridColumn = gridView1.Columns("IDDetail")
             Dim created As GridColumn = gridView1.Columns("CreatedAt")
 
+            id.Visible = False
             created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
             created.DisplayFormat.FormatString = "dd-MMM-yyyy HH:mm:ss"
             ' Make the grid read-only.

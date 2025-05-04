@@ -132,6 +132,7 @@ Partial Class CariPendaftaranKasir
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.IconOptions.Image = CType(resources.GetObject("CariPendaftaranKasir.IconOptions.Image"), System.Drawing.Image)
         Me.Name = "CariPendaftaranKasir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cari Pendaftaran"
         CType(Me.RadioGroup1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()

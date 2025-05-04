@@ -38,7 +38,7 @@ Public Class Kasir
             Dim selectedharga As Integer = CInt(GridViewData.GetRowCellValue(e.RowHandle, "Harga"))
             If jml <> "" Then
                 ' Update kolom NamaBarang pada baris yang sama
-                GridViewData.SetRowCellValue(e.RowHandle, "Subtotal", (selectedharga * jml))
+                GridViewData.SetRowCellValue(e.RowHandle, "Subtotal", (selectedharga * CDbl(jml)))
             Else
                 ' Kalau tidak ketemu, kosongkan
                 GridViewData.SetRowCellValue(e.RowHandle, "Subtotal", "0")
@@ -182,7 +182,7 @@ Public Class Kasir
                                               on c.NoRegistrasi=a.NoPendaftaran
                                               left join [dbo].[Transaksi_Billing_D] b
                                               on b.IDPelayanan=a.IDPelayanan and b.BillingID=c.BillingID and b.Deskripsi=a.Deskripsi
-											  where a.NoPendaftaran='" & nodaftar & "' and b.BillingID='" & billid & "'
+											  where a.NoPendaftaran='" & nodaftar & "'
                                               union all
                                               SELECT 
                                                     b.DetailBillingID AS ID,
@@ -200,7 +200,7 @@ Public Class Kasir
                                                     AND a.NoPendaftaran = c.NoRegistrasi 
                                                     AND a.Deskripsi = b.Deskripsi
                                                 WHERE c.BillingID = '" & billid & "'
-                                                    AND a.IDPelayanan IS NULL;")
+                                                    AND a.IDPelayanan IS NULL")
 
         If tblPasien.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
@@ -539,6 +539,7 @@ Public Class Kasir
             ' 1. Buka template Excel
             excelApp = CreateObject("Excel.Application")
             Dim templatepath As String = Application.StartupPath & "\Template\Invoice.xlt"
+#Disable Warning BC42017
             workbook = excelApp.Workbooks.Open(templatepath)
             worksheet = workbook.Sheets(1)
 
@@ -643,6 +644,7 @@ Public Class Kasir
             ReleaseObject(worksheet)
             ReleaseObject(workbook)
             ReleaseObject(excelApp)
+#Enable Warning BC42017
         End Try
     End Sub
     Private Sub ReleaseObject(ByVal obj As Object)
