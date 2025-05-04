@@ -19,6 +19,7 @@ Partial Class Kasir
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Kasir))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.dtTglBilling = New DevExpress.XtraEditors.DateEdit()
@@ -36,6 +37,8 @@ Partial Class Kasir
         Me.txtBillingID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.HapusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -49,6 +52,7 @@ Partial Class Kasir
         CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -234,6 +238,19 @@ Partial Class Kasir
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HapusToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(121, 28)
+        '
+        'HapusToolStripMenuItem
+        '
+        Me.HapusToolStripMenuItem.Name = "HapusToolStripMenuItem"
+        Me.HapusToolStripMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.HapusToolStripMenuItem.Text = "Hapus"
+        '
         'Kasir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -259,6 +276,7 @@ Partial Class Kasir
         CType(Me.txtBillingID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -279,4 +297,6 @@ Partial Class Kasir
     Friend WithEvents GridViewData As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents dtTglBilling As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents HapusToolStripMenuItem As ToolStripMenuItem
 End Class

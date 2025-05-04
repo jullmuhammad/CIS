@@ -144,7 +144,7 @@ Partial Class FarmasiMasukDetail
         Me.txtNoBatch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNoBatch.Name = "txtNoBatch"
         Me.txtNoBatch.Size = New System.Drawing.Size(260, 28)
-        Me.txtNoBatch.TabIndex = 58
+        Me.txtNoBatch.TabIndex = 6
         '
         'dtTglExp
         '
@@ -155,7 +155,7 @@ Partial Class FarmasiMasukDetail
         Me.dtTglExp.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglExp.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtTglExp.Size = New System.Drawing.Size(228, 28)
-        Me.dtTglExp.TabIndex = 57
+        Me.dtTglExp.TabIndex = 5
         '
         'txtHargaBeli
         '
@@ -165,7 +165,7 @@ Partial Class FarmasiMasukDetail
         Me.txtHargaBeli.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtHargaBeli.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtHargaBeli.Size = New System.Drawing.Size(260, 28)
-        Me.txtHargaBeli.TabIndex = 56
+        Me.txtHargaBeli.TabIndex = 4
         '
         'lblid
         '
@@ -195,7 +195,7 @@ Partial Class FarmasiMasukDetail
         Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
-        Me.btnExit.TabIndex = 6
+        Me.btnExit.TabIndex = 9
         Me.btnExit.Text = "Exit"
         '
         'btnHapus
@@ -206,7 +206,7 @@ Partial Class FarmasiMasukDetail
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
-        Me.btnHapus.TabIndex = 5
+        Me.btnHapus.TabIndex = 8
         Me.btnHapus.Text = "Hapus"
         '
         'btnSave
@@ -217,7 +217,7 @@ Partial Class FarmasiMasukDetail
         Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
-        Me.btnSave.TabIndex = 4
+        Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "Simpan"
         '
         'LabelControl3

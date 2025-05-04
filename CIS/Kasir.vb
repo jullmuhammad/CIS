@@ -3,7 +3,7 @@ Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraEditors.Repository
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-
+Imports Excel = Microsoft.Office.Interop.Excel
 Public Class Kasir
     Dim SQL As String
     Dim Proses As New ClassKoneksi
@@ -87,6 +87,10 @@ Public Class Kasir
         PROSESPROC()
     End Sub
 
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        PrintToExcelTemplate()
+    End Sub
+
     Sub PROSESPROC()
         If Trim(txtNoPendaftaran.Text) = "" Then MsgBox("Pilih No Pendaftaran yang dimaksud!") : Exit Sub
 
@@ -107,7 +111,7 @@ Public Class Kasir
 
         Commandku.CommandText = "sp_Transaksi_Billing_H"
 
-        Dim id = Val(txtBillingID.Text)
+        Dim id = Trim(txtBillingID.Text)
         Dim noreg = Trim(txtNoPendaftaran.Text)
         Dim tglbill = dtTglBilling.DateTime
         Dim stts = Trim(cmbStatus.Text)
@@ -245,8 +249,23 @@ Public Class Kasir
             colHarga.DisplayFormat.FormatString = "N0" ' Format angka (misal: 1.000)
             colsubtot.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
             colsubtot.DisplayFormat.FormatString = "N0" ' Format angka (misal: 1.000)
+
         End If
     End Sub
+    Dim xrow As Integer = -1
+    Private Sub GridControlData_MouseDown(sender As Object, e As MouseEventArgs) Handles GridControlData.MouseDown
+        If e.Button = MouseButtons.Right Then
+            Dim view = TryCast(GridViewData, DevExpress.XtraGrid.Views.Grid.GridView)
+            Dim hitInfo = view.CalcHitInfo(e.Location)
+
+            If hitInfo.InRow Then
+                xrow = hitInfo.RowHandle ' Simpan index row yang diklik kanan
+                view.FocusedRowHandle = xrow
+                ContextMenuStrip1.Show(GridControlData, e.Location)
+            End If
+        End If
+    End Sub
+
     Private Sub SetupRepositoryLookUpBarang()
         ' Ambil data master barang
         dtBarang = Proses.ExecuteQuery("SELECT convert(varchar(20),[TindakanID]) + ' - ' + [NamaTindakan] Tindakan,Tarif Harga
@@ -275,6 +294,21 @@ Public Class Kasir
         Dim colKodeBarang As GridColumn = GridViewData.Columns("Deskripsi")
         colKodeBarang.ColumnEdit = repoLookupBarang
     End Sub
+
+    Private Sub HapusToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HapusToolStripMenuItem.Click
+        Dim view As DevExpress.XtraGrid.Views.Grid.GridView = TryCast(GridControlData.FocusedView, DevExpress.XtraGrid.Views.Grid.GridView)
+        If view IsNot Nothing AndAlso view.FocusedRowHandle >= 0 Then
+            If xrow >= 0 Then
+                aksi = "D" ' ← ini penting, agar stored procedure tahu ini penghapusan
+                HapusDetailProc() ' Prosedur kamu tadi
+
+                ' Hapus dari grid
+                GridViewData.DeleteRow(xrow)
+                xrow = -1 ' reset index
+            End If
+        End If
+    End Sub
+
     '--- Tambah kolom NamaBarang unbound (tidak dari data utama)
     Private Sub SetupUnboundNamaBarang()
         ' Cek apakah kolom sudah ada
@@ -401,6 +435,85 @@ Public Class Kasir
         Next
         data()
     End Sub
+    Sub HapusDetailProc()
+        If txtBillingID.Text = "" Then MsgBox("Buat dulu transaksi kasirnya!") : Exit Sub
+        Dim row = TryCast(GridViewData.GetRow(xrow), DataRowView)
+        If row Is Nothing Then Exit Sub
+
+        Cursor.Current = Cursors.WaitCursor
+
+        Dim P, S, DB As String
+        P = Trim(Login.lblP.Text)
+        DB = Trim(Login.lblDB.Text)
+        S = Trim(Login.lblS.Text)
+
+        Dim connectionString As String = "Data Source= " & S & ";Initial Catalog=" & DB & "; Persist Security Info=True; User ID=sa; Password=" & P & ""
+        Dim Database As New SqlClient.SqlConnection(connectionString)
+        Database.Open()
+        ' ----- Membuat command dasar
+        Dim Commandku As New SqlClient.SqlCommand()
+        Commandku.CommandType = CommandType.StoredProcedure
+        Commandku.Connection = Database
+
+        Commandku.CommandText = "sp_Transaksi_Billing_D"
+
+        Dim id = Trim(row("ID").ToString())
+        Dim billid = Trim(txtBillingID.Text)
+        Dim kategori = Trim(row("Kategori").ToString())
+        Dim deskripsi = Trim(row("Deskripsi").ToString())
+        Dim jumlah = row("Jumlah")
+        Dim harga = row("Harga")
+        Dim pelayananid = Trim(row("IDPelayanan").ToString())
+
+        Dim userid = Trim(FormMenu.txtUserID.Caption)
+
+        Commandku.Parameters.AddWithValue("@dtlid", id)
+        Commandku.Parameters.AddWithValue("@billid", billid)
+        Commandku.Parameters.AddWithValue("@kategori", kategori)
+        Commandku.Parameters.AddWithValue("@deskripsi", deskripsi)
+        Commandku.Parameters.AddWithValue("@qty", jumlah)
+        Commandku.Parameters.AddWithValue("@harga", harga)
+        Commandku.Parameters.AddWithValue("@idpelayanan", pelayananid)
+        Commandku.Parameters.AddWithValue("@aksi", aksi)
+
+        Dim outMsg As SqlClient.SqlParameter =
+                Commandku.Parameters.Add("@message", SqlDbType.VarChar, 60)
+        outMsg.Direction = ParameterDirection.Output
+
+        Dim OutSTS As SqlClient.SqlParameter =
+                Commandku.Parameters.Add("@status", SqlDbType.VarChar, 150)
+        OutSTS.Direction = ParameterDirection.Output
+
+        'Debug.Print("Insert Baris ke-" & x)
+        'Debug.Print("ID: " & id)
+        'Debug.Print("Kode: " & kodebarang)
+        'Debug.Print("Nama: " & namabrg)
+        'Debug.Print("Jumlah: " & jumlah)
+
+        Commandku.CommandTimeout = 1000
+        Commandku.ExecuteNonQuery()
+
+
+
+        If Trim(OutSTS.Value.ToString) = "OK" Then
+            Cursor.Current = Cursors.Default
+
+            'XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            'Data()
+            'clear()
+
+        Else
+            Cursor.Current = Cursors.Default
+            'XtraMessageBox.Show("" & outMsg.Value.ToString & "", "Proses gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+
+        End If
+        ' ----- Bersih - bersih.
+        Commandku = Nothing
+        Database.Close()
+        Database.Dispose()
+
+    End Sub
     Private Function IsValidRow(view As GridView, rowHandle As Integer) As Boolean
         If view.IsNewItemRow(rowHandle) Then Return False
 
@@ -415,4 +528,131 @@ Public Class Kasir
            jumlah > 0 AndAlso
         harga > 0
     End Function
+    Public Sub PrintToExcelTemplate()
+        Dim billid = Trim(txtBillingID.Text)
+
+        Dim excelApp As Object = Nothing
+        Dim workbook As Object = Nothing
+        Dim worksheet As Object = Nothing
+        'Dim filepath = Application.StartupPath & "\Images\" & nodaftar & ".png"
+        Try
+            ' 1. Buka template Excel
+            excelApp = CreateObject("Excel.Application")
+            Dim templatepath As String = Application.StartupPath & "\Template\Invoice.xlt"
+            workbook = excelApp.Workbooks.Open(templatepath)
+            worksheet = workbook.Sheets(1)
+
+            tblDokter = Proses.ExecuteQuery("SELECT a.[BillingID]
+                                                  ,b.NamaLengkap Pasien
+	                                              ,b.Alamat
+                                                  ,[TanggalBilling]
+                                                  ,[TotalTindakan]
+                                                  ,[TotalObat]
+                                                  ,[TotalBayar]
+                                                  ,a.[UserCreated]
+                                                  ,a.[CreatedAt]
+                                                  ,c.Deskripsi
+	                                              ,c.Qty
+	                                              ,c.Harga
+	                                              ,c.Subtotal
+                                                  ,d.Username
+                                              FROM [db_klinik].[dbo].[Transaksi_Billing_H] a
+                                              left join [dbo].[M_Pasien] b
+                                              on b.ID=a.PasienID
+                                              left join [dbo].[Transaksi_Billing_D] c
+                                              on c.BillingID=a.BillingID
+                                              left join [dbo].[M_User_Login] d
+                                              on d.UserID=a.UserCreated
+                                              where a.BillingID='" & billid & "'")
+
+            'If tblDokter.Rows.Count = 0 Then MsgBox("Detail barang belum diinput!") : Exit Sub
+            ' 2. Isi data ke template
+            With worksheet
+
+                If tblDokter.Rows.Count = 0 Then
+
+                Else
+                    ' Contoh isi data
+                    .Range("H2").Value = Trim(tblDokter.Rows(0).Item("BillingID").ToString)
+                    .Range("H3").Value = Trim(tblDokter.Rows(0).Item("Pasien").ToString)
+                    .Range("H4").Value = Trim(tblDokter.Rows(0).Item("Alamat").ToString)
+                    .Range("H5").Value = Trim(tblDokter.Rows(0).Item("TanggalBilling").ToString)
+
+                    Dim nrow = 6
+                    Dim no = 0
+                    For x = 0 To tblDokter.Rows.Count - 1
+                        no += 1
+                        nrow += 1
+
+                        .Range("A" & CStr(nrow)).Value = no
+                        ' Merge kolom B dan C
+                        .Range("B" & nrow & ":F" & nrow).Merge()
+                        .Range("B" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("Deskripsi").ToString)
+                        .Range("B" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("B" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+
+                        .Range("G" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("Qty").ToString)
+                        .Range("G" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("G" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+                        .Range("H" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("Harga").ToString)
+                        .Range("H" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("H" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+
+                        .Range("I" & nrow & ":J" & nrow).Merge()
+                        .Range("I" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("Subtotal").ToString)
+                        .Range("I" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("I" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+
+                        Dim cellRange = .Range("A" & nrow & ":J" & nrow)
+                        With cellRange.Borders
+                            .LineStyle = Excel.XlLineStyle.xlContinuous
+                            .Weight = Excel.XlBorderWeight.xlThin
+                        End With
+                    Next
+                    .Range("I" & nrow + 1 & ":J" & nrow + 1).Merge()
+                    .Range("H" & CStr(nrow + 1)).Value = "Total : "
+                    .Range("H" & nrow + 1).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                    .Range("I" & CStr(nrow + 1)).Value = "=SUM(I7:I" & nrow & ")"
+                    .Range("I" & nrow + 1).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                    .Range("B" & CStr(nrow + 2)).Value = "Dibuat oleh : " & tblDokter.Rows(0).Item("Username").ToString
+                    .Range("B" & CStr(nrow + 3)).Value = "Tanggal : " & tblDokter.Rows(0).Item("CreatedAt").ToString
+                End If
+
+            End With
+
+
+            ' 3. Setting printer dan langsung cetak
+            'excelWorksheet.PrintOut(
+            '    Copies:=1,
+            '    Preview:=False,
+            '    ActivePrinter:="Nama Printer Anda", ' Ganti dengan nama printer
+            '    Collate:=True)
+            worksheet.PrintOut(1, 1, 1, False) ' Print langsung
+
+            excelApp.Visible = False
+            excelApp.DisplayAlerts = False
+            ' 4. Tutup tanpa menyimpan perubahan
+            workbook.Close(SaveChanges:=False)
+            excelApp.Quit()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            ' 5. Bersihkan COM Object
+            ReleaseObject(worksheet)
+            ReleaseObject(workbook)
+            ReleaseObject(excelApp)
+        End Try
+    End Sub
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            If obj IsNot Nothing Then
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+                obj = Nothing
+            End If
+        Catch ex As Exception
+            obj = Nothing
+        End Try
+    End Sub
 End Class

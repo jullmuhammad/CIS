@@ -39,6 +39,9 @@ Partial Class FarmasiMasuk
         Me.txtTransID = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlData = New DevExpress.XtraGrid.GridControl()
         Me.GridViewData = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnPrint = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtAlamat = New DevExpress.XtraEditors.TextEdit()
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.Panel1.SuspendLayout()
@@ -54,6 +57,7 @@ Partial Class FarmasiMasuk
         CType(Me.txtTransID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SplitContainerControl1
@@ -66,6 +70,9 @@ Partial Class FarmasiMasuk
         'SplitContainerControl1.Panel1
         '
         Me.SplitContainerControl1.Panel1.AutoScroll = True
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl4)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.txtAlamat)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnPrint)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnBarangDetail)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnClear)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.btnExit)
@@ -90,7 +97,7 @@ Partial Class FarmasiMasuk
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlData)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1329, 656)
-        Me.SplitContainerControl1.SplitterPosition = 205
+        Me.SplitContainerControl1.SplitterPosition = 243
         Me.SplitContainerControl1.TabIndex = 0
         '
         'btnBarangDetail
@@ -98,7 +105,7 @@ Partial Class FarmasiMasuk
         Me.btnBarangDetail.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBarangDetail.Enabled = False
         Me.btnBarangDetail.ImageOptions.Image = CType(resources.GetObject("btnBarangDetail.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnBarangDetail.Location = New System.Drawing.Point(139, 157)
+        Me.btnBarangDetail.Location = New System.Drawing.Point(139, 193)
         Me.btnBarangDetail.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBarangDetail.Name = "btnBarangDetail"
         Me.btnBarangDetail.Size = New System.Drawing.Size(126, 41)
@@ -120,7 +127,7 @@ Partial Class FarmasiMasuk
         '
         Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnExit.ImageOptions.Image = CType(resources.GetObject("btnExit.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnExit.Location = New System.Drawing.Point(1071, 108)
+        Me.btnExit.Location = New System.Drawing.Point(1094, 149)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(96, 41)
@@ -131,7 +138,7 @@ Partial Class FarmasiMasuk
         '
         Me.btnHapus.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnHapus.ImageOptions.Image = CType(resources.GetObject("btnHapus.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnHapus.Location = New System.Drawing.Point(944, 108)
+        Me.btnHapus.Location = New System.Drawing.Point(941, 149)
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(96, 41)
@@ -142,7 +149,7 @@ Partial Class FarmasiMasuk
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ImageOptions.Image = CType(resources.GetObject("btnSave.ImageOptions.Image"), System.Drawing.Image)
-        Me.btnSave.Location = New System.Drawing.Point(810, 108)
+        Me.btnSave.Location = New System.Drawing.Point(787, 149)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(96, 41)
@@ -151,7 +158,7 @@ Partial Class FarmasiMasuk
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 124)
+        Me.LabelControl3.Location = New System.Drawing.Point(12, 160)
         Me.LabelControl3.Margin = New System.Windows.Forms.Padding(4)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(79, 21)
@@ -178,7 +185,7 @@ Partial Class FarmasiMasuk
         '
         'txtKet
         '
-        Me.txtKet.Location = New System.Drawing.Point(139, 121)
+        Me.txtKet.Location = New System.Drawing.Point(139, 157)
         Me.txtKet.Margin = New System.Windows.Forms.Padding(4)
         Me.txtKet.Name = "txtKet"
         Me.txtKet.Size = New System.Drawing.Size(602, 28)
@@ -257,7 +264,7 @@ Partial Class FarmasiMasuk
         Me.GridControlData.MainView = Me.GridViewData
         Me.GridControlData.Margin = New System.Windows.Forms.Padding(4)
         Me.GridControlData.Name = "GridControlData"
-        Me.GridControlData.Size = New System.Drawing.Size(1329, 446)
+        Me.GridControlData.Size = New System.Drawing.Size(1329, 408)
         Me.GridControlData.TabIndex = 4
         Me.GridControlData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewData})
         '
@@ -266,6 +273,35 @@ Partial Class FarmasiMasuk
         Me.GridViewData.DetailHeight = 432
         Me.GridViewData.GridControl = Me.GridControlData
         Me.GridViewData.Name = "GridViewData"
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrint.ImageOptions.Image = CType(resources.GetObject("SimpleButton1.ImageOptions.Image"), System.Drawing.Image)
+        Me.btnPrint.Location = New System.Drawing.Point(298, 193)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(116, 41)
+        Me.btnPrint.TabIndex = 55
+        Me.btnPrint.Text = "Cetak Bukti"
+        '
+        'txtAlamat
+        '
+        Me.txtAlamat.Location = New System.Drawing.Point(139, 121)
+        Me.txtAlamat.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAlamat.Name = "txtAlamat"
+        Me.txtAlamat.Properties.ReadOnly = True
+        Me.txtAlamat.Size = New System.Drawing.Size(570, 28)
+        Me.txtAlamat.TabIndex = 56
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Location = New System.Drawing.Point(12, 124)
+        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(49, 21)
+        Me.LabelControl4.TabIndex = 57
+        Me.LabelControl4.Text = "Alamat"
         '
         'FarmasiMasuk
         '
@@ -293,6 +329,7 @@ Partial Class FarmasiMasuk
         CType(Me.txtTransID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlData, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAlamat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -316,4 +353,7 @@ Partial Class FarmasiMasuk
     Friend WithEvents GridControlData As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewData As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents btnBarangDetail As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnPrint As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtAlamat As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
 End Class

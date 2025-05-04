@@ -2,7 +2,8 @@
 Imports DevExpress.XtraEditors.Controls
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-
+Imports Excel = Microsoft.Office.Interop.Excel
+Imports System.Runtime.InteropServices
 Public Class FarmasiMasuk
     Dim SQL As String
     Dim Proses As New ClassKoneksi
@@ -10,12 +11,14 @@ Public Class FarmasiMasuk
 
     Private Sub cmbSupplier_EditValueChanged(sender As Object, e As EventArgs) Handles cmbSupplier.EditValueChanged
         Dim kdsup = Trim(cmbSupplier.Text)
-        tblUser = Proses.ExecuteQuery("SELECT [NamaSupplier] FROM [db_klinik].[dbo].[M_Supplier] where KodeSupplier='" & kdsup & "'")
+        tblUser = Proses.ExecuteQuery("SELECT [NamaSupplier],[Alamat] FROM [db_klinik].[dbo].[M_Supplier] where KodeSupplier='" & kdsup & "'")
 
         If tblUser.Rows.Count = 0 Then
             txtSupplier.Text = ""
+            txtAlamat.Text = ""
         Else
             txtSupplier.Text = Trim(tblUser.Rows(0).Item("NamaSupplier").ToString)
+            txtAlamat.Text = Trim(tblUser.Rows(0).Item("Alamat").ToString)
         End If
     End Sub
 
@@ -39,8 +42,10 @@ Public Class FarmasiMasuk
     Private Sub txtTransID_EditValueChanged(sender As Object, e As EventArgs) Handles txtTransID.EditValueChanged
         If txtTransID.Text = "" Then
             btnBarangDetail.Enabled = False
+            btnPrint.Enabled = False
         Else
             btnBarangDetail.Enabled = True
+            btnPrint.Enabled = True
         End If
     End Sub
 
@@ -76,6 +81,12 @@ Public Class FarmasiMasuk
 
     Private Sub GridViewData_RowClick(sender As Object, e As RowClickEventArgs) Handles GridViewData.RowClick
         gridtotext()
+    End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        If txtTransID.Text = "" Then MsgBox("Buat dulu transaksi masuknya!") : Exit Sub
+
+        PrintToExcelTemplate()
     End Sub
 
     Private Sub FarmasiMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -254,6 +265,126 @@ Public Class FarmasiMasuk
             txtKet.EditValue = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
         Catch ex As Exception
 
+        End Try
+    End Sub
+    Public Sub PrintToExcelTemplate()
+        Dim transid = Trim(txtTransID.Text)
+
+        Dim excelApp As Object = Nothing
+        Dim workbook As Object = Nothing
+        Dim worksheet As Object = Nothing
+        'Dim filepath = Application.StartupPath & "\Images\" & nodaftar & ".png"
+        Try
+            ' 1. Buka template Excel
+            excelApp = CreateObject("Excel.Application")
+            Dim templatepath As String = Application.StartupPath & "\Template\Bukti_Penerimaan_Barang.xlt"
+            workbook = excelApp.Workbooks.Open(templatepath)
+            worksheet = workbook.Sheets(1)
+
+            tblDokter = Proses.ExecuteQuery("SELECT [ID]
+                                                  ,[TransID]
+                                                  ,a.[KodeBarang]
+                                                  ,a.[NamaBarang]
+                                                  ,b.Satuan
+                                                  ,[QtyMasuk]
+                                              FROM [db_klinik].[dbo].[Farmasi_Barang_Masuk_D] a
+                                              left join [dbo].[M_Barang] b
+                                              on b.KodeBarang=a.KodeBarang
+                                              where a.TransID='" & transid & "'")
+
+            If tblDokter.Rows.Count = 0 Then MsgBox("Detail barang belum diinput!") : Exit Sub
+            ' 2. Isi data ke template
+
+            tblUser = Proses.ExecuteQuery("SELECT a.[CreatedAt]
+                                                      ,b.Username
+                                                  FROM [db_klinik].[dbo].[Farmasi_Barang_Masuk_H] a
+                                                  left join [dbo].[M_User_Login] b
+                                                  on b.UserID=a.UserCreated
+                                                  where a.TransID='" & transid & "'")
+
+            With worksheet
+
+                If tblDokter.Rows.Count = 0 Then
+
+                Else
+                    ' Contoh isi data
+                    .Range("H1").Value = txtSupplier.Text.Trim
+                    .Range("H2").Value = txtAlamat.Text.Trim
+                    .Range("H3").Value = dtTglMasuk.Text
+                    .Range("H4").Value = txtTransID.Text.Trim & " | " & txtNoFaktur.Text.Trim
+
+                    Dim nrow = 6
+                    Dim no = 0
+                    For x = 0 To tblDokter.Rows.Count - 1
+                        no += 1
+                        nrow += 1
+
+                        .Range("A" & CStr(nrow)).Value = no
+                        ' Merge kolom B dan C
+                        .Range("B" & nrow & ":C" & nrow).Merge()
+                        .Range("B" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("KodeBarang").ToString)
+                        .Range("B" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("B" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+                        ' Merge kolom D sampai G
+                        .Range("D" & nrow & ":G" & nrow).Merge()
+                        .Range("D" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("NamaBarang").ToString)
+
+                        .Range("H" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("Satuan").ToString)
+                        .Range("H" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("H" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+                        .Range("I" & CStr(nrow)).Value = Trim(tblDokter.Rows(x).Item("QtyMasuk").ToString)
+                        .Range("I" & nrow).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                        .Range("I" & nrow).VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+
+                        Dim cellRange = .Range("A" & nrow & ":I" & nrow)
+                        With cellRange.Borders
+                            .LineStyle = Excel.XlLineStyle.xlContinuous
+                            .Weight = Excel.XlBorderWeight.xlThin
+                        End With
+                    Next
+                    .Range("H" & CStr(nrow + 1)).Value = "Total : "
+                    .Range("H" & nrow + 1).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                    .Range("I" & CStr(nrow + 1)).Value = "=SUM(I7:I" & nrow & ")"
+                    .Range("I" & nrow + 1).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
+                    .Range("B" & CStr(nrow + 2)).Value = "Diterima oleh : " & tblUser.Rows(0).Item("Username").ToString
+                    .Range("B" & CStr(nrow + 3)).Value = "Tanggal : " & tblUser.Rows(0).Item("CreatedAt").ToString
+                End If
+
+            End With
+
+
+            ' 3. Setting printer dan langsung cetak
+            'excelWorksheet.PrintOut(
+            '    Copies:=1,
+            '    Preview:=False,
+            '    ActivePrinter:="Nama Printer Anda", ' Ganti dengan nama printer
+            '    Collate:=True)
+            worksheet.PrintOut(1, 1, 1, False) ' Print langsung
+
+            excelApp.Visible = False
+            excelApp.DisplayAlerts = False
+            ' 4. Tutup tanpa menyimpan perubahan
+            workbook.Close(SaveChanges:=False)
+            excelApp.Quit()
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            ' 5. Bersihkan COM Object
+            ReleaseObject(worksheet)
+            ReleaseObject(workbook)
+            ReleaseObject(excelApp)
+        End Try
+    End Sub
+    Private Sub ReleaseObject(ByVal obj As Object)
+        Try
+            If obj IsNot Nothing Then
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+                obj = Nothing
+            End If
+        Catch ex As Exception
+            obj = Nothing
         End Try
     End Sub
 End Class
