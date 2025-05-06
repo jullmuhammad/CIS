@@ -92,4 +92,12 @@ Partial Public Class FormMenu
         MasterBarang.Show()
         MasterBarang.BringToFront()
     End Sub
+
+    Private Sub btnDokter_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnDokter.ItemClick
+        MasterDokter.TopLevel = False
+        PanelControl1.Controls.Add(MasterDokter)
+        ' FormUsers.Dock = DockStyle.Fill
+        MasterDokter.Show()
+        MasterDokter.BringToFront()
+    End Sub
 End Class

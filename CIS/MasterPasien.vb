@@ -174,8 +174,18 @@ Public Class MasterPasien
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        aksi = "D"
-        PROSESPROC()
+        ' Tampilkan pesan konfirmasi
+        Dim result As DialogResult = XtraMessageBox.Show("Apakah Anda yakin ingin menghapus data ini?",
+                                                     "Konfirmasi Hapus",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question)
+
+        ' Cek hasil konfirmasi
+        If result = DialogResult.Yes Then
+            ' Lakukan proses penghapusan data
+            aksi = "D"
+            PROSESPROC()
+        End If
     End Sub
 
     Sub clear()

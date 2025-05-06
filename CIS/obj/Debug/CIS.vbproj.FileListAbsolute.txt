@@ -214,3 +214,4 @@ C:\vs2017\CIS\CIS\obj\Debug\CIS.FarmasiMasuk.resources
 C:\vs2017\CIS\CIS\obj\Debug\CIS.FarmasiMasukDetail.resources
 C:\vs2017\CIS\CIS\obj\Debug\CIS.MasterBarang.resources
 C:\vs2017\CIS\CIS\obj\Debug\CIS.vbprojAssemblyReference.cache
+C:\vs2017\CIS\CIS\obj\Debug\CIS.MasterDokter.resources

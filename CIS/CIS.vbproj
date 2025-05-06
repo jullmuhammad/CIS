@@ -150,6 +150,12 @@
     <Compile Include="MasterBarang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterDokter.Designer.vb">
+      <DependentUpon>MasterDokter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDokter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterPasien.Designer.vb">
       <DependentUpon>MasterPasien.vb</DependentUpon>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterBarang.resx">
       <DependentUpon>MasterBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterDokter.resx">
+      <DependentUpon>MasterDokter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterPasien.resx">
       <DependentUpon>MasterPasien.vb</DependentUpon>
