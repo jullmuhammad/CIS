@@ -162,6 +162,12 @@
     <Compile Include="MasterPasien.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterTindakan.Designer.vb">
+      <DependentUpon>MasterTindakan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterTindakan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterUser.Designer.vb">
       <DependentUpon>MasterUser.vb</DependentUpon>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterPasien.resx">
       <DependentUpon>MasterPasien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterTindakan.resx">
+      <DependentUpon>MasterTindakan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterUser.resx">
       <DependentUpon>MasterUser.vb</DependentUpon>

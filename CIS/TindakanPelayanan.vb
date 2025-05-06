@@ -169,7 +169,7 @@ Public Class TindakanPelayanan
     End Sub
     Sub combotindakan()
 
-        tblPasien = Proses.ExecuteQuery("SELECT [TindakanID],[NamaTindakan],[Kategori]  FROM [db_klinik].[dbo].[M_Tindakan] where StatusAktif=1")
+        tblPasien = Proses.ExecuteQuery("SELECT [TindakanID],[NamaTindakan],[Kategori]  FROM [db_klinik].[dbo].[M_Tindakan] where StatusAktif='1'")
 
         cmbKodeTindakan.Properties.DataSource = tblPasien
         cmbKodeTindakan.Properties.ValueMember = "TindakanID"

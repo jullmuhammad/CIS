@@ -46,6 +46,7 @@
         Me.txtUserID = New DevExpress.XtraBars.BarStaticItem()
         Me.btnKasir = New DevExpress.XtraBars.BarButtonItem()
         Me.btnPelayananPoli = New DevExpress.XtraBars.BarButtonItem()
+        Me.btnMasterTindakan = New DevExpress.XtraBars.BarButtonItem()
         Me.rpSystem = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpgAction = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpgSystem = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -72,10 +73,10 @@
         '
         Me.ribbonControl1.EmptyAreaImageOptions.ImagePadding = New System.Windows.Forms.Padding(45, 48, 45, 48)
         Me.ribbonControl1.ExpandCollapseItem.Id = 0
-        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.ribbonControl1.SearchEditItem, Me.btnLogout, Me.btnExit, Me.btnChangePwd, Me.btnPasien, Me.btnKamar, Me.btnDokter, Me.btnBarang, Me.btnUser, Me.btnRawatJalan, Me.btnRekamMedis, Me.btnTindakanRM, Me.btnObatRM, Me.btnBarangMasuk, Me.btnBarangKeluar, Me.txtUsername, Me.BarStaticItem1, Me.txtRole, Me.txtUserID, Me.btnKasir, Me.btnPelayananPoli})
+        Me.ribbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl1.ExpandCollapseItem, Me.ribbonControl1.SearchEditItem, Me.btnLogout, Me.btnExit, Me.btnChangePwd, Me.btnPasien, Me.btnKamar, Me.btnDokter, Me.btnBarang, Me.btnUser, Me.btnRawatJalan, Me.btnRekamMedis, Me.btnTindakanRM, Me.btnObatRM, Me.btnBarangMasuk, Me.btnBarangKeluar, Me.txtUsername, Me.BarStaticItem1, Me.txtRole, Me.txtUserID, Me.btnKasir, Me.btnPelayananPoli, Me.btnMasterTindakan})
         Me.ribbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.ribbonControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.ribbonControl1.MaxItemId = 23
+        Me.ribbonControl1.MaxItemId = 24
         Me.ribbonControl1.Name = "ribbonControl1"
         Me.ribbonControl1.OptionsMenuMinWidth = 495
         Me.ribbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rpSystem, Me.rpMaster, Me.rpTransaksi})
@@ -229,6 +230,13 @@
         Me.btnPelayananPoli.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.clinic
         Me.btnPelayananPoli.Name = "btnPelayananPoli"
         '
+        'btnMasterTindakan
+        '
+        Me.btnMasterTindakan.Caption = "Tindakan"
+        Me.btnMasterTindakan.Id = 23
+        Me.btnMasterTindakan.ImageOptions.LargeImage = Global.CIS.My.Resources.Resources.medical
+        Me.btnMasterTindakan.Name = "btnMasterTindakan"
+        '
         'rpSystem
         '
         Me.rpSystem.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpgAction, Me.rpgSystem})
@@ -258,6 +266,7 @@
         Me.rpgMasterData.ItemLinks.Add(Me.btnPasien)
         Me.rpgMasterData.ItemLinks.Add(Me.btnKamar)
         Me.rpgMasterData.ItemLinks.Add(Me.btnDokter)
+        Me.rpgMasterData.ItemLinks.Add(Me.btnMasterTindakan)
         Me.rpgMasterData.Name = "rpgMasterData"
         Me.rpgMasterData.Text = "General"
         '
@@ -427,4 +436,5 @@
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents rpgPemeriksaan As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnPelayananPoli As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btnMasterTindakan As DevExpress.XtraBars.BarButtonItem
 End Class
