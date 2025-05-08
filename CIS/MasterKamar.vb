@@ -1,30 +1,36 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraGrid.Columns
 Imports DevExpress.XtraGrid.Views.Grid
-Public Class MasterTindakan
+Public Class MasterKamar
     Dim SQL As String
     Dim Proses As New ClassKoneksi
     Dim tblUser, tblPasien As DataTable
     Dim aksi As String
     Dim shostname As String = System.Net.Dns.GetHostName
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Close()
+    End Sub
 
-    Private Sub MasterTindakan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub MasterKamar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         data()
     End Sub
 
     Sub data()
 
-        tblPasien = Proses.ExecuteQuery("SELECT    [TindakanID]
-                                                  ,[KodeTindakan]
-                                                  ,[NamaTindakan]
-                                                  ,[Kategori]
-                                                  ,[Tarif]
-                                                  ,[Satuan]
-                                                  ,[Keterangan]
+        tblPasien = Proses.ExecuteQuery("SELECT [KamarID]
+                                                  ,[KodeKamar]
+                                                  ,[NamaKamar]
+                                                  ,[Ruang]
+                                                  ,[Kelas]
+                                                  ,[TarifPerHari]
+                                                  ,[Kapasitas]
+                                                  ,[Terisi]
                                                   ,[StatusAktif]
-                                                  ,[UserCreated]
+                                                  ,[Keterangan]
                                                   ,[CreatedAt]
-                                              FROM [db_klinik].[dbo].[M_Tindakan]")
+                                                  ,[UserCreated]
+                                                  ,[PC]
+                                              FROM [db_klinik].[dbo].[M_Kamar]")
 
         If tblPasien.Rows.Count = 0 Then
             GridControlData.DataSource = Nothing
@@ -34,7 +40,7 @@ Public Class MasterTindakan
             Dim gridView1 As GridView = TryCast(GridControlData.MainView, GridView)
 
             ' Obtain created columns.
-            Dim id As GridColumn = gridView1.Columns("TindakanID")
+            Dim id As GridColumn = gridView1.Columns("KamarID")
             Dim created As GridColumn = gridView1.Columns("CreatedAt")
 
             created.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
@@ -56,7 +62,7 @@ Public Class MasterTindakan
         End If
     End Sub
     Sub PROSESPROC()
-        If Trim(txtNama.Text) = "" Then MsgBox("Nama harus diisi!") : Exit Sub
+        If Trim(txtNamaKamar.Text) = "" Then MsgBox("Nama harus diisi!") : Exit Sub
 
         Cursor.Current = Cursors.WaitCursor
 
@@ -73,28 +79,33 @@ Public Class MasterTindakan
         Commandku.CommandType = CommandType.StoredProcedure
         Commandku.Connection = Database
 
-        Commandku.CommandText = "sp_Master_Tindakan"
+        Commandku.CommandText = "sp_Master_Kamar"
 
         Dim id = Trim(lblid.Text)
-        Dim kodetdk = Trim(txtKodeTindakan.Text)
-        Dim nama = Trim(txtNama.Text)
-        Dim kategori = Trim(txtKategori.Text)
+        Dim kodekamar = Trim(txtKodeKamar.Text)
+        Dim nama = Trim(txtNamaKamar.Text)
+        Dim ruang = Trim(txtRuang.Text)
+        Dim kelas = Trim(cmbKelas.Text)
         Dim tarif = Val(txtTarif.Text)
-        Dim satuan = Trim(txtSatuan.Text)
+        Dim kapasitas = Val(numKapasitas.Text)
+        Dim terisi = Val(numTerisi.Text)
         Dim ket = Trim(mmoKet.Text)
         Dim stts = Trim(cmbStatus.Text)
 
         Dim userid = Trim(FormMenu.txtUserID.Caption)
 
         Commandku.Parameters.AddWithValue("@id", id)
-        Commandku.Parameters.AddWithValue("@kodetindakan", kodetdk)
-        Commandku.Parameters.AddWithValue("@namatindakan", nama)
-        Commandku.Parameters.AddWithValue("@kategori", kategori)
+        Commandku.Parameters.AddWithValue("@kodekamar", kodekamar)
+        Commandku.Parameters.AddWithValue("@namakamar", nama)
+        Commandku.Parameters.AddWithValue("@ruang", ruang)
+        Commandku.Parameters.AddWithValue("@kelas", kelas)
         Commandku.Parameters.AddWithValue("@tarif", tarif)
-        Commandku.Parameters.AddWithValue("@satuan", satuan)
-        Commandku.Parameters.AddWithValue("@ket", ket)
+        Commandku.Parameters.AddWithValue("@kapasitas", tarif)
+        Commandku.Parameters.AddWithValue("@terisi", terisi)
         Commandku.Parameters.AddWithValue("@sts", stts)
+        Commandku.Parameters.AddWithValue("@ket", ket)
         Commandku.Parameters.AddWithValue("@userid", userid)
+        Commandku.Parameters.AddWithValue("@pc", shostname)
         Commandku.Parameters.AddWithValue("@aksi", aksi)
 
 
@@ -139,10 +150,6 @@ Public Class MasterTindakan
         clear()
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Close()
-    End Sub
-
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If lblid.Text = "" Then
             aksi = "I"
@@ -170,12 +177,14 @@ Public Class MasterTindakan
 
     Sub clear()
         lblid.Text = String.Empty
-        txtKodeTindakan.Text = String.Empty
-        txtNama.Text = String.Empty
-        txtKategori.Text = String.Empty
+        txtKodeKamar.Text = String.Empty
+        txtNamaKamar.Text = String.Empty
+        txtRuang.Text = String.Empty
         txtTarif.Text = String.Empty
-        txtSatuan.Text = String.Empty
+        numKapasitas.Text = 0
+        numTerisi.Text = 0
         mmoKet.Text = String.Empty
+        cmbKelas.SelectedIndex = -1
         cmbStatus.SelectedIndex = -1
     End Sub
 
@@ -185,13 +194,29 @@ Public Class MasterTindakan
 
     Sub gridtotext()
         Try
+            tblPasien = Proses.ExecuteQuery("SELECT [KamarID]
+                                                  ,[KodeKamar]
+                                                  ,[NamaKamar]
+                                                  ,[Ruang]
+                                                  ,[Kelas]
+                                                  ,[TarifPerHari]
+                                                  ,[Kapasitas]
+                                                  ,[Terisi]
+                                                  ,[StatusAktif]
+                                                  ,[Keterangan]
+                                                  ,[CreatedAt]
+                                                  ,[UserCreated]
+                                                  ,[PC]
+                                              FROM [db_klinik].[dbo].[M_Kamar]")
 
-            lblid.Text = GridViewData.GetFocusedRowCellValue("TindakanID").ToString
-            txtKodeTindakan.Text = GridViewData.GetFocusedRowCellValue("KodeTindakan").ToString
-            txtNama.Text = GridViewData.GetFocusedRowCellValue("NamaTindakan").ToString
-            txtKategori.Text = GridViewData.GetFocusedRowCellValue("Kategori").ToString
-            txtTarif.Text = GridViewData.GetFocusedRowCellValue("Tarif").ToString
-            txtSatuan.Text = GridViewData.GetFocusedRowCellValue("Satuan").ToString
+            lblid.Text = GridViewData.GetFocusedRowCellValue("KamarID").ToString
+            txtKodeKamar.Text = GridViewData.GetFocusedRowCellValue("KodeKamar").ToString
+            txtNamaKamar.Text = GridViewData.GetFocusedRowCellValue("NamaKamar").ToString
+            txtRuang.Text = GridViewData.GetFocusedRowCellValue("Ruang").ToString
+            cmbKelas.Text = GridViewData.GetFocusedRowCellValue("Kelas").ToString
+            txtTarif.Text = GridViewData.GetFocusedRowCellValue("TarifPerHari").ToString
+            numKapasitas.Text = GridViewData.GetFocusedRowCellValue("Kapasitas").ToString
+            numTerisi.Text = GridViewData.GetFocusedRowCellValue("Terisi").ToString
             mmoKet.Text = GridViewData.GetFocusedRowCellValue("Keterangan").ToString
             If GridViewData.GetFocusedRowCellValue("StatusAktif").ToString = "1" Then
                 cmbStatus.Text = "Aktif"

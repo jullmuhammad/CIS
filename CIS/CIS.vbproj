@@ -156,6 +156,12 @@
     <Compile Include="MasterDokter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterKamar.Designer.vb">
+      <DependentUpon>MasterKamar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterKamar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterPasien.Designer.vb">
       <DependentUpon>MasterPasien.vb</DependentUpon>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterDokter.resx">
       <DependentUpon>MasterDokter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterKamar.resx">
+      <DependentUpon>MasterKamar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterPasien.resx">
       <DependentUpon>MasterPasien.vb</DependentUpon>
